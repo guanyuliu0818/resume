@@ -165,6 +165,13 @@
       }
     },
     {
+      "id": "projects",
+      "label": {
+        "zh": "项目",
+        "en": "Projects"
+      }
+    },
+    {
       "id": "awards",
       "label": {
         "zh": "荣誉",
@@ -179,17 +186,17 @@
       }
     },
     {
+      "id": "talks",
+      "label": {
+        "zh": "报告",
+        "en": "Talks"
+      }
+    },
+    {
       "id": "media",
       "label": {
         "zh": "报道",
         "en": "Media"
-      }
-    },
-    {
-      "id": "skills",
-      "label": {
-        "zh": "技能",
-        "en": "Skills"
       }
     },
     {
@@ -576,6 +583,157 @@
       ]
     },
     {
+      "id": "projects",
+      "emoji": "🧪",
+      "title": {
+        "zh": "科研项目",
+        "en": "Research Projects"
+      },
+      "type": "groups",
+      "groups": [
+        {
+          "title": {
+            "zh": "项目主持",
+            "en": "As principal investigator"
+          },
+          "entries": [
+            {
+              "role": {
+                "zh": "当前和未来全球野火碳排放的气候反馈",
+                "en": "Climate feedback of current and future global wildfire carbon emissions"
+              },
+              "org": {
+                "zh": "北京大学必和必拓「碳与气候」博士研究生未名学者奖学金项目",
+                "en": "PKU–BHP Carbon & Climate PhD Weiming Scholar programme"
+              },
+              "date": {
+                "zh": "2024.10 – 至今",
+                "en": "2024.10 – present"
+              },
+              "bullets": [
+                {
+                  "zh": "主持。研究野火碳排放的辐射反馈，及其与海温、海冰的相互作用，评估当前与未来情景下野火—气候反馈的强度与区域差异。",
+                  "en": "Principal investigator. Examines the radiative feedback of wildfire carbon emissions and its interaction with SST and sea ice, quantifying the strength and regional pattern of the wildfire–climate feedback under current and future scenarios."
+                },
+                {
+                  "zh": "成果发表于 *Nature Communications*、*PNAS* 等期刊，构成博士论文的核心内容。",
+                  "en": "Results published in *Nature Communications*, *PNAS* and elsewhere form the core of the doctoral dissertation."
+                }
+              ]
+            },
+            {
+              "role": {
+                "zh": "2018 年欧洲热浪的机理分析",
+                "en": "Mechanisms of the 2018 European heatwave"
+              },
+              "org": {
+                "zh": "南京大学大学生创新创业训练计划（国家级）",
+                "en": "NJU National Undergraduate Innovation and Entrepreneurship Programme"
+              },
+              "date": {
+                "zh": "2018.10 – 2019.10",
+                "en": "2018.10 – 2019.10"
+              },
+              "bullets": [
+                {
+                  "zh": "主持，**优秀结题**。诊断 2018 年夏季欧洲持续高温事件的环流配置与陆气反馈过程。",
+                  "en": "Principal investigator, completed with distinction. Diagnosed the circulation pattern and land–atmosphere feedbacks behind the persistent 2018 summer heat over Europe."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": {
+            "zh": "项目参与",
+            "en": "As participant"
+          },
+          "entries": [
+            {
+              "role": {
+                "zh": "气溶胶卫星遥感与辐射效应",
+                "en": "Satellite remote sensing of aerosols and radiative effects"
+              },
+              "org": {
+                "zh": "国家自然科学基金杰出青年科学基金",
+                "en": "NSFC Distinguished Young Scholars Fund"
+              },
+              "date": {
+                "zh": "2025 – 2029",
+                "en": "2025 – 2029"
+              },
+              "bullets": [
+                {
+                  "zh": "参与。方向为卫星气溶胶反演与气溶胶辐射效应；相关一作成果包括利用红外窗区长波辐亮度与地基微波辐射计反演夜间气溶胶光学厚度（*GRL* 2024、*AMT* 2025）。",
+                  "en": "Participant. Works on satellite aerosol retrieval and aerosol radiative effects; related first-author papers include nighttime aerosol optical depth retrieval from infrared-window radiances and from ground-based microwave radiometers (*GRL* 2024, *AMT* 2025)."
+                }
+              ]
+            },
+            {
+              "role": {
+                "zh": "基于多角度偏振成像仪 DPC 的气溶胶单次散射反照率反演算法开发",
+                "en": "Retrieval of aerosol single-scattering albedo from the Directional Polarimetric Camera (DPC)"
+              },
+              "org": {
+                "zh": "国家自然科学基金面上项目",
+                "en": "NSFC General Programme"
+              },
+              "date": {
+                "zh": "2024.01 – 2027.12",
+                "en": "2024.01 – 2027.12"
+              },
+              "bullets": [
+                {
+                  "zh": "参与。面向 DPC 多角度偏振观测发展气溶胶单次散射反照率反演算法，并结合 AERONET 地基观测开展验证与不确定性分析。",
+                  "en": "Participant. Develops a single-scattering albedo retrieval for DPC multi-angle polarimetric observations, with validation and uncertainty analysis against AERONET ground-based measurements."
+                }
+              ]
+            },
+            {
+              "role": {
+                "zh": "利用 A-Train 卫星联合反演研究中国地区气溶胶直接辐射强迫的时空变化",
+                "en": "Spatiotemporal variability of aerosol direct radiative forcing over China from joint A-Train retrievals"
+              },
+              "org": {
+                "zh": "国家自然科学基金面上项目",
+                "en": "NSFC General Programme"
+              },
+              "date": {
+                "zh": "2020.01 – 2023.12",
+                "en": "2020.01 – 2023.12"
+              },
+              "bullets": [
+                {
+                  "zh": "参与。基于 A-Train 多传感器联合反演，评估中国地区气溶胶直接辐射强迫的时空演变；相关成果涉及气溶胶散射性变化对季风降水的影响（*Science Bulletin* 2023，合作作者）。",
+                  "en": "Participant. Assesses the spatiotemporal evolution of aerosol direct radiative forcing over China from joint A-Train retrievals; related work on how changing aerosol scattering affects monsoon rainfall appeared in *Science Bulletin* (2023, co-author)."
+                }
+              ]
+            },
+            {
+              "role": {
+                "zh": "长时序高时空分辨率植被生态气候数据集的研制",
+                "en": "Long-term, high-resolution vegetation and eco-climate dataset"
+              },
+              "org": {
+                "zh": "科技部国家重点研发计划课题",
+                "en": "National Key R&D Programme of China (MOST)"
+              },
+              "date": {
+                "zh": "2023.12 – 2028.11",
+                "en": "2023.12 – 2028.11"
+              },
+              "bullets": [
+                {
+                  "zh": "参与。研制长时序、高时空分辨率的植被与生态气候数据集，为野火、沙尘等陆气相互作用研究提供植被与气候背景场。",
+                  "en": "Participant. Builds long-term, high-resolution vegetation and eco-climate datasets that provide the vegetation and climate background for studies of wildfire, dust and other land–atmosphere interactions."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "awards",
       "emoji": "🏆",
       "title": {
@@ -611,8 +769,20 @@
               "en": "Jiukun Scholarship (2022)"
             },
             {
+              "zh": "中国绿色创新夏季学院奖学金（2022）",
+              "en": "China Green Innovation Summer School Scholarship (2022)"
+            },
+            {
               "zh": "招行奖学金（2020）",
               "en": "CMB Scholarship (2020)"
+            },
+            {
+              "zh": "郑钢海外学习奖学金（2019）、杨蓝云领导型人才奖学金（2019）",
+              "en": "Zheng Gang Overseas Study Scholarship (2019); Yang Lanyun Leadership Talent Scholarship (2019)"
+            },
+            {
+              "zh": "人民奖学金（2018）",
+              "en": "People's Scholarship (2018)"
             }
           ]
         },
@@ -641,6 +811,10 @@
             {
               "zh": "中国气象现代化科技创新创业大赛一等奖（2021）",
               "en": "First Prize, China Meteorological Modernization Innovation Contest (2021)"
+            },
+            {
+              "zh": "南京大学气象科普风采大赛三等奖（2020）、「华教杯」数学竞赛一等奖（2019）",
+              "en": "Third Prize, NJU Meteorological Science Communication Contest (2020); First Prize, Huajiao Cup Mathematics Competition (2019)"
             }
           ]
         },
@@ -671,12 +845,24 @@
               "en": "NJU Outstanding Graduate (2021)"
             },
             {
+              "zh": "南京大学优秀共青团干部（2021）",
+              "en": "NJU Outstanding Communist Youth League Cadre (2021)"
+            },
+            {
               "zh": "南京大学优秀学生标兵（2020）",
               "en": "NJU Outstanding Student Role Model (2020)"
             },
             {
+              "zh": "南京大学优秀学生干部（2020）",
+              "en": "NJU Outstanding Student Cadre (2020)"
+            },
+            {
               "zh": "南京大学十佳志愿者（2019）、江苏省社会实践优秀团队（2019）",
               "en": "NJU Top Ten Volunteer (2019); Jiangsu Outstanding Social Practice Team (2019)"
+            },
+            {
+              "zh": "南京大学优秀共青团员（2019、2018）",
+              "en": "NJU Outstanding League Member (2019, 2018)"
             }
           ]
         }
@@ -1454,6 +1640,85 @@
         "zh": "*IF 与分区随 JCR 年度更新；论文 PDF 可来信索取。*",
         "en": "*IF and tier values follow the annual JCR release; PDFs of the papers above are available on request.*"
       }
+    },
+    {
+      "id": "talks",
+      "emoji": "🎤",
+      "title": {
+        "zh": "学术报告",
+        "en": "Conference Presentations"
+      },
+      "type": "groups-list",
+      "groups": [
+        {
+          "title": {
+            "zh": "口头报告",
+            "en": "Oral presentations"
+          },
+          "items": [
+            {
+              "zh": "中国气象科学研究院研究生院「研学沙龙」第十期（2026，特邀报告）",
+              "en": "Chinese Academy of Meteorological Sciences (CAMS), 10th Research Salon (2026, invited)"
+            },
+            {
+              "zh": "**Biosmoke 国际论坛**（2025）",
+              "en": "**Biosmoke International Forum** (2025)"
+            },
+            {
+              "zh": "**国际辐射论坛**（2024）",
+              "en": "**International Radiation Symposium** (2024)"
+            },
+            {
+              "zh": "第二届「空间、大气、海洋与环境光学」学术会议（2024，**优秀报告**）",
+              "en": "2nd Symposium on Space, Atmosphere, Ocean and Environmental Optics (2024, **best talk**)"
+            },
+            {
+              "zh": "「钟盛标」教育基金研究生学术论坛（2022、2024；2024 年**三等奖**）",
+              "en": "Zhong Shengbiao Graduate Academic Forum (2022, 2024; **third prize** in 2024)"
+            },
+            {
+              "zh": "**AGU** 美国地球物理联合会秋季会议（2023）",
+              "en": "**AGU** Fall Meeting (2023)"
+            },
+            {
+              "zh": "北京大学大气科学学生论坛「蔚蓝空间」（2022、2023）",
+              "en": "PKU Blue-Space Atmospheric Science Student Forum (2022, 2023)"
+            },
+            {
+              "zh": "第三届大气环境遥感与协同分析学术论坛（2023）",
+              "en": "3rd Forum on Atmospheric Environment Remote Sensing and Synergistic Analysis (2023)"
+            },
+            {
+              "zh": "第八届青年地学论坛（2023）",
+              "en": "8th Youth Geoscience Forum (2023)"
+            },
+            {
+              "zh": "长三角高校大气科学研究生论坛（2022）",
+              "en": "Yangtze River Delta Graduate Forum on Atmospheric Science (2022)"
+            }
+          ]
+        },
+        {
+          "title": {
+            "zh": "海报",
+            "en": "Posters"
+          },
+          "items": [
+            {
+              "zh": "「钟盛标」教育基金研究生学术论坛（2022、2024）",
+              "en": "Zhong Shengbiao Graduate Academic Forum (2022, 2024)"
+            },
+            {
+              "zh": "第八届青年地学论坛（2023）",
+              "en": "8th Youth Geoscience Forum (2023)"
+            },
+            {
+              "zh": "长三角高校大气科学研究生论坛（2022）",
+              "en": "Yangtze River Delta Graduate Forum on Atmospheric Science (2022)"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "media",
@@ -2541,77 +2806,6 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "skills",
-      "emoji": "🛠",
-      "title": {
-        "zh": "技能与学术服务",
-        "en": "Skills & Academic Service"
-      },
-      "type": "definitions",
-      "items": [
-        {
-          "key": {
-            "zh": "数值模式",
-            "en": "Numerical models"
-          },
-          "value": {
-            "zh": "WRF-Chem, CESM, GEOS-Chem, RTTOV, SBDART, monoRTM",
-            "en": "WRF-Chem, CESM, GEOS-Chem, RTTOV, SBDART, monoRTM"
-          }
-        },
-        {
-          "key": {
-            "zh": "编程与 AI",
-            "en": "Programming & AI"
-          },
-          "value": {
-            "zh": "Python（scikit-learn, PyTorch）、MATLAB、Fortran、NCL、C++、Shell；Transformer / ResNet / GAN 模型复现",
-            "en": "Python (scikit-learn, PyTorch), MATLAB, Fortran, NCL, C++, Shell; reproduction of Transformer / ResNet / GAN models"
-          }
-        },
-        {
-          "key": {
-            "zh": "地理空间数据",
-            "en": "Geospatial data"
-          },
-          "value": {
-            "zh": "SQL、Google Earth Engine、QGIS；卫星遥感反演与统计降尺度",
-            "en": "SQL, Google Earth Engine, QGIS; satellite retrieval and statistical downscaling"
-          }
-        },
-        {
-          "key": {
-            "zh": "学术报告",
-            "en": "Conference talks"
-          },
-          "value": {
-            "zh": "Biosmoke 论坛（2025）、国际辐射论坛（2024）、空间大气海洋与环境光学会议（2024）、第八届青年地学论坛（2023）、AGU（2023） 等口头报告",
-            "en": "Oral presentations at Biosmoke (2025), International Radiation Symposium (2024), SAME Optics Symposium (2024), Young Geoscientists Forum (2023) and AGU (2023), among others"
-          }
-        },
-        {
-          "key": {
-            "zh": "学术服务",
-            "en": "Academic service"
-          },
-          "value": {
-            "zh": "北京大学博士生讲师团成员（10+ 场社区与院系宣讲）、「蔚蓝空间」研究生学术讲座负责人",
-            "en": "Member of PKU Ph.D. Lecturers Group (10+ outreach talks); organiser of the Blue Space graduate seminar series"
-          }
-        },
-        {
-          "key": {
-            "zh": "语言与资质",
-            "en": "Languages & certificates"
-          },
-          "value": {
-            "zh": "英语 CET-6 589 / CET-4 595，德语（基本交流）；高级信息系统项目管理师、高中地理教师资格证",
-            "en": "English CET-6 589 / CET-4 595, German (basic); Senior Information Systems Project Manager; High-school Geography Teaching Certificate"
-          }
         }
       ]
     },
