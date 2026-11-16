@@ -1516,6 +1516,29 @@
         },
         {
           "source": {
+            "zh": "Clearsky Science（科学传播平台）",
+            "en": "Clearsky Science"
+          },
+          "tag": {
+            "zh": "科普解读",
+            "en": "Plain-language explainer"
+          },
+          "desc": {
+            "zh": "以《中东尘埃作为印度洋偶极子的重要外部驱动因子》为题，将 *Nature Communications* 论文改写为面向公众的图文解读，并绘有机制示意图。",
+            "en": "A public-facing illustrated explainer of the *Nature Communications* paper, “Middle East dust as an important external driver of the Indian Ocean Dipole”, with mechanism diagrams."
+          },
+          "links": [
+            {
+              "label": {
+                "zh": "中文解读",
+                "en": "Explainer (Chinese)"
+              },
+              "url": "https://www.clearskyscience.com/zh/10.1038/s41467-026-68842-1"
+            }
+          ]
+        },
+        {
+          "source": {
             "zh": "风云新知（公众号 · 论文速递）",
             "en": "Fengyun Xinzhi (WeChat)"
           },
@@ -1848,6 +1871,66 @@
         },
         {
           "source": {
+            "zh": "北京大学物理学院大气与海洋科学系 · 王绍武优秀博士毕业生奖",
+            "en": "PKU Dept. of Atmospheric & Oceanic Sciences · Wang Shaowu Award"
+          },
+          "tag": {
+            "zh": "荣誉表彰",
+            "en": "Award"
+          },
+          "desc": {
+            "zh": "2026 年 7 月 1 日，与刘伽晨博士共同获颁第五届“王绍武优秀博士毕业生奖”。该奖为纪念气候学家王绍武先生设立，由先生生前学生捐资，每年评选 2 人。",
+            "en": "On 1 July 2026, jointly received the 5th Wang Shaowu Outstanding PhD Graduate Award — established in memory of the climatologist Wang Shaowu by his former students and given to two graduates each year."
+          },
+          "links": [
+            {
+              "label": {
+                "zh": "系官方公众号",
+                "en": "Department WeChat"
+              },
+              "url": "https://mp.weixin.qq.com/s?__biz=MzUxNzU0NzA1NA==&mid=2247493984&idx=1&sn=30d29a1649d175b070323c322231377e"
+            },
+            {
+              "label": {
+                "zh": "气象学家（转载）",
+                "en": "Meteorologist (repost)"
+              },
+              "url": "https://mp.weixin.qq.com/s?__biz=MzAwNDgyNTgxOA==&mid=2247601567&idx=1&sn=7e96e26bd7be899ce5fb9901d8a3ba12"
+            }
+          ]
+        },
+        {
+          "source": {
+            "zh": "南京大学招生办公室 · 南大招生小蓝鲸（公众号）",
+            "en": "NJU Admissions · Blue Whale (WeChat)"
+          },
+          "tag": {
+            "zh": "人物专访（本科阶段）",
+            "en": "Profile interview (undergraduate)"
+          },
+          "desc": {
+            "zh": "2021 年 3 月专访《投稿 SCI，参与芬兰国际科考，看本科直博北大的他与大气科学的不解之缘！》，记述本科阶段的科研起步、芬兰 SMEAR II 观测站科考与牛津短期研学，以及气象指数保险的跨学科实践。",
+            "en": "Interview “From an SCI submission to a Finnish field campaign: an undergraduate's path into atmospheric science” (March 2021), covering his first steps in research, the SMEAR II campaign and a short stay at Oxford, plus cross-disciplinary work on weather-index insurance."
+          },
+          "links": [
+            {
+              "label": {
+                "zh": "公众号原文",
+                "en": "WeChat article"
+              },
+              "url": "https://mp.weixin.qq.com/s/R7UutKQvPTlJ-ja2mUEnpg"
+            },
+            {
+              "label": {
+                "zh": "今日头条转载",
+                "en": "Repost (Toutiao)"
+              },
+              "url": "https://www.toutiao.com/article/6938557007372878366/"
+            }
+          ]
+        },
+        {
+          "source": {
             "zh": "南京大学大气科学学院（公众号）· 青春风采",
             "en": "School of Atmospheric Sciences, Nanjing University (WeChat) · Spotlight"
           },
@@ -1873,13 +1956,59 @@
                 "en": "Repost (ihwrm)"
               },
               "url": "https://wx.ihwrm.com/baokan/article/info.html?doc_id=3765768"
+            }
+          ]
+        },
+        {
+          "source": {
+            "zh": "澎湃新闻 · 南京大学涂长望气象讲师团",
+            "en": "The Paper · NJU Tu Changwang Meteorological Lecturers"
+          },
+          "tag": {
+            "zh": "科普创作（本科阶段）",
+            "en": "Science outreach (undergraduate)"
+          },
+          "desc": {
+            "zh": "参与世界气象日科普视频《云上说云》水循环篇章的文案撰写，作品经澎湃号发布，并向南京多所小学播出。",
+            "en": "Co-wrote the water-cycle episode of the World Meteorological Day outreach series “Clouds Talk”, published via The Paper and shown in several Nanjing primary schools."
+          },
+          "links": [
+            {
+              "label": {
+                "zh": "澎湃新闻原文",
+                "en": "The Paper"
+              },
+              "url": "https://thepaper.cn/newsDetail_forward_6663629"
+            }
+          ]
+        },
+        {
+          "source": {
+            "zh": "南京大学官网 · 大气科学学院",
+            "en": "Nanjing University · School of Atmospheric Sciences"
+          },
+          "tag": {
+            "zh": "本科教学与经验分享",
+            "en": "Teaching & peer mentoring"
+          },
+          "desc": {
+            "zh": "本科期间主讲“汇彩课堂”生涯青课堂第一期《高效学习的器、道、法》，并受邀在“学长学姐来支招”系列活动分享跨专业学习与科研起步经验。",
+            "en": "Delivered the first “Career” session of the NJU Huicai Classroom on tools and methods for efficient learning, and shared study and research-start advice in the “seniors' tips” series."
+          },
+          "links": [
+            {
+              "label": {
+                "zh": "南大官网 · 汇彩课堂",
+                "en": "NJU · Huicai Classroom"
+              },
+              "url": "https://www.nju.edu.cn/info/3321/295001.htm"
             },
             {
               "label": {
-                "zh": "今日头条转载",
-                "en": "Repost (Toutiao)"
+                "zh": "大气科学学院 · 学长学姐来支招",
+                "en": "School of Atmospheric Sciences · peer mentoring"
               },
-              "url": "https://www.toutiao.com/article/6938557007372878366/"
+              "url": "https://as.nju.edu.cn/44/42/c18096a476226/page.htm"
             }
           ]
         },
@@ -1916,8 +2045,8 @@
             "en": "Public outreach"
           },
           "desc": {
-            "zh": "作为北京大学博士生讲师团成员进社区宣讲，主题为《大美中国 气象添彩——新时代气象服务生态文明建设》与《加强生态环境保护，促进绿色低碳发展》，两场均获官网报道。",
-            "en": "As a member of the PKU PhD Lecturer Corps, gave community talks on meteorology serving ecological civilization and on green low-carbon development, both covered on the sub-district website."
+            "zh": "作为北京大学团委博士生讲师团成员进社区宣讲，主题为《大美中国 气象添彩——新时代气象服务生态文明建设》与《加强生态环境保护，促进绿色低碳发展》，街道办事处官网与北大新闻网均有报道。",
+            "en": "As a member of the PKU Youth League PhD Lecturer Corps, gave community talks on meteorology serving ecological civilization and on green low-carbon development, covered by the sub-district website and PKU News."
           },
           "links": [
             {
@@ -1933,13 +2062,43 @@
                 "en": "Yanbeiyuan talk"
               },
               "url": "https://www.yanyuan.pku.edu.cn/xxyw/1111yanyuangb150713.htm"
+            },
+            {
+              "label": {
+                "zh": "北大新闻网报道",
+                "en": "PKU News"
+              },
+              "url": "https://news.pku.edu.cn/xwzh/6757318eb69e4fc58343cb31195a7781.htm"
             }
           ]
         },
         {
           "source": {
-            "zh": "光明网 · 科普中国 · 北京市气象局",
-            "en": "Guangming Online · China Science Communication · Beijing Meteorological Service"
+            "zh": "北京大学物理学院 · “钟盛标教育基金”研究生学术论坛",
+            "en": "PKU School of Physics · Zhong Shengbiao Graduate Academic Forum"
+          },
+          "tag": {
+            "zh": "学术论坛",
+            "en": "Academic forum"
+          },
+          "desc": {
+            "zh": "在第二十二届“钟盛标教育基金”研究生学术论坛中获三等奖（口头报告与海报展示）。",
+            "en": "Third prize at the 22nd Zhong Shengbiao Graduate Academic Forum (oral report and poster)."
+          },
+          "links": [
+            {
+              "label": {
+                "zh": "获奖名单公示",
+                "en": "Award list"
+              },
+              "url": "https://www.phy.pku.edu.cn/info/2248/10289.htm"
+            }
+          ]
+        },
+        {
+          "source": {
+            "zh": "光明网 · 科普中国 · 北京市气象局 · 北京气象学会",
+            "en": "Guangming Online · China Science Communication · Beijing Meteorological Service · Beijing Meteorological Society"
           },
           "tag": {
             "zh": "科普竞赛",
@@ -1977,6 +2136,20 @@
                 "en": "Beijing Association for Science and Technology"
               },
               "url": "https://www.bast.net.cn/kxweb/gwzwz/kxpj/qmkxszxd/202507/t20250703_141951.html"
+            },
+            {
+              "label": {
+                "zh": "北京气象学会",
+                "en": "Beijing Meteorological Society"
+              },
+              "url": "https://bms.ium.cn/index.php/home/news/view/id/351.html"
+            },
+            {
+              "label": {
+                "zh": "今日头条",
+                "en": "Toutiao"
+              },
+              "url": "https://www.toutiao.com/article/7120553991553057319/"
             }
           ]
         },
