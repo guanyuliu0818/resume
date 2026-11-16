@@ -130,6 +130,10 @@ curl -X POST -H "Authorization: Bearer <PAT>" \
 >
 > 因此**不要**把带 `?sharecode=` 的链接填进 `site.canonicalBase`：构建脚本会把它拼成畸形 URL，访问码也会写进公开页面源码。当前 `canonicalBase` 保持为空，等确定正式域名后一键 `node build.js --set-base=…` 即可。
 
+> **零账号通道的实测结论（2026-11-16）**：WorkBuddy 内置分享链接需 `?sharecode=`（无 Cookie 时 403）；Netlify 匿名部署 `CI=1 npx netlify-cli deploy --dir=dist --allow-anonymous --json` **能成功创建站点**（例如 `friendly-nasturtium-dd6557.netlify.app`），但整个站点被 **Password Protection** 锁住，首页、`en.html`、`assets/*`、`robots.txt`、`sitemap.xml` 一律 401；Netlify 匿名建站 API `POST /api/v1/sites` 直接 401。匿名站可用返回的 `claim_command`（`netlify claim --site … --token …`）认领到账号后解除密码。
+>
+> **因此：所有「无需账号」的通道都带访问门槛，爬虫进不来，都无法让网页被搜到。** 要被搜索引擎收录，必须拥有并授权至少一个平台账号（GitHub / Netlify / Cloudflare / 腾讯云任一），拿到无门槛的公开网址后再执行下面的 `--set-base`。
+
 ### 干净发布目录 `dist/`
 
 工作区根目录里有两份**含手机号等隐私的原始简历 PDF**、本地记忆目录与压缩包，**不能直接整目录上传**。已备好 `dist/`，只含：
