@@ -5,7 +5,8 @@
     "url 留空的侧栏链接不会出现在页面上（也不留灰色占位）；补齐 url 后重新构建即自动显示。",
     "证件照原图在 assets/avatar.jpg；执行 node build.js 会自动把它转成纯文本 assets/avatar.svg（内嵌 base64），页面与 og:image 都引用该 SVG，便于纯文本通道发布。换照片只需替换 jpg 后重新构建。",
     "badge 颜色 tone 可选：red（顶刊 / 一区 Top）、blue（主流期刊）、gray（中文 / 其他）、green（在投 / 会议）。",
-    "所有列表条目一律按时间倒序（最新在最前）：奖项 / 论文按年份，经历按起始年月，教育按学位时间线。"
+    "所有列表条目一律按时间倒序（最新在最前）：奖项 / 论文按年份，经历按起始年月，教育按学位时间线。",
+    "论文 metrics 字段：{\"if\": \"18.1\", \"tier\": {\"zh\": \"中科院一区 Top\", \"en\": \"CAS Tier 1 (Top)\"}}；media 为报道来源数组，mediaExtra 为报道补充说明。"
   ],
   "config": {
     "draft": false,
@@ -33,17 +34,17 @@
       "en": "Guanyu Liu"
     },
     "sidebarBio": {
-      "zh": "中国南方电力调度控制中心 主管 · 北京大学博士（2026 届）",
-      "en": "Supervisor, CSG Dispatching & Control Center · Ph.D., Peking University (2026)"
+      "zh": "中国南方电力调度控制中心 水电及新能源处主管 · 北京大学博士（2026 届）",
+      "en": "Supervisor, Hydropower & New Energy Division, CSG Dispatching & Control Center · Ph.D., Peking University (2026)"
     },
     "canonicalBase": "https://guanyuliu0818.github.io/resume",
     "seoDescription": {
-      "zh": "刘冠宇，中国南方电力调度控制中心水电及新能源处主管、北京大学大气物理学与大气环境博士，研究电力气象、新能源功率预测、野火与气溶胶、卫星遥感反演与 AI for Science。",
-      "en": "Guanyu Liu, Supervisor at CSG Power Dispatching & Control Center and Peking University Ph.D. Research: power meteorology, renewable-energy forecasting, wildfire, aerosols, AI for Science."
+      "zh": "刘冠宇，中国南方电力调度控制中心水电及新能源处主管，北京大学大气物理学与大气环境博士。研究电力气象、新能源功率预测、野火与气候反馈、气溶胶—气候相互作用、中东沙尘与印度洋偶极子、夜间气溶胶遥感反演与 AI for Science；在 Nature Communications、PNAS、Science Advances、Science Bulletin 等发表论文 18 篇。",
+      "en": "Guanyu Liu is a supervisor in the Hydropower & New Energy Division of the CSG Power Dispatching and Control Center and holds a Ph.D. in Atmospheric Physics from Peking University. He works on power meteorology, renewable-energy forecasting, wildfire–climate feedbacks, aerosol–climate interactions, Middle East dust and the Indian Ocean Dipole, nighttime aerosol retrieval and AI for Science, with 18 papers in Nature Communications, PNAS, Science Advances and Science Bulletin."
     },
     "keywords": {
-      "zh": "刘冠宇, Guanyu Liu, 北京大学, 中国南方电力调度控制中心, 南方电网, 电力气象, 新能源功率预测, 大气科学, 野火, 气溶胶, 卫星遥感反演, AI for Science",
-      "en": "Guanyu Liu, 刘冠宇, Peking University, CSG, China Southern Power Grid, power meteorology, renewable-energy power forecasting, atmospheric science, wildfire, aerosol, satellite remote sensing, AI for Science"
+      "zh": "刘冠宇, Guanyu Liu, 北京大学, 大气科学, 大气物理学, 中国南方电力调度控制中心, 南方电网, 电力气象, 新能源功率预测, 水电, 野火, 火险天气, 气溶胶, 沙尘, 中东沙尘, 印度洋偶极子, IOD, 气溶胶光学厚度, AOD, 单次散射反照率, 卫星遥感反演, 微波辐射计, 气候变化, 极端事件, 机器学习, 人工智能, AI for Science, 气象指数保险, 莱比锡大学, 南京大学",
+      "en": "Guanyu Liu, 刘冠宇, Peking University, atmospheric science, atmospheric physics, CSG, China Southern Power Grid, power meteorology, renewable-energy forecasting, hydropower, wildfire, fire weather, aerosol, dust, Middle East dust, Indian Ocean Dipole, IOD, aerosol optical depth, AOD, single scattering albedo, satellite retrieval, microwave radiometer, climate change, climate extremes, machine learning, artificial intelligence, AI for Science, weather-index insurance, Leipzig University, Nanjing University"
     },
     "knowsAbout": [
       "Power meteorology",
@@ -69,8 +70,8 @@
       "en": "en"
     },
     "docTitle": {
-      "zh": "刘冠宇 (Guanyu Liu) | 大气科学与电力气象 · 个人主页",
-      "en": "Guanyu Liu (刘冠宇) | Atmospheric Science & Power Meteorology"
+      "zh": "刘冠宇 (Guanyu Liu) | 大气科学博士 · 电力气象与新能源功率预测 · 北京大学",
+      "en": "Guanyu Liu (刘冠宇) | Atmospheric Science Ph.D. · Power Meteorology & Renewable Forecasting"
     },
     "alternateName": {
       "zh": "Guanyu Liu",
@@ -87,6 +88,20 @@
     "alumniOf": {
       "zh": "北京大学",
       "en": "Peking University"
+    },
+    "schemaAwards": {
+      "zh": [
+        "第五届王绍武优秀博士毕业生（2026）",
+        "北京大学校长奖学金（2025、2021）",
+        "国家奖学金（2023）",
+        "北京市优秀毕业生（2026）"
+      ],
+      "en": [
+        "5th Wang Shaowu Outstanding Doctoral Graduate Award (2026)",
+        "Peking University Presidential Scholarship (2025, 2021)",
+        "National Scholarship (2023)",
+        "Outstanding Graduate of Beijing (2026)"
+      ]
     }
   },
   "labels": {
@@ -113,6 +128,18 @@
     "draftTag": {
       "zh": "草稿",
       "en": "DRAFT"
+    },
+    "paperNote": {
+      "zh": "主要内容",
+      "en": "Main findings"
+    },
+    "paperMedia": {
+      "zh": "报道",
+      "en": "Covered by"
+    },
+    "researchAreas": {
+      "zh": "研究方向",
+      "en": "Research areas"
     }
   },
   "nav": [
@@ -149,6 +176,13 @@
       "label": {
         "zh": "论文",
         "en": "Papers"
+      }
+    },
+    {
+      "id": "media",
+      "label": {
+        "zh": "报道",
+        "en": "Media"
       }
     },
     {
@@ -213,6 +247,40 @@
         {
           "zh": "兼具 **大气科学 + 电力调度 + 遥感 AI + 保险金融** 的交叉背景。现任中国南方电力调度控制中心水电及新能源处主管，负责电力气象与新能源功率预测等业务，并开发气象数据分析工具与调度气象智能体应用；此前曾在中国长江三峡集团科学技术研究院、微软亚洲研究院（AI for Science）、北京佳格天地与中科院计算技术研究所实习，把数值模拟与机器学习带入真实业务场景，推动科研成果向能源调度、防灾减灾与气候服务转化。同时侧重「电力 + 气象」线上科普，累计观看人数逾 2 万；并担任北京大学博士生讲师团成员与「蔚蓝空间」学术讲座负责人。",
           "en": "His background bridges **atmospheric science, power system dispatching, remote-sensing AI and insurance/finance**. At CSG he is responsible for power meteorology and renewable-energy power forecasting, and develops meteorological data-analysis tools and dispatching-oriented AI agents. Earlier internships at the China Three Gorges Corporation Research Institute, Microsoft Research Asia (AI for Science), GAGO Inc. and the Institute of Computing Technology (CAS) shaped a practice of bringing numerical modelling and machine learning into operational settings and translating research into energy dispatch, disaster risk reduction and climate services. He also focuses on online science communication at the *power + meteorology* interface, reaching an audience of over 20,000, and serves as a member of the Peking University Ph.D. Lecturers Group and organiser of the *Blue Space* seminar series."
+        }
+      ],
+      "tags": [
+        {
+          "zh": "电力气象",
+          "en": "Power meteorology"
+        },
+        {
+          "zh": "新能源功率预测",
+          "en": "Renewable power forecasting"
+        },
+        {
+          "zh": "野火与气候反馈",
+          "en": "Wildfire–climate feedbacks"
+        },
+        {
+          "zh": "气溶胶—气候相互作用",
+          "en": "Aerosol–climate interactions"
+        },
+        {
+          "zh": "沙尘与海洋变率",
+          "en": "Dust & ocean variability"
+        },
+        {
+          "zh": "卫星遥感反演",
+          "en": "Satellite retrievals"
+        },
+        {
+          "zh": "机器学习与 AI for Science",
+          "en": "Machine learning & AI for Science"
+        },
+        {
+          "zh": "气象指数保险",
+          "en": "Weather-index insurance"
         }
       ]
     },
@@ -312,8 +380,8 @@
                 "en": "**CSG Dispatching & Control Center · Hydropower & New Energy Division**"
               },
               "date": {
-                "zh": "2026 – 至今",
-                "en": "2026 – present"
+                "zh": "2026.07 – 至今",
+                "en": "2026.07 – present"
               },
               "bullets": [
                 {
@@ -623,8 +691,8 @@
       },
       "type": "papers",
       "note": {
-        "zh": "共发表论文 **18 篇**，其中 **第一作者 SCI 一区论文 10 篇**（累计 IF >100）。粗体为本人；期刊名后的年份即发表年份。",
-        "en": "**18 papers** in total, including **10 first-author papers in Q1 SCI journals** (cumulative IF > 100). Bold denotes the author; the year follows the journal badge."
+        "zh": "共发表论文 **18 篇**，其中 **第一作者论文 11 篇**（SCI 论文 10 篇，均为中科院一区，累计影响因子 > 100）。粗体为本人。标出各刊影响因子（IF）与中科院分区，均为 JCR 最新公布值，随年度更新。",
+        "en": "**18 papers** in total, including **11 first-author papers** (10 SCI papers, all CAS Tier 1; cumulative IF above 100). Bold denotes the author. The impact factor (IF) and CAS tier shown for each journal follow the latest JCR release and are updated annually."
       },
       "groups": [
         {
@@ -649,8 +717,8 @@
                 "en": "**G Liu**, S.-P Xie, J E Hansen, et al. · 17, 2166"
               },
               "note": {
-                "zh": "揭示中东沙尘作为印度洋偶极子（IOD）的重要外部驱动",
-                "en": "Middle East dust identified as an external driver of the Indian Ocean Dipole"
+                "zh": "揭示中东沙尘是印度洋偶极子（IOD）的重要外部驱动：沙尘—辐射—海温反馈可触发并放大 IOD 事件，为热带海气耦合变率提供了新的外强迫来源。",
+                "en": "Identifies Middle East dust as an important external driver of the Indian Ocean Dipole: dust–radiation–SST feedbacks can trigger and amplify IOD events, adding a new external forcing to tropical coupled variability."
               },
               "links": [
                 {
@@ -659,6 +727,27 @@
                     "en": "DOI"
                   },
                   "url": "https://doi.org/10.1038/s41467-026-68842-1"
+                }
+              ],
+              "metrics": {
+                "if": "18.1",
+                "tier": {
+                  "zh": "中科院一区 Top",
+                  "en": "CAS Tier 1 (Top)"
+                }
+              },
+              "media": [
+                {
+                  "zh": "大气科学进展 AAS",
+                  "en": "AAS (Adv. Atmos. Sci.)"
+                },
+                {
+                  "zh": "北大物理人 公众号",
+                  "en": "PKU Physics WeChat"
+                },
+                {
+                  "zh": "气象一线 公众号",
+                  "en": "Meteorology Frontline WeChat"
                 }
               ]
             },
@@ -678,8 +767,8 @@
                 "en": "**G Liu**, J Li, T Ying, Y Dong, Z Zhang, C Zhang, Q Li · 8, 60"
               },
               "note": {
-                "zh": "揭示高纬海冰损失对东南亚野火暴露健康风险的影响",
-                "en": "High-latitude sea-ice loss raises fire-weather health exposure in Southeast Asia"
+                "zh": "指出波弗特海海冰减少通过改变环流与湿度条件，加剧东南亚火险天气并放大人口健康暴露，把高纬海冰变化与低纬公共健康风险连接起来。",
+                "en": "Shows that Beaufort Sea ice loss alters circulation and humidity, intensifying fire weather and population exposure to harmful smoke over Southeast Asia, linking high-latitude ice change to low-latitude public health risk."
               },
               "links": [
                 {
@@ -689,7 +778,14 @@
                   },
                   "url": "https://doi.org/10.1038/s41612-025-00954-9"
                 }
-              ]
+              ],
+              "metrics": {
+                "if": "8.5",
+                "tier": {
+                  "zh": "中科院一区 Top",
+                  "en": "CAS Tier 1 (Top)"
+                }
+              }
             },
             {
               "badge": "Atmos. Meas. Tech.",
@@ -707,8 +803,8 @@
                 "en": "**G Liu**, J Li, S Yue, L Zhang, C Zhang · 18, 6705–6725"
               },
               "note": {
-                "zh": "利用地基微波辐射计亮温反演气溶胶光学厚度",
-                "en": "Nighttime AOD retrieval from ground-based microwave radiometer brightness temperatures"
+                "zh": "提出用地基微波辐射计亮温反演夜间气溶胶光学厚度的方法，填补夜间 AOD 观测空白，为逐日气溶胶日变化与辐射效应研究提供新数据源。",
+                "en": "Presents a nighttime AOD retrieval based on ground-based microwave radiometer brightness temperatures, filling the night-time AOD observation gap and enabling diurnal aerosol and radiative-forcing studies."
               },
               "links": [
                 {
@@ -718,7 +814,14 @@
                   },
                   "url": "https://doi.org/10.5194/amt-18-6705-2025"
                 }
-              ]
+              ],
+              "metrics": {
+                "if": "3.3",
+                "tier": {
+                  "zh": "中科院二区",
+                  "en": "CAS Tier 2"
+                }
+              }
             },
             {
               "badge": "PNAS",
@@ -736,8 +839,8 @@
                 "en": "**G Liu**, J Li, X Li, T Ying · 121(49), e2414241121"
               },
               "note": {
-                "zh": "阐明气候变率对 2023 年加拿大极端火季的贡献",
-                "en": "Climate variability contributed to the 2023 extreme Canadian fire season"
+                "zh": "定量分离北大西洋与巴伦支海海温、海冰变率的贡献，阐明气候变率如何把 2023 年加拿大史无前例的极端火季推向极值。",
+                "en": "Separates the contributions of North Atlantic and Barents Sea SST/sea-ice variability, explaining how climate variability pushed the unprecedented 2023 Canadian fire season to extremes."
               },
               "links": [
                 {
@@ -746,6 +849,19 @@
                     "en": "DOI"
                   },
                   "url": "https://doi.org/10.1073/pnas.2414241121"
+                }
+              ],
+              "metrics": {
+                "if": "12.8",
+                "tier": {
+                  "zh": "中科院一区 Top",
+                  "en": "CAS Tier 1 (Top)"
+                }
+              },
+              "media": [
+                {
+                  "zh": "北大物理人 公众号",
+                  "en": "PKU Physics WeChat"
                 }
               ]
             },
@@ -765,8 +881,8 @@
                 "en": "**G Liu**, J Li, T Ying · 58(15), 6716–6724"
               },
               "note": {
-                "zh": "强调南极高纬气候变率对澳大利亚野火增加的贡献",
-                "en": "Antarctic sea-ice loss linked to increased Australian wildfires"
+                "zh": "发现南极阿蒙森海海冰损失通过遥相关调制澳大利亚的干湿与火险条件，为近年澳大利亚野火增多提供高纬驱动解释。",
+                "en": "Links Amundsen Sea ice loss to Australian fire activity through teleconnections, offering a high-latitude driver for recent increases in Australian wildfires."
               },
               "links": [
                 {
@@ -776,7 +892,14 @@
                   },
                   "url": "https://doi.org/10.1021/acs.est.4c00051"
                 }
-              ]
+              ],
+              "metrics": {
+                "if": "11.4",
+                "tier": {
+                  "zh": "中科院一区 Top",
+                  "en": "CAS Tier 1 (Top)"
+                }
+              }
             },
             {
               "badge": "Geophys. Res. Lett.",
@@ -794,8 +917,8 @@
                 "en": "**G Liu**, J Li, J Li, S Yue, R Zhou · 51, e2023GL108120"
               },
               "note": {
-                "zh": "利用红外窗区卫星辐亮度反演夜间气溶胶光学厚度",
-                "en": "Retrieving nighttime aerosol optical depth from infrared window radiances"
+                "zh": "利用 AIRS 红外窗区辐亮度反演夜间气溶胶光学厚度，突破可见光反演依赖日照的限制，实现昼夜连续监测。",
+                "en": "Retrieves nighttime AOD from AIRS infrared-window radiances, overcoming the daylight dependence of visible-band retrievals and enabling round-the-clock aerosol monitoring."
               },
               "links": [
                 {
@@ -804,6 +927,23 @@
                     "en": "DOI"
                   },
                   "url": "https://doi.org/10.1029/2023GL108120"
+                }
+              ],
+              "metrics": {
+                "if": "5.2",
+                "tier": {
+                  "zh": "中科院一区 Top",
+                  "en": "CAS Tier 1 (Top)"
+                }
+              },
+              "media": [
+                {
+                  "zh": "搜狐新闻",
+                  "en": "Sohu News"
+                },
+                {
+                  "zh": "北京大学新闻网",
+                  "en": "PKU News"
                 }
               ]
             },
@@ -823,8 +963,8 @@
                 "en": "**G Liu**, J Li, T Ying · 68(13), 1439–1446"
               },
               "note": {
-                "zh": "揭示热带北大西洋海温对中东沙尘年代际趋势转折的影响",
-                "en": "Tropical North Atlantic SST drove the decadal trend shift in Middle East dust"
+                "zh": "揭示热带北大西洋海温变率是中东沙尘年代际趋势转折的关键驱动，解释了沙尘活动\"先增后减\"的年代际转折机制。",
+                "en": "Identifies tropical North Atlantic SST variability as the key driver of the decadal turning point in Middle East dust activity, explaining the observed shift from increasing to decreasing dust trends."
               },
               "links": [
                 {
@@ -834,7 +974,32 @@
                   },
                   "url": "https://doi.org/10.1016/j.scib.2023.05.031"
                 }
-              ]
+              ],
+              "metrics": {
+                "if": "18.9",
+                "tier": {
+                  "zh": "中科院一区 Top",
+                  "en": "CAS Tier 1 (Top)"
+                }
+              },
+              "media": [
+                {
+                  "zh": "网易网",
+                  "en": "NetEase"
+                },
+                {
+                  "zh": "腾讯网",
+                  "en": "Tencent News"
+                },
+                {
+                  "zh": "每日生活网",
+                  "en": "Daily Life Net"
+                }
+              ],
+              "mediaExtra": {
+                "zh": "被福建省三模、广东省地理联考选作压轴题",
+                "en": "Selected as the culminating question in Fujian provincial and Guangdong provincial geography mock examinations"
+              }
             },
             {
               "badge": "Atmos. Chem. Phys.",
@@ -852,8 +1017,8 @@
                 "en": "**G Liu**, J Li, T Ying · 23, 9217–9228"
               },
               "note": {
-                "zh": "揭示年代际气候变率对年际气候变率–野火天气关系的调制",
-                "en": "Decadal variability modulates the ENSO–fire-weather relationship"
+                "zh": "指出大西洋多年代际振荡（AMO）调制 ENSO 与澳大利亚火险天气的关系，说明年代际背景会放大或削弱年际信号的现实影响。",
+                "en": "Shows that the Atlantic Multidecadal Oscillation modulates the ENSO–Australian fire-weather relationship, so decadal background states can amplify or mute interannual signals."
               },
               "links": [
                 {
@@ -863,7 +1028,14 @@
                   },
                   "url": "https://doi.org/10.5194/acp-23-9217-2023"
                 }
-              ]
+              ],
+              "metrics": {
+                "if": "7.2",
+                "tier": {
+                  "zh": "中科院一区 Top",
+                  "en": "CAS Tier 1 (Top)"
+                }
+              }
             },
             {
               "badge": "Geophys. Res. Lett.",
@@ -881,8 +1053,8 @@
                 "en": "**G Liu**, J Li, T Ying, H Su, X Huang, Y Yu · 50, e2023GL105931"
               },
               "note": {
-                "zh": "强调北极高纬气候变率对中国东北野火潜势增加的贡献",
-                "en": "Arctic variability contributes to rising fire weather potential in Northeast China"
+                "zh": "发现白令海海冰减少与东北亚环流异常相联系，使中国东北野火潜势显著上升，为北方森林火险的北极驱动提供证据。",
+                "en": "Connects declining Bering Sea ice with Northeast Asian circulation anomalies that raise fire-weather potential in Northeast China, evidencing an Arctic driver of northern forest fire risk."
               },
               "links": [
                 {
@@ -891,6 +1063,23 @@
                     "en": "DOI"
                   },
                   "url": "https://doi.org/10.1029/2023GL105931"
+                }
+              ],
+              "metrics": {
+                "if": "5.2",
+                "tier": {
+                  "zh": "中科院一区 Top",
+                  "en": "CAS Tier 1 (Top)"
+                }
+              },
+              "media": [
+                {
+                  "zh": "百家号",
+                  "en": "Baijiahao"
+                },
+                {
+                  "zh": "北京大学大气与海洋科学系",
+                  "en": "Dept. of Atmospheric & Oceanic Sciences, PKU"
                 }
               ]
             },
@@ -922,8 +1111,14 @@
                 }
               ],
               "note": {
-                "zh": "中文核心期刊短文，梳理热带北大西洋海温对中东沙尘的影响",
-                "en": "Short Chinese-language article on tropical Atlantic SST controls on Middle East dust"
+                "zh": "中文核心期刊观点短文，梳理热带北大西洋海温变率对中东沙尘活动的影响路径，面向中文读者解读相关机制。",
+                "en": "A short Chinese-language perspective summarising how tropical North Atlantic SST variability affects Middle East dust activity."
+              },
+              "metrics": {
+                "tier": {
+                  "zh": "中文核心（CSCD）",
+                  "en": "Chinese core journal (CSCD)"
+                }
               }
             },
             {
@@ -942,8 +1137,8 @@
                 "en": "**G Liu**, J Li, Z Jiang, X Li · 49, e2022GL099821"
               },
               "note": {
-                "zh": "定量不同海盆海温 / 海冰对我国沙尘活动的贡献",
-                "en": "Quantified contributions of basin-scale SST/sea ice to dust activity over China"
+                "zh": "定量比较不同海盆海温与海冰对戈壁、华北沙尘活动的贡献，识别出我国沙尘年际变化的主要海洋驱动因子。",
+                "en": "Quantifies the relative contributions of basin-scale SST and sea ice to dust activity over the Gobi Desert and North China, identifying the dominant oceanic drivers of interannual dust variability."
               },
               "links": [
                 {
@@ -952,6 +1147,23 @@
                     "en": "DOI"
                   },
                   "url": "https://doi.org/10.1029/2022GL099821"
+                }
+              ],
+              "metrics": {
+                "if": "5.2",
+                "tier": {
+                  "zh": "中科院一区 Top",
+                  "en": "CAS Tier 1 (Top)"
+                }
+              },
+              "media": [
+                {
+                  "zh": "中科院大气物理研究所",
+                  "en": "Institute of Atmospheric Physics, CAS"
+                },
+                {
+                  "zh": "北京大学大气与海洋科学系",
+                  "en": "Dept. of Atmospheric & Oceanic Sciences, PKU"
                 }
               ]
             }
@@ -986,7 +1198,18 @@
                   },
                   "url": "https://doi.org/10.1038/s41612-026-01442-4"
                 }
-              ]
+              ],
+              "metrics": {
+                "if": "8.5",
+                "tier": {
+                  "zh": "中科院一区 Top",
+                  "en": "CAS Tier 1 (Top)"
+                }
+              },
+              "note": {
+                "zh": "指出对流层气溶胶强迫增强太平洋沃克环流，修正了\"全球变暖必然削弱沃克环流\"的简单认识，强调气溶胶的竞争性作用。",
+                "en": "Shows that tropospheric aerosol forcing strengthens the Pacific Walker Circulation, complicating the simple expectation that warming necessarily weakens it."
+              }
             },
             {
               "badge": "Atmos. Meas. Tech.",
@@ -1011,7 +1234,18 @@
                   },
                   "url": "https://doi.org/10.5194/amt-19-5871-2026"
                 }
-              ]
+              ],
+              "metrics": {
+                "if": "3.3",
+                "tier": {
+                  "zh": "中科院二区",
+                  "en": "CAS Tier 2"
+                }
+              },
+              "note": {
+                "zh": "基于全天空成像仪观测与人工智能算法，同步反演气溶胶光学厚度与单次散射反照率，提升站点尺度气溶胶吸收性的反演能力。",
+                "en": "Uses all-sky imager observations with an AI algorithm to retrieve AOD and single-scattering albedo simultaneously, improving site-level characterisation of aerosol absorption."
+              }
             },
             {
               "badge": "JGR: Atmospheres",
@@ -1036,7 +1270,18 @@
                   },
                   "url": "https://doi.org/10.1029/2024JD043170"
                 }
-              ]
+              ],
+              "metrics": {
+                "if": "4.4",
+                "tier": {
+                  "zh": "中科院二区 Top",
+                  "en": "CAS Tier 2 (Top)"
+                }
+              },
+              "note": {
+                "zh": "融合多传感器卫星观测与机器学习，构建晴空直接气溶胶辐射强迫的全球估算，降低传统反演的不确定性。",
+                "en": "Combines multi-sensor satellite observations with machine learning to estimate clear-sky direct aerosol radiative forcing globally, reducing retrieval uncertainty."
+              }
             },
             {
               "badge": "Science Advances",
@@ -1060,6 +1305,27 @@
                     "en": "DOI"
                   },
                   "url": "https://doi.org/10.1126/sciadv.adq9716"
+                }
+              ],
+              "metrics": {
+                "if": "11.8",
+                "tier": {
+                  "zh": "中科院一区 Top",
+                  "en": "CAS Tier 1 (Top)"
+                }
+              },
+              "note": {
+                "zh": "提出散射性与吸收性气溶胶比例变化是北半球哈德莱环流扩张的新机制，为理解季风与干旱带迁移提供线索。",
+                "en": "Proposes that fractional changes in scattering versus absorbing aerosols drive Northern Hemisphere Hadley circulation expansion, with implications for monsoon and dry-zone shifts."
+              },
+              "media": [
+                {
+                  "zh": "北大物理人 公众号",
+                  "en": "PKU Physics WeChat"
+                },
+                {
+                  "zh": "大气化学 公众号",
+                  "en": "Atmospheric Chemistry WeChat"
                 }
               ]
             },
@@ -1086,7 +1352,18 @@
                   },
                   "url": "https://doi.org/10.1029/2024GL110108"
                 }
-              ]
+              ],
+              "metrics": {
+                "if": "5.2",
+                "tier": {
+                  "zh": "中科院一区 Top",
+                  "en": "CAS Tier 1 (Top)"
+                }
+              },
+              "note": {
+                "zh": "揭示印度洋偶极子通过环流与光化学过程调控中国行星边界层臭氧浓度，把海洋变率与空气质量联系起来。",
+                "en": "Reveals that the Indian Ocean Dipole modulates planetary boundary layer ozone over China through circulation and photochemistry, linking ocean variability to air quality."
+              }
             },
             {
               "badge": "Science Bulletin",
@@ -1111,7 +1388,18 @@
                   },
                   "url": "https://doi.org/10.1016/j.scib.2023.08.052"
                 }
-              ]
+              ],
+              "metrics": {
+                "if": "18.9",
+                "tier": {
+                  "zh": "中科院一区 Top",
+                  "en": "CAS Tier 1 (Top)"
+                }
+              },
+              "note": {
+                "zh": "指出散射性气溶胶增强是恒河平原近几十年季风降水减少的重要成因，为南亚水资源风险评估提供依据。",
+                "en": "Attributes part of the recent monsoon rainfall decline over the Gangetic Plain to increased aerosol scattering, with implications for South Asian water resources."
+              }
             },
             {
               "badge": "Sustainability",
@@ -1136,15 +1424,163 @@
                   },
                   "url": "https://doi.org/10.3390/su15010313"
                 }
-              ]
+              ],
+              "metrics": {
+                "if": "3.0"
+              },
+              "note": {
+                "zh": "基于 4×CO₂ 强迫试验，量化东亚水汽收支（蒸发、输送与辐合）的响应，评估增暖背景下区域水循环变化。",
+                "en": "Quantifies changes in the East Asian water-vapour budget (evaporation, transport and convergence) under 4×CO2 forcing."
+              }
             }
           ]
         }
       ],
       "footnote": {
-        "zh": "*以上论文 PDF 可来信索取*",
-        "en": "*PDFs of the papers above are available on request*"
+        "zh": "*IF 与分区随 JCR 年度更新；论文 PDF 可来信索取。*",
+        "en": "*IF and tier values follow the annual JCR release; PDFs of the papers above are available on request.*"
       }
+    },
+    {
+      "id": "media",
+      "emoji": "📰",
+      "title": {
+        "zh": "媒体报道与学术传播",
+        "en": "Media Coverage"
+      },
+      "type": "press",
+      "intro": {
+        "zh": "相关成果获学术期刊、院系与行业媒体关注，部分工作被中学地理教学与命题采用。",
+        "en": "Research has been covered by journals, university media and industry outlets; some results have been adopted in secondary-school geography teaching and examinations."
+      },
+      "items": [
+        {
+          "source": {
+            "zh": "大气科学进展 AAS",
+            "en": "AAS (Adv. Atmos. Sci.)"
+          },
+          "tag": {
+            "zh": "期刊研究亮点",
+            "en": "Journal highlight"
+          },
+          "desc": {
+            "zh": "报道 *Middle East dust as an important external driver of the Indian Ocean Dipole*（*Nature Communications*，2026），评述中东沙尘对印度洋偶极子的驱动作用。",
+            "en": "Highlighted *Middle East dust as an important external driver of the Indian Ocean Dipole* (*Nature Communications*, 2026)."
+          }
+        },
+        {
+          "source": {
+            "zh": "北大物理人（公众号）",
+            "en": "PKU Physics (WeChat)"
+          },
+          "tag": {
+            "zh": "院系公众号",
+            "en": "Department WeChat"
+          },
+          "desc": {
+            "zh": "先后报道 *Nature Communications*（2026）中东沙尘与印度洋偶极子、*PNAS*（2024）2023 年加拿大极端火季、*Science Advances*（2024）气溶胶与哈德莱环流扩张等工作。",
+            "en": "Covered the *Nature Communications* (2026) dust–IOD study, the *PNAS* (2024) 2023 Canadian fire-season work and the *Science Advances* (2024) aerosol–Hadley circulation study."
+          }
+        },
+        {
+          "source": {
+            "zh": "气象一线（公众号）",
+            "en": "Meteorology Frontline (WeChat)"
+          },
+          "tag": {
+            "zh": "行业公众号",
+            "en": "Industry WeChat"
+          },
+          "desc": {
+            "zh": "报道 *Nature Communications*（2026）中东沙尘驱动印度洋偶极子的研究，面向气象业务与爱好者读者解读。",
+            "en": "Reported the *Nature Communications* (2026) study for meteorological practitioners and enthusiasts."
+          }
+        },
+        {
+          "source": {
+            "zh": "大气化学（公众号）",
+            "en": "Atmospheric Chemistry (WeChat)"
+          },
+          "tag": {
+            "zh": "行业公众号",
+            "en": "Industry WeChat"
+          },
+          "desc": {
+            "zh": "报道 *Science Advances*（2024）气溶胶散射—吸收配比变化驱动北半球哈德莱环流扩张的研究。",
+            "en": "Reported the *Science Advances* (2024) study on scattering–absorbing aerosol fractions and Hadley circulation expansion."
+          }
+        },
+        {
+          "source": {
+            "zh": "北京大学新闻网 · 搜狐新闻",
+            "en": "PKU News · Sohu News"
+          },
+          "tag": {
+            "zh": "校园与门户媒体",
+            "en": "University & portal media"
+          },
+          "desc": {
+            "zh": "报道 *Geophysical Research Letters*（2024）利用红外窗区卫星辐亮度反演夜间气溶胶光学厚度的工作。",
+            "en": "Covered the *GRL* (2024) nighttime AOD retrieval from infrared-window satellite radiances."
+          }
+        },
+        {
+          "source": {
+            "zh": "中科院大气物理研究所 · 北大大气与海洋科学系",
+            "en": "IAP-CAS · PKU Atmospheric & Oceanic Sciences"
+          },
+          "tag": {
+            "zh": "科研机构",
+            "en": "Research institutes"
+          },
+          "desc": {
+            "zh": "报道 *Geophysical Research Letters*（2022）不同海盆海温与海冰对我国戈壁、华北沙尘活动影响的研究。",
+            "en": "Covered the *GRL* (2022) study on basin-scale SST/sea-ice impacts on dust over the Gobi Desert and North China."
+          }
+        },
+        {
+          "source": {
+            "zh": "百家号 · 北大大气与海洋科学系",
+            "en": "Baijiahao · PKU Atmospheric & Oceanic Sciences"
+          },
+          "tag": {
+            "zh": "门户与院系",
+            "en": "Portal & department"
+          },
+          "desc": {
+            "zh": "报道 *Geophysical Research Letters*（2023）白令海海冰减少与中国东北野火潜势上升的研究。",
+            "en": "Covered the *GRL* (2023) study linking Bering Sea ice loss to rising fire-weather potential in Northeast China."
+          }
+        },
+        {
+          "source": {
+            "zh": "网易网 · 腾讯网 · 每日生活网",
+            "en": "NetEase · Tencent News · Daily Life Net"
+          },
+          "tag": {
+            "zh": "门户媒体",
+            "en": "Portal media"
+          },
+          "desc": {
+            "zh": "报道 *Science Bulletin*（2023）热带北大西洋海温与中东沙尘年代际趋势转折的研究；该成果另被福建省三模、广东省地理联考选作压轴题。",
+            "en": "Covered the *Science Bulletin* (2023) study on tropical North Atlantic SST and the decadal shift in Middle East dust; the result was also used as the culminating question in Fujian and Guangdong geography mock examinations."
+          }
+        },
+        {
+          "source": {
+            "zh": "气象学家 · 南大招生小蓝鲸 · 大气科学学院",
+            "en": "Meteorologist · NJU Admissions · School of Atmospheric Sciences"
+          },
+          "tag": {
+            "zh": "本科阶段",
+            "en": "Undergraduate years"
+          },
+          "desc": {
+            "zh": "本科期间因学业表现与气象科普工作获上述平台报道。",
+            "en": "Covered during undergraduate years for academic performance and science outreach."
+          }
+        }
+      ]
     },
     {
       "id": "skills",

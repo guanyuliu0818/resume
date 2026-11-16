@@ -142,13 +142,24 @@ function renderPaper(p, lang) {
     const label = typeof l.label === 'object' ? (l.label[lang] ?? l.label.zh) : l.label;
     return `<a href="${esc(l.url)}" target="_blank" rel="noopener noreferrer">[${esc(label)}]</a>`;
   }).join(' ');
+  // 影响因子 / 中科院分区
+  const m = p.metrics || {};
+  const metricBits = [];
+  if (m.if) metricBits.push(`<span class="metric metric--if" title="Impact Factor">IF ${esc(m.if)}</span>`);
+  if (m.tier) metricBits.push(`<span class="metric metric--tier">${L(m.tier, lang)}</span>`);
+  const media = (p.media || []).map(x => `<span class="media-chip">${L(x, lang)}</span>`).join('');
+  const mediaExtra = p.mediaExtra ? `<span class="media-note">${L(p.mediaExtra, lang)}</span>` : '';
+  const noteLabel = p.note ? `<span class="paper__label">${L(data.labels.paperNote, lang)}</span>` : '';
+  const mediaLabel = (media || mediaExtra) ? `<span class="paper__label">${L(data.labels.paperMedia, lang)}</span>` : '';
   return `          <div class="paper">
             <div class="paper__line">
               <span class="badge badge--${esc(p.tone || 'blue')}"><span class="badge__key">${L(p.badge, lang)}</span><span class="badge__val">${L(p.badgeValue, lang)}</span></span>
               <span class="paper__title">${L(p.title, lang)}</span>
             </div>
             <div class="paper__authors">${L(p.authors, lang)}</div>
-            ${p.note ? `<div class="paper__note">${L(p.note, lang)}</div>` : ''}
+            ${metricBits.length ? `<div class="paper__meta">${metricBits.join('')}</div>` : ''}
+            ${p.note ? `<div class="paper__note">${noteLabel}${L(p.note, lang)}</div>` : ''}
+            ${(media || mediaExtra) ? `<div class="paper__media">${mediaLabel}${media}${mediaExtra}</div>` : ''}
             ${links ? `<div class="paper__links">${links}</div>` : ''}
           </div>`;
 }
@@ -159,6 +170,23 @@ function renderSection(section, lang, index, total) {
   let body = '';
   if (section.type === 'paragraphs') {
     body = section.paragraphs.map(p => `<p>${L(p, lang)}</p>`).join('\n          ');
+    if (section.tags && section.tags.length) {
+      const label = data.labels.researchAreas ? L(data.labels.researchAreas, lang) : '';
+      body += `\n          <ul class="tag-row" aria-label="${esc(label)}">
+            ${label ? `<li class="tag-row__label">${label}</li>` : ''}
+            ${section.tags.map(t => `<li>${L(t, lang)}</li>`).join('\n            ')}
+          </ul>`;
+    }
+  } else if (section.type === 'press') {
+    body = [
+      section.intro ? `<p class="papers__note">${L(section.intro, lang)}</p>` : '',
+      `<ul class="press">
+            ${section.items.map(it => `<li class="press__item">
+              <div class="press__head"><span class="press__source">${L(it.source, lang)}</span>${it.tag ? `<span class="press__tag">${L(it.tag, lang)}</span>` : ''}</div>
+              <p class="press__desc">${L(it.desc, lang)}</p>
+            </li>`).join('\n            ')}
+          </ul>`
+    ].filter(Boolean).join('\n          ');
   } else if (section.type === 'entries') {
     body = section.entries.map(e => renderEntry(e, lang)).join('\n          ');
   } else if (section.type === 'groups') {
@@ -220,18 +248,61 @@ function render(lang) {
 <meta name="twitter:image" content="${esc(imageUrl)}">` : '';
   const mailLink = (data.sidebarLinks.find(l => l.icon === 'mail') || {}).url || '';
   const sameAs = data.sidebarLinks.filter(l => /^https?:\/\//i.test(l.url || '')).map(l => l.url);
+  // 教育经历 → alumniOf（去掉行内加粗标记）
+  const eduEntries = (data.sections.find(s => s.id === 'education') || {}).entries || [];
+  const alumni = [...new Set(eduEntries
+    .map(e => String(T(e.org) || '').replace(/\*\*/g, '').replace(/\s+/g, ' ').trim())
+    .filter(Boolean))];
+  const personId = (SITE_BASE ? canonical : '') + '#person';
   const jsonld = {
-    '@context': 'https://schema.org', '@type': 'Person',
+    '@context': 'https://schema.org', '@type': 'Person', '@id': personId,
     'name': T(data.site.pageTitle),
     'alternateName': T(data.site.alternateName),
+    'description': desc,
     'jobTitle': T(data.site.jobTitle),
     'affiliation': { '@type': 'Organization', 'name': T(data.site.affiliation) },
-    'alumniOf': { '@type': 'CollegeOrUniversity', 'name': T(data.site.alumniOf) },
+    'worksFor': { '@type': 'Organization', 'name': T(data.site.affiliation) },
+    'alumniOf': alumni.map(n => ({ '@type': 'CollegeOrUniversity', 'name': n })),
     'knowsAbout': data.site.knowsAbout || [],
     'sameAs': sameAs
   };
   if (mailLink) jsonld.email = mailLink;
   if (SITE_BASE) { jsonld.url = canonical; jsonld.image = imageUrl; }
+  const schemaAwards = data.site.schemaAwards ? data.site.schemaAwards[lang] || data.site.schemaAwards.zh : null;
+  if (schemaAwards && schemaAwards.length) jsonld.award = schemaAwards;
+
+  // 全部论文 → ScholarlyArticle 列表，帮助搜索引擎理解研究主题与成果
+  const allPapers = [];
+  for (const s of data.sections) {
+    if (s.type !== 'papers') continue;
+    if (s.groups) s.groups.forEach(g => (g.papers || []).forEach(p => allPapers.push(p)));
+    else (s.papers || []).forEach(p => allPapers.push(p));
+  }
+  const worksJson = allPapers.length ? {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    'name': lang === 'zh' ? '论文成果' : 'Publications',
+    'numberOfItems': allPapers.length,
+    'itemListElement': allPapers.map((p, i) => {
+      const item = {
+        '@type': 'ScholarlyArticle',
+        'position': i + 1,
+        'name': T(p.title),
+        'headline': T(p.title),
+        'author': { '@type': 'Person', 'name': T(data.site.pageTitle) },
+        'isPartOf': { '@type': 'Periodical', 'name': String(T(p.badge)).replace(/\s+/g, ' ') }
+      };
+      const yr = String(T(p.badgeValue)).match(/\d{4}/);
+      if (yr) item.datePublished = yr[0];
+      if (p.note) item.abstract = T(p.note);
+      const doi = (p.links || []).find(l => /doi\.org/i.test(l.url || ''));
+      if (doi) { item.identifier = doi.url; item.url = doi.url; item.sameAs = doi.url; }
+      if (p.metrics && p.metrics.if) {
+        item.additionalProperty = { '@type': 'PropertyValue', 'name': 'Impact Factor', 'value': p.metrics.if };
+      }
+      return item;
+    })
+  } : null;
   const sections = data.sections.map((s, i) => renderSection(s, lang, i, data.sections.length)).join('\n');
   const draftBar = data.config.draft ? `
   <div class="draft-bar" role="note">
@@ -249,21 +320,26 @@ function render(lang) {
 <meta name="author" content="${esc(T(data.site.brand, lang))}">
 <meta name="keywords" content="${esc(T(data.site.keywords, lang))}">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="applicable-device" content="pc,mobile">
 <link rel="alternate" hreflang="zh-CN" href="${esc(ZH_URL)}">
 <link rel="alternate" hreflang="en" href="${esc(EN_URL)}">
-<link rel="alternate" hreflang="x-default" href="${esc(ZH_URL)}">${absTags}
-<meta property="og:type" content="website">
+<link rel="alternate" hreflang="x-default" href="${esc(ZH_URL)}">
+${sameAs.map(u => `<link rel="me" href="${esc(u)}">`).join('\n')}${absTags}
+<meta property="og:type" content="profile">
 <meta property="og:site_name" content="${esc(T(data.site.brand, lang))}">
 <meta property="og:locale" content="${lang === 'zh' ? 'zh_CN' : 'en_US'}">
 <meta property="og:locale:alternate" content="${lang === 'zh' ? 'en_US' : 'zh_CN'}">
 <meta property="og:title" content="${esc(T(data.site.docTitle, lang))}">
 <meta property="og:description" content="${esc(desc)}">
+<meta property="profile:first_name" content="${lang === 'zh' ? '冠宇' : 'Guanyu'}">
+<meta property="profile:last_name" content="${lang === 'zh' ? '刘' : 'Liu'}">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="${esc(T(data.site.docTitle, lang))}">
 <meta name="twitter:description" content="${esc(desc)}">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="stylesheet" href="assets/style.css">
 <script type="application/ld+json">${JSON.stringify(jsonld)}</script>
+${worksJson ? `<script type="application/ld+json">${JSON.stringify(worksJson)}</script>` : ''}
 </head>
 <body id="top">
 ${draftBar}

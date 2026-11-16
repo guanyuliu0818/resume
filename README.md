@@ -16,6 +16,7 @@
 | `assets/favicon.svg` | 站点图标 |
 | `sitemap.xml` | **配置 `site.canonicalBase` 后生成**，供搜索引擎提交 |
 | `robots.txt` | **配置 `site.canonicalBase` 后生成**，声明 sitemap 地址 |
+| `bced4a16983c0370b2c634a7cee8c18c.txt` | **IndexNow 归属验证文件**（内容即 key），供 Bing / Yandex 主动推送时校验，不要删 |
 | `.nojekyll` | 告诉 GitHub Pages 跳过 Jekyll 构建 |
 | `.gitignore` | 默认排除两份原始简历 |
 
@@ -40,6 +41,9 @@ python -m http.server 8765
 - **换照片**：替换 `assets/avatar.jpg`（正方形、白底效果最好）后重新执行 `node build.js`，脚本会自动生成纯文本 `assets/avatar.svg`（内嵌 base64），页面与 `og:image` 都引用它。整站因此没有二进制文件，纯文本通道（GitHub 网页拖放、代码连接器）也能一次上传完整站点。
 - **补外链**：`sidebarLinks` 里的 `url` 留空时该链接不会出现在页面上（不留灰色占位）；填上后重新构建即自动显示。
 - **加论文**：在 `sections → papers → groups → papers` 里复制一条，`tone` 可选 `red` / `blue` / `gray` / `green`。
+- **论文的指标与报道**：每条论文可带三个可选字段 —— `metrics`（`{"if": "18.1", "tier": {"zh": "中科院一区 Top", "en": "CAS Tier 1 (Top)"}}`，`if` 与 `tier` 都可省略）、`note`（"主要内容"，中英各一句）、`media`（报道来源数组，如 `[{"zh": "北大物理人 公众号", "en": "PKU Physics WeChat"}]`）与 `mediaExtra`（报道的补充说明，如被选作试题）。影响因子与分区随 JCR 年度更新时，改 `content.json` 后重新构建即可。
+- **媒体报道板块**：`sections → media`（`type: "press"`），每条含 `source`（媒体名）、`tag`（媒体类型）、`desc`（报道了哪篇论文）。新增报道直接往 `items` 里插，越新越靠前。
+- **研究方向标签**：`sections → biography → tags`，会渲染成简介下方的圆角标签行，同时提升页面关键词覆盖。
 - **排序约定**：所有列表一律时间倒序（最新在最前）——奖项 / 论文按年份，经历按起始年月，教育按学位时间线；新增条目要插到对应年份位置，不要追加到末尾。
 - **工作经历排版**：该组用 `bullets` 字段（而不是 `detail`），构建时只有职位首行加粗、日期靠右，后续要点统一常规字重。
 - **开关草稿提示条**：`config.draft` 改成 `true` / `false`。
@@ -52,7 +56,9 @@ python -m http.server 8765
 >
 > 上线过程两条路都走了：先在仓库网页上传 `personal-homepage-upload.zip` 的 6 个文件（GitHub 自动提交 `Add files via upload`），再用 `repo` 权限的 PAT 从本地 `git push` 补齐完整源码结构（`content.json` / `build.js` / `assets/` 等），合并时以本地版本为准。**PAT 只在单次命令行环境变量中使用，未写入 `.git/config`、任何文件或提交；请到 GitHub → Settings → Developer settings 里 Revoke 撤销。**
 >
-> 现在只差「让人搜到」这一步：按下面「让搜索引擎能搜到」一节，把 `https://guanyuliu0818.github.io/resume/sitemap.xml` 提交到 Google Search Console / Bing / 百度，并把主页链接填进 ORCID、ResearchGate 等公开档案。
+> 现在只差「让人搜到」这一步：按下面「让搜索引擎能搜到」一节，把 `https://guanyuliu0818.github.io/resume/sitemap.xml` 提交到 Google Search Console / Bing / 百度，并把主页链接填进 ORCID、ResearchGate 等公开档案；Bing 侧已用 IndexNow 接口主动推送过。
+>
+> **2026-11-16 内容与曝光升级**：工作经历改为「主管，中国南方电力调度控制中心 水电及新能源处 / 2026.07 – 至今」；18 篇论文（含共同作者）全部标出影响因子、中科院分区、主要内容与报道来源；新增「媒体报道与学术传播」板块与「研究方向」标签行；新增 18 条 `ScholarlyArticle` 结构化数据。
 >
 > 下面的 1–5 是通用发布步骤，当前仓库已全部完成，仅作日后迁移参考。
 
@@ -182,12 +188,16 @@ cp -f index.html en.html sitemap.xml robots.txt dist/
 
 ### 1. 站内已内置的 SEO
 
-- 两版 `<title>` 含中英文姓名与领域；`meta description` / `keywords` 含机构、现职与研究方向（电力气象、新能源功率预测、野火与气溶胶等）。
+- 两版 `<title>` 含中英文姓名、学位与领域关键词；`meta description`（约 150 字，含机构、现职、代表期刊）与 `meta keywords`（含沙尘、印度洋偶极子 IOD、气溶胶光学厚度 AOD、单次散射反照率、功率预测等，主要供百度使用）。
 - `<h1>` 是姓名，正文含机构、导师、期刊名，语义化 `article` + `itemprop` 标记。
+- 论文条目全部带**影响因子 / 中科院分区 / 主要内容 / 报道来源**，正文可索引文本量大幅增加（18 篇 × 双语的标题、期刊与摘要式描述）。
+- 「研究方向」标签行与「媒体报道与学术传播」板块，覆盖电力气象、野火、气溶胶、卫星遥感、AI for Science 等长尾检索词。
 - `canonical` + `hreflang`（zh-CN / en / x-default）指向绝对地址，避免中英两版被判为重复内容。
-- Open Graph / Twitter Card 元数据、`og:image`（头像）、JSON-LD `Person`（姓名、别名、职务、任职机构、母校、`knowsAbout` 研究方向、`sameAs` ORCID / ResearchGate）。
-- `sitemap.xml`（中英两页 + 双语互指）与 `robots.txt`（声明 sitemap 地址、允许全站抓取）。
-- `.nojekyll` 保证 `assets/` 等下划线无关目录正常发布；全站无 CDN 依赖，抓取无障碍。
+- Open Graph（`og:type=profile`，含 `profile:first_name` / `profile:last_name`）/ Twitter Card、`og:image`（头像）。
+- JSON-LD **两段**：① `Person`（姓名、别名、职务、任职机构、4 条 `alumniOf`、`award` 获奖、`knowsAbout` 研究方向、`sameAs` ORCID / ResearchGate、`email`）；② `ItemList` 内含 **18 条 `ScholarlyArticle`**（标题、`datePublished`、期刊 `isPartOf`、DOI `identifier`、主要内容 `abstract`、`Impact Factor` 属性），让搜索引擎理解"这个人写过哪些论文"。
+- `<link rel="me">` 指向 ORCID / ResearchGate，帮助引擎把多个身份档案归并到同一个人。
+- `sitemap.xml`（中英两页 + 双语互指 + `lastmod`）与 `robots.txt`（声明 sitemap 地址、允许全站抓取）。
+- `<meta name="applicable-device" content="pc,mobile">`（百度移动适配声明）；`.nojekyll` 保证资源正常发布；全站无 CDN 依赖，抓取无障碍。
 
 > **项目子路径站点的 `robots.txt` 限制**：站点挂在 `/resume/` 下时，`robots.txt` 的实际地址是 `https://guanyuliu0818.github.io/resume/robots.txt`，而搜索引擎只认域名根目录的 `/robots.txt`。所以包里那句 `Sitemap:` 声明**不会被自动发现**；但这不影响抓取（根 `robots.txt` 返回 404 等于默认允许全站）。对策：按下一节在 Search Console / Bing / 百度里**主动提交** `https://guanyuliu0818.github.io/resume/sitemap.xml`；若想让 robots.txt 也生效，把仓库改名为 `guanyuliu0818.github.io` 变成根站点即可。
 
@@ -201,15 +211,41 @@ cp -f index.html en.html sitemap.xml robots.txt dist/
 
 验证是否收录：在搜索引擎输入 `site:你的域名`，或在 Search Console 的「网址检查」看状态。Google 通常几天到两周，百度往往更久。
 
-### 3. 加速被发现（最有效的一招）
+### 3. IndexNow 主动推送（Bing / Yandex / DuckDuckGo，已内置）
 
-新站主要靠**外部链接**被爬虫发现。建议把主页网址填进这些已有公开档案：
+仓库根目录放了验证文件 `bced4a16983c0370b2c634a7cee8c18c.txt`（内容就是这个 key），用于向 IndexNow 证明站点归属。改完内容后一条命令即可主动通知 Bing：
 
-- **ORCID** → Edit → Websites & social links → 添加个人主页
-- **ResearchGate** → 个人资料里的 website / 联系方式
-- **Google Scholar** 档案的「首页」字段、单位或院系人员页、论文页的作者简介、微信/LinkedIn 等个人简介
+```bash
+curl -X POST https://api.indexnow.org/indexnow \
+  -H "Content-Type: application/json; charset=utf-8" \
+  -d '{
+    "host": "guanyuliu0818.github.io",
+    "key": "bced4a16983c0370b2c634a7cee8c18c",
+    "keyLocation": "https://guanyuliu0818.github.io/resume/bced4a16983c0370b2c634a7cee8c18c.txt",
+    "urlList": [
+      "https://guanyuliu0818.github.io/resume/",
+      "https://guanyuliu0818.github.io/resume/en.html"
+    ]
+  }'
+```
 
-另外，把主页链接发一次给同事或在学术社交平台露一次面，通常比反复提交 sitemap 更快。
+返回 `200` / `202` 即已接收。**注意**：Google 与百度不支持 IndexNow（Google 的 sitemap ping 接口已于 2023 年废弃），它们仍要靠 Search Console / 百度资源平台手动提交；Bing 收录后会同步给 DuckDuckGo、Yahoo，而 ChatGPT 等 AI 搜索也使用 Bing 索引，所以这一步的间接收益不小。
+
+### 4. 加速被发现（最有效的一招）
+
+新站主要靠**外部链接**被爬虫发现。建议把主页网址填进这些已有公开档案（都是免费、十几分钟能填完）：
+
+| 渠道 | 位置 | 价值 |
+| --- | --- | --- |
+| **ORCID** | Edit → Websites & social links 添加主页；再把 18 篇论文的 DOI 补成 Works | 学术身份核心节点，Google 权重高 |
+| **ResearchGate** | 个人资料的 website / contact info | 学术搜索常居首屏 |
+| **Google Scholar** | 档案里的「首页」字段 | 名字检索时直接出现在学者卡片里 |
+| **Semantic Scholar / OpenAlex** | 作者页的 homepage 字段 | 供 AI 与学术搜索抓取 |
+| **单位或院系人员页** | 南方电网 / 北大院系介绍页 | 权威站点外链，最有说服力 |
+| **GitHub 个人 README** | 新建 `guanyuliu0818/guanyuliu0818` 仓库，README 里放主页链接 | GitHub 自身权重高，且会被 Bing 快速收录 |
+| **知乎 / 微信公众号 / LinkedIn / 小红书** | 个人简介里放主页链接 | 中文检索与社交曝光；公众号文章可分别介绍每篇论文 |
+
+中文场景还有一个低成本高收益的做法：把「Middle East dust」「中东沙尘与印度洋偶极子」「夜间气溶胶反演」这类主题写成科普短文发在公众号或知乎，文末挂主页链接——媒体与社交平台的外链比反复提交 sitemap 有效得多。
 
 > 国内访问提示：`*.github.io` 在国内连通性不稳定，百度抓取可能失败。若主要面向国内，建议绑定自定义域名（仓库 Settings → Pages → Custom domain，并加一条 CNAME 解析），或改用方案 B 的国内节点托管（腾讯云 EdgeOne / CloudBase）；换域名后记得更新 `site.canonicalBase` 重新构建并重新上传。
 
@@ -221,13 +257,12 @@ cp -f index.html en.html sitemap.xml robots.txt dist/
 
 ## 发布包
 
-三个包按用途区分，均已用正斜杠路径打包并校验，**都不含两份原始简历 PDF 与本地记忆目录**：
+两个包按用途区分，均已用正斜杠路径打包并校验，**都不含两份原始简历 PDF 与本地记忆目录**：
 
 | 包 | 文件数 | 用途 |
 | --- | --- | --- |
-| `personal-homepage-upload.zip` | 6（全部在根目录） | **GitHub 网页拖放专用**：`index.html`、`en.html`、`avatar.svg`、`sitemap.xml`、`robots.txt`、`.nojekyll`。CSS / JS / 图标已内联，无子文件夹，一次拖完 |
-| `personal-homepage-static.zip` | 9（含 `assets/`） | 标准静态站，适合 PAT 推送、Cloudflare Pages、腾讯云 EdgeOne 等 |
-| `personal-homepage-publish.zip` | 14 | 完整源码包：额外含 `content.json` / `build.js` / `README.md` / `.gitignore` 与 Pages 自动部署工作流，便于日后改内容 |
+| `personal-homepage-static.zip` | 10（含 `assets/`） | 标准静态站，适合直接上传到 Cloudflare Pages、腾讯云 EdgeOne 或任何静态托管 |
+| `personal-homepage-publish.zip` | 15 | 完整源码包：额外含 `content.json` / `build.js` / `README.md` / `.gitignore` 与 Pages 自动部署工作流，便于日后改内容 |
 
 `site.canonicalBase` 已配置，`sitemap.xml` / `robots.txt` 都在包内。最快路径：解压 → 用方案 A 或 B 任一方式上传 → 拿到网址（已确定是 `https://guanyuliu0818.github.io/resume`）→ 到 Search Console / Bing / 百度提交 sitemap。只预览的话直接双击 `index.html` 即可。
 
@@ -243,6 +278,7 @@ cp -f index.html en.html sitemap.xml robots.txt dist/
 
 - **上线后填写 `site.canonicalBase` 并重新构建**（否则 hreflang 为相对地址、无 sitemap，收录会打折扣）
 - 如需恢复 GitHub 主页或脱敏后的 CV PDF，在 `sidebarLinks` 补一条并填 `url` 即自动显示
-- 工作经历「2026 – 至今」的准确起始年月（当前按年份粒度）
+- 论文影响因子与分区取自 `北京大学_刘冠宇_科研.pdf`，随 JCR 年度更新时同步修改 `content.json` 的 `metrics`
+- 报道来源目前只写媒体名；若拿到具体文章链接，可把 `media` 里的对象改成 `{"zh": "...", "en": "...", "url": "..."}` 后再扩展渲染
 - ORCID 是从公开档案推断填入的，发布前建议本人再确认一次
 - 若论文数量、一作篇数与最新进展有变化，同步修改 `content.json` 后重新构建
