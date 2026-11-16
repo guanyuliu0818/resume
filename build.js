@@ -121,9 +121,12 @@ function renderEntry(e, lang) {
   const sep = lang === 'zh' ? '，' : ', ';
   // 工作经历等「单条职位 + 普通要点」排版：只有第一行加粗，后续要点不加粗
   if (e.bullets && e.bullets.length) {
+    const headBody = e.orgBreak
+      ? `${L(e.role, lang)}<span class="entry__org">${L(e.org, lang)}</span>`
+      : `${L(e.role, lang)}<span class="entry__sep">${sep}</span>${L(e.org, lang)}`;
     return `          <div class="entry entry--work">
             <div class="entry__head entry__head--work">
-              <span class="entry__headline">${L(e.role, lang)}<span class="entry__sep">${sep}</span>${L(e.org, lang)}</span>
+              <span class="entry__headline">${headBody}</span>
               <em class="entry__date">${L(e.date, lang)}</em>
             </div>
             <ul class="entry__bullets">

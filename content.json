@@ -607,8 +607,8 @@
                 "en": "PKU–BHP Carbon & Climate PhD Weiming Scholar programme"
               },
               "date": {
-                "zh": "2024.10 – 至今",
-                "en": "2024.10 – present"
+                "zh": "2024.10 – 2026.06",
+                "en": "2024.10 – 2026.06"
               },
               "bullets": [
                 {
@@ -619,7 +619,8 @@
                   "zh": "成果发表于 *Nature Communications*、*PNAS* 等期刊，构成博士论文的核心内容。",
                   "en": "Results published in *Nature Communications*, *PNAS* and elsewhere form the core of the doctoral dissertation."
                 }
-              ]
+              ],
+              "orgBreak": true
             },
             {
               "role": {
@@ -757,28 +758,24 @@
               "en": "**Peking University Presidential Scholarship** (2025, 2021; highest doctoral scholarship at PKU)"
             },
             {
-              "zh": "**CSC 国家公派留学奖学金**（2024）、廖凯原奖学金（2024）、必和必拓「碳与气候」未名学者奖学金（2024）",
-              "en": "**CSC State-Sponsored Study Abroad Scholarship** (2024); Liao Kaiyuan Scholarship (2024); BHP Carbon & Climate Weiming Fellowship (2024)"
+              "zh": "必和必拓「碳与气候」未名学者奖学金、**CSC 国家公派留学奖学金**、廖凯原奖学金（2024）",
+              "en": "BHP Carbon & Climate Weiming Fellowship; **CSC State-Sponsored Study Abroad Scholarship**; Liao Kaiyuan Scholarship (2024)"
             },
             {
               "zh": "**国家奖学金**（2023）",
               "en": "**National Scholarship** (2023)"
             },
             {
-              "zh": "九坤奖学金（2022）",
-              "en": "Jiukun Scholarship (2022)"
-            },
-            {
-              "zh": "中国绿色创新夏季学院奖学金（2022）",
-              "en": "China Green Innovation Summer School Scholarship (2022)"
+              "zh": "中国绿色创新夏季学院奖学金、九坤奖学金（2022）",
+              "en": "China Green Innovation Summer School Scholarship; Jiukun Scholarship (2022)"
             },
             {
               "zh": "招行奖学金（2020）",
               "en": "CMB Scholarship (2020)"
             },
             {
-              "zh": "郑钢海外学习奖学金（2019）、杨蓝云领导型人才奖学金（2019）",
-              "en": "Zheng Gang Overseas Study Scholarship (2019); Yang Lanyun Leadership Talent Scholarship (2019)"
+              "zh": "郑钢海外学习奖学金、杨蓝云领导型人才奖学金（2019）",
+              "en": "Zheng Gang Overseas Study Scholarship; Yang Lanyun Leadership Talent Scholarship (2019)"
             },
             {
               "zh": "人民奖学金（2018）",
@@ -797,24 +794,28 @@
               "en": "PKU **Academic Innovation Award** (2025, 2023)"
             },
             {
-              "zh": "北京大学优秀科研奖（2024）、第二届「空间、大气、海洋与环境光学」学术会议优秀报告（2024）、「钟盛标」教育基金研究生论坛三等奖（2024）",
-              "en": "PKU Outstanding Research Award (2024); Best Talk, 2nd Symposium on Space/Atmospheric/Oceanic & Environmental Optics (2024); Third Prize, Zhongshengbao Graduate Forum (2024)"
+              "zh": "北京大学优秀科研奖、第二届「空间、大气、海洋与环境光学」学术会议**优秀报告**、「钟盛标」教育基金研究生学术论坛三等奖（2024）",
+              "en": "PKU Outstanding Research Award; **Best Talk**, 2nd Symposium on Space/Atmospheric/Oceanic & Environmental Optics; Third Prize, Zhongshengbao Graduate Academic Forum (2024)"
             },
             {
               "zh": "**全国大学生气象科技知识竞赛一等奖**（2023）",
               "en": "**First Prize, National College Meteorological Science & Technology Contest** (2023)"
             },
             {
-              "zh": "中国绿色创新竞赛最佳科研奖（2022）、北京市气象科普讲解大赛三等奖（2022）",
-              "en": "Best Research Award, China Green Innovation Contest (2022); Third Prize, Beijing Meteorological Science Communication Contest (2022)"
+              "zh": "中国绿色创新竞赛最佳科研奖、北京市气象科普讲解大赛三等奖（2022）",
+              "en": "Best Research Award, China Green Innovation Contest; Third Prize, Beijing Meteorological Science Communication Contest (2022)"
             },
             {
               "zh": "中国气象现代化科技创新创业大赛一等奖（2021）",
               "en": "First Prize, China Meteorological Modernization Innovation Contest (2021)"
             },
             {
-              "zh": "南京大学气象科普风采大赛三等奖（2020）、「华教杯」数学竞赛一等奖（2019）",
-              "en": "Third Prize, NJU Meteorological Science Communication Contest (2020); First Prize, Huajiao Cup Mathematics Competition (2019)"
+              "zh": "南京大学气象科普风采大赛三等奖（2020）",
+              "en": "Third Prize, NJU Meteorological Science Communication Contest (2020)"
+            },
+            {
+              "zh": "「华教杯」数学竞赛一等奖（2019）",
+              "en": "First Prize, Huajiao Cup Mathematics Competition (2019)"
             }
           ]
         },
@@ -825,12 +826,8 @@
           },
           "items": [
             {
-              "zh": "南方电网新员工培训班 **优秀班干部、优秀学员**（2026）",
-              "en": "**Outstanding Class Cadre & Outstanding Trainee**, CSG New Employee Training Program (2026)"
-            },
-            {
-              "zh": "**北京市优秀毕业生**（2026）、**北京大学优秀毕业生**（2026）",
-              "en": "**Outstanding Graduate of Beijing** (2026); **Outstanding Graduate of Peking University** (2026)"
+              "zh": "**北京市优秀毕业生**、**北京大学优秀毕业生**、南方电网新员工培训班**优秀班干部、优秀学员**（2026）",
+              "en": "**Outstanding Graduate of Beijing**; **Outstanding Graduate of PKU**; **Outstanding Class Cadre & Outstanding Trainee**, CSG New Employee Training (2026)"
             },
             {
               "zh": "北京大学社会实践十佳团队与优秀个人（2024）",
@@ -841,28 +838,16 @@
               "en": "PKU Merit Student (2023, 2022)"
             },
             {
-              "zh": "南京大学优秀毕业生（2021）",
-              "en": "NJU Outstanding Graduate (2021)"
+              "zh": "南京大学优秀毕业生、优秀共青团干部（2021）",
+              "en": "NJU Outstanding Graduate; NJU Outstanding Communist Youth League Cadre (2021)"
             },
             {
-              "zh": "南京大学优秀共青团干部（2021）",
-              "en": "NJU Outstanding Communist Youth League Cadre (2021)"
+              "zh": "南京大学优秀学生标兵、优秀学生干部（2020）",
+              "en": "NJU Outstanding Student Role Model; NJU Outstanding Student Cadre (2020)"
             },
             {
-              "zh": "南京大学优秀学生标兵（2020）",
-              "en": "NJU Outstanding Student Role Model (2020)"
-            },
-            {
-              "zh": "南京大学优秀学生干部（2020）",
-              "en": "NJU Outstanding Student Cadre (2020)"
-            },
-            {
-              "zh": "南京大学十佳志愿者（2019）、江苏省社会实践优秀团队（2019）",
-              "en": "NJU Top Ten Volunteer (2019); Jiangsu Outstanding Social Practice Team (2019)"
-            },
-            {
-              "zh": "南京大学优秀共青团员（2019、2018）",
-              "en": "NJU Outstanding League Member (2019, 2018)"
+              "zh": "南京大学十佳志愿者、江苏省社会实践优秀团队、南京大学优秀共青团员（2019、2018）",
+              "en": "NJU Top Ten Volunteer; Jiangsu Outstanding Social Practice Team; NJU Outstanding League Member (2019, 2018)"
             }
           ]
         }
