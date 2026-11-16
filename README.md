@@ -188,6 +188,8 @@ cp -f index.html en.html sitemap.xml robots.txt dist/
 - `sitemap.xml`（中英两页 + 双语互指）与 `robots.txt`（声明 sitemap 地址、允许全站抓取）。
 - `.nojekyll` 保证 `assets/` 等下划线无关目录正常发布；全站无 CDN 依赖，抓取无障碍。
 
+> **项目子路径站点的 `robots.txt` 限制**：站点挂在 `/resume/` 下时，`robots.txt` 的实际地址是 `https://guanyuliu0818.github.io/resume/robots.txt`，而搜索引擎只认域名根目录的 `/robots.txt`。所以包里那句 `Sitemap:` 声明**不会被自动发现**；但这不影响抓取（根 `robots.txt` 返回 404 等于默认允许全站）。对策：按下一节在 Search Console / Bing / 百度里**主动提交** `https://guanyuliu0818.github.io/resume/sitemap.xml`；若想让 robots.txt 也生效，把仓库改名为 `guanyuliu0818.github.io` 变成根站点即可。
+
 ### 2. 主动提交收录（上线后做一次）
 
 | 平台 | 操作 |
