@@ -2171,6 +2171,13 @@
                     "en": "Forum report"
                   },
                   "url": "https://news.pku.edu.cn/info/7921/2767181.htm"
+                },
+                {
+                  "label": {
+                    "zh": "论坛议程（报名预告）",
+                    "en": "Forum agenda"
+                  },
+                  "url": "https://news.pku.edu.cn/info/3001/2651561.htm"
                 }
               ]
             },
@@ -2240,6 +2247,29 @@
                     "en": "Department article"
                   },
                   "url": "https://mp.weixin.qq.com/s/Tz89aBhEgAX4jf_UZT1lOQ"
+                }
+              ]
+            },
+            {
+              "source": {
+                "zh": "第八届青年地学论坛（武汉）· 气溶胶与环境专题",
+                "en": "8th Youth Geoscience Forum (Wuhan) · aerosol session"
+              },
+              "tag": {
+                "zh": "学术会议报告",
+                "en": "Conference talk"
+              },
+              "desc": {
+                "zh": "2023 年 5 月，在第八届青年地学论坛作快闪报告《不同洋盆海温变率对戈壁沙漠和华北地区沙尘活动的影响》，报告已列入会议公开日程。",
+                "en": "In May 2023, gave a flash talk at the 8th Youth Geoscience Forum on how SST variability in different ocean basins drives dust activity over the Gobi Desert and North China; listed in the public programme."
+              },
+              "links": [
+                {
+                  "label": {
+                    "zh": "会议日程",
+                    "en": "Programme"
+                  },
+                  "url": "https://www.aconf.cn/conf_186290/timetable/session/193245/day/2.html"
                 }
               ]
             }
