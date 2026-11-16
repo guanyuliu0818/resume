@@ -738,16 +738,16 @@
               },
               "media": [
                 {
-                  "zh": "大气科学进展 AAS",
-                  "en": "AAS (Adv. Atmos. Sci.)"
+                  "zh": "北大物理学院 · 大气与海洋科学系",
+                  "en": "PKU AOS (dept. news)"
                 },
                 {
                   "zh": "北大物理人 公众号",
-                  "en": "PKU Physics WeChat"
+                  "en": "PKU Physics (WeChat)"
                 },
                 {
-                  "zh": "气象一线 公众号",
-                  "en": "Meteorology Frontline WeChat"
+                  "zh": "风云新知 公众号",
+                  "en": "Fengyun Xinzhi (WeChat)"
                 }
               ]
             },
@@ -861,7 +861,7 @@
               "media": [
                 {
                   "zh": "北大物理人 公众号",
-                  "en": "PKU Physics WeChat"
+                  "en": "PKU Physics (WeChat)"
                 }
               ]
             },
@@ -938,12 +938,16 @@
               },
               "media": [
                 {
+                  "zh": "北京大学新闻网",
+                  "en": "PKU News"
+                },
+                {
                   "zh": "搜狐新闻",
                   "en": "Sohu News"
                 },
                 {
-                  "zh": "北京大学新闻网",
-                  "en": "PKU News"
+                  "zh": "北大物理人 公众号",
+                  "en": "PKU Physics (WeChat)"
                 }
               ]
             },
@@ -984,16 +988,20 @@
               },
               "media": [
                 {
-                  "zh": "网易网",
-                  "en": "NetEase"
+                  "zh": "科学通报 公众号",
+                  "en": "Chinese Sci. Bull. (WeChat)"
                 },
                 {
-                  "zh": "腾讯网",
+                  "zh": "腾讯新闻",
                   "en": "Tencent News"
                 },
                 {
-                  "zh": "每日生活网",
-                  "en": "Daily Life Net"
+                  "zh": "网易新闻",
+                  "en": "NetEase News"
+                },
+                {
+                  "zh": "EurekAlert!（AAAS）",
+                  "en": "EurekAlert! (AAAS)"
                 }
               ],
               "mediaExtra": {
@@ -1074,12 +1082,12 @@
               },
               "media": [
                 {
-                  "zh": "百家号",
-                  "en": "Baijiahao"
+                  "zh": "北大物理人 公众号",
+                  "en": "PKU Physics (WeChat)"
                 },
                 {
-                  "zh": "北京大学大气与海洋科学系",
-                  "en": "Dept. of Atmospheric & Oceanic Sciences, PKU"
+                  "zh": "Phys.org（英文）",
+                  "en": "Phys.org (English)"
                 }
               ]
             },
@@ -1159,11 +1167,15 @@
               "media": [
                 {
                   "zh": "中科院大气物理研究所",
-                  "en": "Institute of Atmospheric Physics, CAS"
+                  "en": "IAP-CAS"
                 },
                 {
-                  "zh": "北京大学大气与海洋科学系",
-                  "en": "Dept. of Atmospheric & Oceanic Sciences, PKU"
+                  "zh": "北大大气与海洋科学系",
+                  "en": "PKU AOS"
+                },
+                {
+                  "zh": "Phys.org（英文）",
+                  "en": "Phys.org (English)"
                 }
               ]
             }
@@ -1321,11 +1333,7 @@
               "media": [
                 {
                   "zh": "北大物理人 公众号",
-                  "en": "PKU Physics WeChat"
-                },
-                {
-                  "zh": "大气化学 公众号",
-                  "en": "Atmospheric Chemistry WeChat"
+                  "en": "PKU Physics (WeChat)"
                 }
               ]
             },
@@ -1450,23 +1458,32 @@
       },
       "type": "press",
       "intro": {
-        "zh": "相关成果获学术期刊、院系与行业媒体关注，部分工作被中学地理教学与命题采用。",
-        "en": "Research has been covered by journals, university media and industry outlets; some results have been adopted in secondary-school geography teaching and examinations."
+        "zh": "相关成果获学术期刊、院系、科研机构与国际科技媒体关注，部分工作被中学地理教学与命题采用。以下均为可点击的报道原文或官方发布链接。",
+        "en": "Research has been covered by journals, university media, research institutes and international sci-tech outlets; some results have been adopted in secondary-school geography teaching and examinations. Every entry below links to the original coverage."
       },
       "items": [
         {
           "source": {
-            "zh": "大气科学进展 AAS",
-            "en": "AAS (Adv. Atmos. Sci.)"
+            "zh": "北京大学物理学院 · 大气与海洋科学系（官网）",
+            "en": "Dept. of Atmospheric & Oceanic Sciences, Peking University"
           },
           "tag": {
-            "zh": "期刊研究亮点",
-            "en": "Journal highlight"
+            "zh": "学院新闻",
+            "en": "Department news"
           },
           "desc": {
-            "zh": "报道 *Middle East dust as an important external driver of the Indian Ocean Dipole*（*Nature Communications*，2026），评述中东沙尘对印度洋偶极子的驱动作用。",
-            "en": "Highlighted *Middle East dust as an important external driver of the Indian Ocean Dipole* (*Nature Communications*, 2026)."
-          }
+            "zh": "专题报道 *Middle East dust as an important external driver of the Indian Ocean Dipole*（*Nature Communications*，2026），指出该研究首次系统揭示中东沙尘对印度洋偶极子年际变率的驱动，可解释其约 36% 的方差。",
+            "en": "Featured *Middle East dust as an important external driver of the Indian Ocean Dipole* (*Nature Communications*, 2026), reporting that Middle East dust explains ~36% of interannual IOD variance."
+          },
+          "links": [
+            {
+              "label": {
+                "zh": "官网新闻原文",
+                "en": "Department news"
+              },
+              "url": "https://www.atmos.pku.edu.cn/kxyj/kyjz/f62bf22708b74bc185156d3d21c3b29b.htm"
+            }
+          ]
         },
         {
           "source": {
@@ -1478,107 +1495,281 @@
             "en": "Department WeChat"
           },
           "desc": {
-            "zh": "先后报道 *Nature Communications*（2026）中东沙尘与印度洋偶极子、*PNAS*（2024）2023 年加拿大极端火季、*Science Advances*（2024）气溶胶与哈德莱环流扩张等工作。",
-            "en": "Covered the *Nature Communications* (2026) dust–IOD study, the *PNAS* (2024) 2023 Canadian fire-season work and the *Science Advances* (2024) aerosol–Hadley circulation study."
-          }
+            "zh": "以《成果丨李婧团队揭示中东沙尘是印度洋偶极子的重要外部驱动因素》推送该 *Nature Communications* 成果，并附作者与资助信息。",
+            "en": "Pushed the *Nature Communications* study as a feature story, with author and funding details."
+          },
+          "links": [
+            {
+              "label": {
+                "zh": "公众号原文",
+                "en": "WeChat article"
+              },
+              "url": "https://mp.weixin.qq.com/s?__biz=MzUxNzU0NzA1NA==&mid=2247492993&idx=1&sn=a9bd1eceb0df93b10af03b02f04e7c7b"
+            }
+          ]
         },
         {
           "source": {
-            "zh": "气象一线（公众号）",
-            "en": "Meteorology Frontline (WeChat)"
+            "zh": "风云新知（公众号 · 论文速递）",
+            "en": "Fengyun Xinzhi (WeChat)"
           },
           "tag": {
-            "zh": "行业公众号",
-            "en": "Industry WeChat"
+            "zh": "第三方解读",
+            "en": "Third-party analysis"
           },
           "desc": {
-            "zh": "报道 *Nature Communications*（2026）中东沙尘驱动印度洋偶极子的研究，面向气象业务与爱好者读者解读。",
-            "en": "Reported the *Nature Communications* (2026) study for meteorological practitioners and enthusiasts."
-          }
+            "zh": "以《北大大气李婧团队在 Nature Communications 发文：中东沙尘为什么会驱动印度洋偶极子？》作独立评述，梳理三个核心发现与结论的适用边界。",
+            "en": "Independent commentary on the dust–IOD paper, reviewing its three key findings and the limits of the conclusion."
+          },
+          "links": [
+            {
+              "label": {
+                "zh": "公众号原文",
+                "en": "WeChat article"
+              },
+              "url": "https://mp.weixin.qq.com/s?__biz=Mzg2MjQyMzcxNQ==&mid=2247486392&idx=2&sn=a98421f35229cd6ca6e9b4a7912b441c"
+            }
+          ]
         },
         {
           "source": {
-            "zh": "大气化学（公众号）",
-            "en": "Atmospheric Chemistry (WeChat)"
+            "zh": "科学通报（公众号）· 腾讯新闻 · 网易新闻",
+            "en": "Chinese Science Bulletin (WeChat) · Tencent News · NetEase"
           },
           "tag": {
-            "zh": "行业公众号",
-            "en": "Industry WeChat"
+            "zh": "期刊与门户转载",
+            "en": "Journal & portal media"
           },
           "desc": {
-            "zh": "报道 *Science Advances*（2024）气溶胶散射—吸收配比变化驱动北半球哈德莱环流扩张的研究。",
-            "en": "Reported the *Science Advances* (2024) study on scattering–absorbing aerosol fractions and Hadley circulation expansion."
-          }
+            "zh": "报道 *Science Bulletin*（2023）热带北大西洋海温驱动中东沙尘年代际趋势转折的研究；该成果另被福建省三模、广东省地理联考选作压轴题。",
+            "en": "Covered the *Science Bulletin* (2023) study on tropical North Atlantic SST driving the decadal shift in Middle East dust; the result was also used as the culminating question in Fujian and Guangdong geography mock examinations."
+          },
+          "links": [
+            {
+              "label": {
+                "zh": "科学通报 · 悦读科学",
+                "en": "Chinese Sci. Bull. (WeChat)"
+              },
+              "url": "https://mp.weixin.qq.com/s?__biz=MzA3ODgxMzc1Ng==&mid=2650455314&idx=2&sn=b7be6b7b9c6b0242e425f36cc764f3f2"
+            },
+            {
+              "label": {
+                "zh": "腾讯新闻",
+                "en": "Tencent News"
+              },
+              "url": "https://news.qq.com/rain/a/20230811A050KQ00"
+            },
+            {
+              "label": {
+                "zh": "网易新闻",
+                "en": "NetEase News"
+              },
+              "url": "https://c.m.163.com/news/a/IKCGEE1R053206RJ.html"
+            }
+          ]
         },
         {
           "source": {
-            "zh": "北京大学新闻网 · 搜狐新闻",
-            "en": "PKU News · Sohu News"
+            "zh": "EurekAlert!（AAAS 新闻平台）",
+            "en": "EurekAlert! (AAAS)"
+          },
+          "tag": {
+            "zh": "英文新闻稿",
+            "en": "English press release"
+          },
+          "desc": {
+            "zh": "以英文发布 *Science Bulletin* 成果新闻稿《Why did the decadal trend of dust activities in the Middle East change from positive to negative around 2010?》，面向国际读者。",
+            "en": "English press release on the *Science Bulletin* study, reaching an international audience."
+          },
+          "links": [
+            {
+              "label": {
+                "zh": "英文新闻稿",
+                "en": "Press release"
+              },
+              "url": "https://www.eurekalert.org/news-releases/994719"
+            }
+          ]
+        },
+        {
+          "source": {
+            "zh": "北大物理人（公众号）",
+            "en": "PKU Physics (WeChat)"
+          },
+          "tag": {
+            "zh": "院系公众号",
+            "en": "Department WeChat"
+          },
+          "desc": {
+            "zh": "以《成果 李婧课题组揭示加拿大破纪录极端野火的气候驱动机制》推送 *PNAS*（2024）成果，指出北大西洋增暖与巴伦支海海冰减少共同贡献约 80% 的野火天气异常。",
+            "en": "Covered the *PNAS* (2024) study showing that North Atlantic warming and Barents Sea ice loss explain ~80% of the fire-weather anomaly."
+          },
+          "links": [
+            {
+              "label": {
+                "zh": "公众号原文",
+                "en": "WeChat article"
+              },
+              "url": "https://mp.weixin.qq.com/s?__biz=MzA5NzUwODgxMw==&mid=2656062991&idx=1&sn=f2ffc2425bd25db9f74484af18ec2a01"
+            }
+          ]
+        },
+        {
+          "source": {
+            "zh": "北大物理人（公众号）",
+            "en": "PKU Physics (WeChat)"
+          },
+          "tag": {
+            "zh": "院系公众号",
+            "en": "Department WeChat"
+          },
+          "desc": {
+            "zh": "以《成果 气溶胶光学性质对哈德雷环流的影响》推送 *Science Advances*（2024）成果，介绍散射—吸收气溶胶配比变化对北半球哈德莱环流扩张的贡献。",
+            "en": "Covered the *Science Advances* (2024) study on how the scattering–absorbing aerosol fraction drives Northern Hemisphere Hadley circulation expansion."
+          },
+          "links": [
+            {
+              "label": {
+                "zh": "公众号原文",
+                "en": "WeChat article"
+              },
+              "url": "https://mp.weixin.qq.com/s?__biz=MzUxNzU0NzA1NA==&mid=2247490368&idx=1&sn=1e525ad2d5f7398bd6c073675089a2a1"
+            }
+          ]
+        },
+        {
+          "source": {
+            "zh": "北京大学新闻网 · 搜狐新闻 · 北大物理人",
+            "en": "PKU News · Sohu News · PKU Physics"
           },
           "tag": {
             "zh": "校园与门户媒体",
             "en": "University & portal media"
           },
           "desc": {
-            "zh": "报道 *Geophysical Research Letters*（2024）利用红外窗区卫星辐亮度反演夜间气溶胶光学厚度的工作。",
-            "en": "Covered the *GRL* (2024) nighttime AOD retrieval from infrared-window satellite radiances."
-          }
+            "zh": "报道 *Geophysical Research Letters*（2024）利用红外窗区长波辐亮度反演夜间气溶胶光学厚度的工作，称其首次实现基于长波辐射的气溶胶反演。",
+            "en": "Covered the *GRL* (2024) work retrieving nighttime AOD from infrared-window longwave radiances, the first aerosol retrieval built on longwave radiation."
+          },
+          "links": [
+            {
+              "label": {
+                "zh": "北大新闻网",
+                "en": "PKU News"
+              },
+              "url": "https://news.pku.edu.cn/info/2881/2727371.htm"
+            },
+            {
+              "label": {
+                "zh": "搜狐新闻",
+                "en": "Sohu News"
+              },
+              "url": "https://www.sohu.com/a/779527505_121474537"
+            },
+            {
+              "label": {
+                "zh": "公众号原文",
+                "en": "WeChat article"
+              },
+              "url": "https://mp.weixin.qq.com/s?__biz=MzUxNzU0NzA1NA==&mid=2247489594&idx=1&sn=e7367587c6772fab66b8ab452a905022"
+            }
+          ]
         },
         {
           "source": {
-            "zh": "中科院大气物理研究所 · 北大大气与海洋科学系",
-            "en": "IAP-CAS · PKU Atmospheric & Oceanic Sciences"
+            "zh": "北大物理人（公众号）· Phys.org",
+            "en": "PKU Physics (WeChat) · Phys.org"
           },
           "tag": {
-            "zh": "科研机构",
-            "en": "Research institutes"
+            "zh": "院系公众号与国际科技媒体",
+            "en": "Department WeChat & international sci-tech media"
           },
           "desc": {
-            "zh": "报道 *Geophysical Research Letters*（2022）不同海盆海温与海冰对我国戈壁、华北沙尘活动影响的研究。",
-            "en": "Covered the *GRL* (2022) study on basin-scale SST/sea-ice impacts on dust over the Gobi Desert and North China."
-          }
+            "zh": "报道 *GRL*（2023）白令海海冰减少与中国东北野火天气潜势上升的研究，Phys.org 亦作英文报道。",
+            "en": "Covered the GRL (2023) study linking Bering Sea ice loss to rising fire-weather potential in Northeast China, also written up in English by Phys.org."
+          },
+          "links": [
+            {
+              "label": {
+                "zh": "公众号原文",
+                "en": "WeChat article"
+              },
+              "url": "https://mp.weixin.qq.com/s?__biz=MzUxNzU0NzA1NA==&mid=2247488637&idx=1&sn=48405e6f15fa01d82776e051e09386c9"
+            },
+            {
+              "label": {
+                "zh": "Phys.org（英文）",
+                "en": "Phys.org (English)"
+              },
+              "url": "https://phys.org/news/2023-10-declining-bering-sea-ice-linked.html"
+            }
+          ]
         },
         {
           "source": {
-            "zh": "百家号 · 北大大气与海洋科学系",
-            "en": "Baijiahao · PKU Atmospheric & Oceanic Sciences"
+            "zh": "中科院大气物理研究所 · 北大大气与海洋科学系 · Phys.org",
+            "en": "IAP-CAS · PKU AOS · Phys.org"
           },
           "tag": {
-            "zh": "门户与院系",
-            "en": "Portal & department"
+            "zh": "科研机构与国际科技媒体",
+            "en": "Research institutes & international media"
           },
           "desc": {
-            "zh": "报道 *Geophysical Research Letters*（2023）白令海海冰减少与中国东北野火潜势上升的研究。",
-            "en": "Covered the *GRL* (2023) study linking Bering Sea ice loss to rising fire-weather potential in Northeast China."
-          }
+            "zh": "报道 *GRL*（2022）不同洋盆海温与海冰对我国戈壁、华北沙尘活动影响的研究，Phys.org 亦作英文报道。",
+            "en": "Covered the GRL (2022) study on basin-scale SST and sea-ice impacts on dust over the Gobi Desert and North China, also written up in English by Phys.org."
+          },
+          "links": [
+            {
+              "label": {
+                "zh": "中科院大气所",
+                "en": "IAP-CAS"
+              },
+              "url": "https://www.iap.cas.cn/gb/xwdt/kyjz/202208/t20220801_6495828.html"
+            },
+            {
+              "label": {
+                "zh": "北大大气系",
+                "en": "PKU AOS"
+              },
+              "url": "https://www.atmos.pku.edu.cn/xwzx/142903.htm"
+            },
+            {
+              "label": {
+                "zh": "Phys.org（英文）",
+                "en": "Phys.org (English)"
+              },
+              "url": "https://phys.org/news/2022-08-ocean-variability-contributes-sandstorms-northern.html"
+            }
+          ]
         },
         {
           "source": {
-            "zh": "网易网 · 腾讯网 · 每日生活网",
-            "en": "NetEase · Tencent News · Daily Life Net"
+            "zh": "中国气象科学研究院 · 研学沙龙第十期",
+            "en": "Chinese Academy of Meteorological Sciences · Research Salon"
           },
           "tag": {
-            "zh": "门户媒体",
-            "en": "Portal media"
+            "zh": "受邀学术报告",
+            "en": "Invited talk"
           },
           "desc": {
-            "zh": "报道 *Science Bulletin*（2023）热带北大西洋海温与中东沙尘年代际趋势转折的研究；该成果另被福建省三模、广东省地理联考选作压轴题。",
-            "en": "Covered the *Science Bulletin* (2023) study on tropical North Atlantic SST and the decadal shift in Middle East dust; the result was also used as the culminating question in Fujian and Guangdong geography mock examinations."
-          }
-        },
-        {
-          "source": {
-            "zh": "气象学家 · 南大招生小蓝鲸 · 大气科学学院",
-            "en": "Meteorologist · NJU Admissions · School of Atmospheric Sciences"
+            "zh": "应中国气象科学研究院研究生院与研究生会邀请，作《探索沙尘与海洋变率的对话：科研成果与经验分享》报告，研究生院公众号发布预告与会后报道。",
+            "en": "Invited by CAMS to give a talk on dust–ocean variability interactions and research experience; the graduate school published both the announcement and the recap."
           },
-          "tag": {
-            "zh": "本科阶段",
-            "en": "Undergraduate years"
-          },
-          "desc": {
-            "zh": "本科期间因学业表现与气象科普工作获上述平台报道。",
-            "en": "Covered during undergraduate years for academic performance and science outreach."
-          }
+          "links": [
+            {
+              "label": {
+                "zh": "会后报道",
+                "en": "Recap"
+              },
+              "url": "https://mp.weixin.qq.com/s?__biz=MzU0OTgwNzc1NQ==&mid=2247486512&idx=1&sn=93f6ff3a337e253543f9d8f862633727"
+            },
+            {
+              "label": {
+                "zh": "报告预告",
+                "en": "Announcement"
+              },
+              "url": "https://mp.weixin.qq.com/s?__biz=MzU0OTgwNzc1NQ==&mid=2247486486&idx=1&sn=f3dd895848f7f4c87119de1d7a137e07"
+            }
+          ]
         }
       ]
     },

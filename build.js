@@ -164,8 +164,18 @@ function renderPaper(p, lang) {
           </div>`;
 }
 
-const groupTitle = (g, lang) => `<h3 class="group-title"><span class="group-title__bar"></span>${L(g.title, lang)}</h3>`;
+// 媒体报道条目下的原文链接（可多条）
+function pressLinks(it, lang) {
+  const list = (it.links || []).filter(l => l.url);
+  if (!list.length) return '';
+  const anchors = list.map(l => {
+    const label = typeof l.label === 'object' ? (l.label[lang] ?? l.label.zh) : l.label;
+    return `<a class="press__link" href="${esc(l.url)}" target="_blank" rel="noopener noreferrer">${esc(label)}</a>`;
+  }).join('');
+  return `\n              <div class="press__links">${anchors}</div>`;
+}
 
+const groupTitle = (g, lang) => `<h3 class="group-title"><span class="group-title__bar"></span>${L(g.title, lang)}</h3>`;
 function renderSection(section, lang, index, total) {
   let body = '';
   if (section.type === 'paragraphs') {
@@ -183,7 +193,7 @@ function renderSection(section, lang, index, total) {
       `<ul class="press">
             ${section.items.map(it => `<li class="press__item">
               <div class="press__head"><span class="press__source">${L(it.source, lang)}</span>${it.tag ? `<span class="press__tag">${L(it.tag, lang)}</span>` : ''}</div>
-              <p class="press__desc">${L(it.desc, lang)}</p>
+              <p class="press__desc">${L(it.desc, lang)}</p>${pressLinks(it, lang)}
             </li>`).join('\n            ')}
           </ul>`
     ].filter(Boolean).join('\n          ');
