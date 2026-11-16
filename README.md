@@ -46,14 +46,15 @@ python -m http.server 8765
 
 ## 方案 A：发布到 GitHub Pages
 
-> **当前实际状态（2026-11-16）**：正式仓库是 https://github.com/guanyuliu0818/resume （公开、`main` 分支、Pages 尚未开启），所以站点根地址是 **`https://guanyuliu0818.github.io/resume/`**；`content.json` 的 `site.canonicalBase`、`sitemap.xml`、`robots.txt` 已按这个子路径生成，无需再改。
+> **已上线（2026-11-16）**：中文首页 **`https://guanyuliu0818.github.io/resume/`**，英文版 **`https://guanyuliu0818.github.io/resume/en.html`**，右上角可切换语言。仓库 https://github.com/guanyuliu0818/resume 为公开 `main` 分支，Pages 从 `main` + `/ (root)` 构建；`.github/workflows/pages.yml` 自动部署工作流也已运行成功（`pages build and deployment` 与 `Deploy GitHub Pages` 均 `success`）。
 >
-> WorkBuddy 的 GitHub 连接器已授权，但实测是**只读集成**：`push_files` 与 `create_or_update_file` 对 `resume` 都返回 `403 Resource not accessible by integration`；本机 git 凭据管理器也没有可用凭据。所以「把文件放进仓库」这一步需要你二选一：
+> 实测匿名访问：`/`、`/en.html`、`/sitemap.xml`、`/robots.txt`、`/assets/style.css`、`/assets/avatar.svg` **全部 HTTP 200**，首页 `<title>` 与 `canonical` 正确。`site.canonicalBase` 已固化为上述子路径，两版 HTML、`sitemap.xml`、`robots.txt` 无需再改。
 >
-> - **A1｜给我一个 PAT**：在 GitHub 生成勾选 `repo` 权限的 token 发我，我用本地仓库一次 push 全部文件，并用 API 开启 Pages、验证线上页面，你不用碰网页。
-> - **A2｜网页拖 6 个文件**：解压 `personal-homepage-upload.zip`，在仓库页 **Add file → Upload files** 把 6 个文件拖进去提交；再到 **Settings → Pages → Deploy from a branch** 选 `main` + `/ (root)` 保存。这个包已把 CSS / JS / 图标内联进两个 HTML，全部文件都在根目录、没有子文件夹，一次拖完即可。
+> 上线过程两条路都走了：先在仓库网页上传 `personal-homepage-upload.zip` 的 6 个文件（GitHub 自动提交 `Add files via upload`），再用 `repo` 权限的 PAT 从本地 `git push` 补齐完整源码结构（`content.json` / `build.js` / `assets/` 等），合并时以本地版本为准。**PAT 只在单次命令行环境变量中使用，未写入 `.git/config`、任何文件或提交；请到 GitHub → Settings → Developer settings 里 Revoke 撤销。**
 >
-> 两条路得到同一个网址 `https://guanyuliu0818.github.io/resume/`。若用 A1，仓库里的 `.github/workflows/pages.yml` 会在 push 后自动启用并部署 Pages（可选，手动开 Pages 也可以）。
+> 现在只差「让人搜到」这一步：按下面「让搜索引擎能搜到」一节，把 `https://guanyuliu0818.github.io/resume/sitemap.xml` 提交到 Google Search Console / Bing / 百度，并把主页链接填进 ORCID、ResearchGate 等公开档案。
+>
+> 下面的 1–5 是通用发布步骤，当前仓库已全部完成，仅作日后迁移参考。
 
 
 1. 在 GitHub 新建仓库。用 `<你的用户名>.github.io` 可得到根域名；用普通仓库则是项目子路径，两种都支持（站内全部使用相对路径）。
