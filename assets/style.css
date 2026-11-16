@@ -267,6 +267,20 @@ h1, h2, h3 { line-height: 1.3; font-weight: 700; }
 }
 
 /* ---------- 媒体报道 ---------- */
+.press-group { margin-top: 1.8rem; }
+.press-group:first-of-type { margin-top: 1.1rem; }
+.press-group__title {
+  display: flex; align-items: baseline; gap: .5rem;
+  margin: 0 0 .45rem; padding: 0 0 .42rem;
+  border-bottom: 1px solid #dfe3e4;
+  font-size: .95rem; font-weight: 700; color: var(--ink); line-height: 1.55;
+}
+.press-group__num {
+  flex: none; font-size: .74rem; font-weight: 700; letter-spacing: .1em;
+  color: var(--link-dark); font-variant-numeric: tabular-nums;
+  opacity: .85;
+}
+.press-group__note { margin: 0 0 .65rem; color: var(--muted); font-size: .79rem; line-height: 1.7; }
 .press { display: grid; gap: .75rem; margin: 0; padding: 0; list-style: none; }
 .press__item {
   padding: .7rem .95rem; border-left: 3px solid var(--link);

@@ -188,14 +188,22 @@ function renderSection(section, lang, index, total) {
           </ul>`;
     }
   } else if (section.type === 'press') {
-    body = [
-      section.intro ? `<p class="papers__note">${L(section.intro, lang)}</p>` : '',
-      `<ul class="press">
-            ${section.items.map(it => `<li class="press__item">
+    const pressItem = it => `<li class="press__item">
               <div class="press__head"><span class="press__source">${L(it.source, lang)}</span>${it.tag ? `<span class="press__tag">${L(it.tag, lang)}</span>` : ''}</div>
               <p class="press__desc">${L(it.desc, lang)}</p>${pressLinks(it, lang)}
-            </li>`).join('\n            ')}
-          </ul>`
+            </li>`;
+    const pressList = list => `<ul class="press">
+            ${list.map(pressItem).join('\n            ')}
+          </ul>`;
+    // 支持两种写法：扁平 items，或按主题分组的 groups（每组含 title / note / items）
+    const pressGroups = section.groups || [{ items: section.items || [] }];
+    body = [
+      section.intro ? `<p class="papers__note">${L(section.intro, lang)}</p>` : '',
+      pressGroups.map(g => `<div class="press-group">
+          ${g.title ? `<h3 class="press-group__title"><span class="press-group__num">${esc(g.num || '')}</span>${L(g.title, lang)}</h3>` : ''}
+          ${g.note ? `<p class="press-group__note">${L(g.note, lang)}</p>` : ''}
+          ${pressList(g.items)}
+        </div>`).join('\n          ')
     ].filter(Boolean).join('\n          ');
   } else if (section.type === 'entries') {
     body = section.entries.map(e => renderEntry(e, lang)).join('\n          ');
