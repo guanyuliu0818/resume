@@ -12,6 +12,27 @@ const ROOT = __dirname;
 const CONTENT = path.join(ROOT, 'content.json');
 const data = JSON.parse(fs.readFileSync(CONTENT, 'utf8'));
 
+// 证件照原图 jpg → 纯文本 SVG（内嵌 base64）。这样整站没有二进制文件，
+// 只支持纯文本的发布通道（如 GitHub 连接器）也能一次性上传完整站点。
+const AVATAR_JPG = path.join(ROOT, 'assets', 'avatar.jpg');
+const AVATAR_SVG = path.join(ROOT, 'assets', 'avatar.svg');
+if (fs.existsSync(AVATAR_JPG)) {
+  const buf = fs.readFileSync(AVATAR_JPG);
+  let w = 420, h = 420;
+  for (let i = 2; i < buf.length - 9;) {
+    if (buf[i] !== 0xFF) { i++; continue; }
+    const m = buf[i + 1];
+    if (m >= 0xC0 && m <= 0xCF && m !== 0xC4 && m !== 0xC8 && m !== 0xCC) {
+      h = buf.readUInt16BE(i + 5); w = buf.readUInt16BE(i + 7); break;
+    }
+    i += 2 + buf.readUInt16BE(i + 2);
+  }
+  const href = `data:image/jpeg;base64,${buf.toString('base64')}`;
+  fs.writeFileSync(AVATAR_SVG,
+    `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}"><image width="${w}" height="${h}" href="${href}" xlink:href="${href}"/></svg>\n`, 'utf8');
+  console.log(`✓ 已由 assets/avatar.jpg 生成纯文本 assets/avatar.svg（${w}×${h}）`);
+}
+
 // --set-base=URL：把最终网址固化进 content.json，之后每次直接 node build.js 即可
 const setBase = (process.argv.find(a => a.startsWith('--set-base=')) || '').slice('--set-base='.length);
 if (setBase) {

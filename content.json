@@ -3,7 +3,7 @@
     "这是全站唯一的内容文件。改完在本目录执行 `node build.js`，index.html（中文）和 en.html（英文）会同时重新生成。",
     "所有 zh / en 字段都要成对填写。文本支持 **加粗**、*斜体*、[文字](链接) 三种轻量标记；写成 [[待补充：xxx]] 的内容会渲染成琥珀色虚线标记。",
     "url 留空的侧栏链接不会出现在页面上（也不留灰色占位）；补齐 url 后重新构建即自动显示。",
-    "照片来自简历证件照，已放在 assets/avatar.jpg；换照片只需替换同名文件，或改 site.avatar 的路径。",
+    "证件照原图在 assets/avatar.jpg；执行 node build.js 会自动把它转成纯文本 assets/avatar.svg（内嵌 base64），页面与 og:image 都引用该 SVG，便于纯文本通道发布。换照片只需替换 jpg 后重新构建。",
     "badge 颜色 tone 可选：red（顶刊 / 一区 Top）、blue（主流期刊）、gray（中文 / 其他）、green（在投 / 会议）。",
     "所有列表条目一律按时间倒序（最新在最前）：奖项 / 论文按年份，经历按起始年月，教育按学位时间线。"
   ],
@@ -36,7 +36,7 @@
       "zh": "中国南方电力调度控制中心 主管 · 北京大学博士（2026 届）",
       "en": "Supervisor, CSG Dispatching & Control Center · Ph.D., Peking University (2026)"
     },
-    "canonicalBase": "https://guanyuliu0818.github.io",
+    "canonicalBase": "https://guanyuliu0818.github.io/resume",
     "seoDescription": {
       "zh": "刘冠宇，中国南方电力调度控制中心水电及新能源处主管、北京大学大气物理学与大气环境博士，研究电力气象、新能源功率预测、野火与气溶胶、卫星遥感反演与 AI for Science。",
       "en": "Guanyu Liu, Supervisor at CSG Power Dispatching & Control Center and Peking University Ph.D. Research: power meteorology, renewable-energy forecasting, wildfire, aerosols, AI for Science."
@@ -59,7 +59,7 @@
       "zh": "liuguanyu@csg.cn",
       "en": "liuguanyu@csg.cn"
     },
-    "avatar": "assets/avatar.jpg",
+    "avatar": "assets/avatar.svg",
     "avatarAlt": {
       "zh": "刘冠宇",
       "en": "Guanyu Liu"

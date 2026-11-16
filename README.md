@@ -37,7 +37,7 @@ python -m http.server 8765
 > 不要直接改 `index.html` / `en.html`，下次构建会被覆盖。
 
 常用改动：
-- **换照片**：替换 `assets/avatar.jpg`（正方形、白底效果最好），或改 `site.avatar` 的路径。
+- **换照片**：替换 `assets/avatar.jpg`（正方形、白底效果最好）后重新执行 `node build.js`，脚本会自动生成纯文本 `assets/avatar.svg`（内嵌 base64），页面与 `og:image` 都引用它。整站因此没有二进制文件，纯文本通道（GitHub 网页拖放、代码连接器）也能一次上传完整站点。
 - **补外链**：`sidebarLinks` 里的 `url` 留空时该链接不会出现在页面上（不留灰色占位）；填上后重新构建即自动显示。
 - **加论文**：在 `sections → papers → groups → papers` 里复制一条，`tone` 可选 `red` / `blue` / `gray` / `green`。
 - **排序约定**：所有列表一律时间倒序（最新在最前）——奖项 / 论文按年份，经历按起始年月，教育按学位时间线；新增条目要插到对应年份位置，不要追加到末尾。
@@ -45,6 +45,16 @@ python -m http.server 8765
 - **开关草稿提示条**：`config.draft` 改成 `true` / `false`。
 
 ## 方案 A：发布到 GitHub Pages
+
+> **当前实际状态（2026-11-16）**：正式仓库是 https://github.com/guanyuliu0818/resume （公开、`main` 分支、Pages 尚未开启），所以站点根地址是 **`https://guanyuliu0818.github.io/resume/`**；`content.json` 的 `site.canonicalBase`、`sitemap.xml`、`robots.txt` 已按这个子路径生成，无需再改。
+>
+> WorkBuddy 的 GitHub 连接器已授权，但实测是**只读集成**：`push_files` 与 `create_or_update_file` 对 `resume` 都返回 `403 Resource not accessible by integration`；本机 git 凭据管理器也没有可用凭据。所以「把文件放进仓库」这一步需要你二选一：
+>
+> - **A1｜给我一个 PAT**：在 GitHub 生成勾选 `repo` 权限的 token 发我，我用本地仓库一次 push 全部文件，并用 API 开启 Pages、验证线上页面，你不用碰网页。
+> - **A2｜网页拖 6 个文件**：解压 `personal-homepage-upload.zip`，在仓库页 **Add file → Upload files** 把 6 个文件拖进去提交；再到 **Settings → Pages → Deploy from a branch** 选 `main` + `/ (root)` 保存。这个包已把 CSS / JS / 图标内联进两个 HTML，全部文件都在根目录、没有子文件夹，一次拖完即可。
+>
+> 两条路得到同一个网址 `https://guanyuliu0818.github.io/resume/`。若用 A1，仓库里的 `.github/workflows/pages.yml` 会在 push 后自动启用并部署 Pages（可选，手动开 Pages 也可以）。
+
 
 1. 在 GitHub 新建仓库。用 `<你的用户名>.github.io` 可得到根域名；用普通仓库则是项目子路径，两种都支持（站内全部使用相对路径）。
 2. 在本目录执行：
@@ -81,34 +91,35 @@ node build.js --set-base=https://<用户名>.github.io
 
 它会把网址写进 `content.json`，同时生成两份 HTML、`sitemap.xml`、`robots.txt`；之后每次改内容只需 `node build.js`。只想临时用某个网址预览、不写入配置，则用 `node build.js --base=https://…`。**未配置网址时这些绝对地址不会生成**（避免把错误域名写进公开页面）。
 
-### 浏览器登录不上 GitHub 时：全程命令行发布
+### 浏览器登录不上 GitHub 时：全程命令行发布（PAT）
 
-若只是网页登录失败，可以完全不碰浏览器。前提是能在账号设置里生成一个 **Personal Access Token（PAT，勾选 `repo` 权限）**；若连这一步也做不了，直接用方案 B 的免 GitHub 托管。
+若只是网页登录失败，可以完全不碰浏览器。前提是能在账号设置里生成一个 **Personal Access Token（PAT，勾选 `repo` 权限）**；若连这一步也做不了，用上面的 A2 网页拖放，或方案 B 的免 GitHub 托管。
+
+仓库已经存在（`guanyuliu0818/resume`），所以**不需要再建仓库**：
 
 ```bash
-# 1) 用 PAT 创建仓库（用户名 guanyuliu0818，根站点仓库名必须是 <用户名>.github.io）
-curl -H "Authorization: Bearer <PAT>" https://api.github.com/user/repos \
-  -d '{"name":"guanyuliu0818.github.io","private":false}'
+# 1) 把本地仓库的远端指向实际仓库
+git remote set-url origin https://github.com/guanyuliu0818/resume.git
 
-# 2) 本地初始化并推送（两份简历和 dist/ 已被 .gitignore 排除）
-git init
-git add .
-git commit -m "Add bilingual personal homepage"
-git branch -M main
-git remote add origin https://github.com/guanyuliu0818/guanyuliu0818.github.io.git
+# 2) 合并远端那个初始 README（本地与远端无共同祖先）
+git fetch origin main
+git merge --allow-unrelated-histories -X ours origin/main -m "Merge remote README"
+
+# 3) 推送；凭据提示里用户名填 guanyuliu0818，密码填 PAT（GitHub 已不接受账号密码）
 git push -u origin main
-# 凭据提示：用户名填 guanyuliu0818，密码填 PAT（GitHub 已不接受账号密码）
 
-# 3) 用 API 开启 Pages，省去 Settings 页面
+# 4) 用 API 开启 Pages，省去 Settings 页面
 curl -X POST -H "Authorization: Bearer <PAT>" \
   -H "Accept: application/vnd.github+json" \
-  https://api.github.com/repos/guanyuliu0818/guanyuliu0818.github.io/pages \
+  https://api.github.com/repos/guanyuliu0818/resume/pages \
   -d '{"source":{"branch":"main","path":"/"}}'
 ```
 
 > **不要把 PAT 写进 `git remote` 的 URL**，那会明文留在 `.git/config`；推送时按提示输入即可。若 `git push` 超时，先配代理 `git config --global http.proxy http://127.0.0.1:<本地代理端口>`，或换手机热点重试。
 >
-> 本项目 `site.canonicalBase` 已固化为 `https://guanyuliu0818.github.io`，`sitemap.xml` / `robots.txt` 已生成并放进发布包；上线后直接去 Search Console / Bing / 百度提交 sitemap 即可。
+> 本项目 `site.canonicalBase` 已固化为 `https://guanyuliu0818.github.io/resume`，`sitemap.xml` / `robots.txt` 已生成并放进发布包；上线后直接去 Search Console / Bing / 百度提交 sitemap 即可。
+>
+> 若希望网址是根域名 `https://guanyuliu0818.github.io/` 而不是 `/resume/`：在仓库 Settings 里把仓库改名为 `guanyuliu0818.github.io`，改完告诉我，我执行一次 `node build.js --set-base=https://guanyuliu0818.github.io` 并重新推送即可。
 
 ## 方案 B：不登录 GitHub 也能上线
 
@@ -128,7 +139,7 @@ curl -X POST -H "Authorization: Bearer <PAT>" \
 >
 > 结论：这条链接适合**发给别人打开或临时展示**，**不能当作「能被搜到」的正式网址**。要被 Google / Bing / 百度收录，请改用上表其它「无需访问码」的托管（Cloudflare Pages、Netlify、腾讯云 EdgeOne、GitHub Pages），拿到干净的网址后再执行下面的「拿到网址后必做」。
 >
-> 因此**不要**把带 `?sharecode=` 的链接填进 `site.canonicalBase`：构建脚本会把它拼成畸形 URL，访问码也会写进公开页面源码。当前 `canonicalBase` 保持为空，等确定正式域名后一键 `node build.js --set-base=…` 即可。
+> 因此**不要**把带 `?sharecode=` 的链接填进 `site.canonicalBase`：构建脚本会把它拼成畸形 URL，访问码也会写进公开页面源码。当前 `canonicalBase` 已填正式 GitHub Pages 地址 `https://guanyuliu0818.github.io/resume`，与带访问码的分享链接无关。
 
 > **零账号通道的实测结论（2026-11-16）**：WorkBuddy 内置分享链接需 `?sharecode=`（无 Cookie 时 403）；Netlify 匿名部署 `CI=1 npx netlify-cli deploy --dir=dist --allow-anonymous --json` **能成功创建站点**（例如 `friendly-nasturtium-dd6557.netlify.app`），但整个站点被 **Password Protection** 锁住，首页、`en.html`、`assets/*`、`robots.txt`、`sitemap.xml` 一律 401；Netlify 匿名建站 API `POST /api/v1/sites` 直接 401。匿名站可用返回的 `claim_command`（`netlify claim --site … --token …`）认领到账号后解除密码。
 >
@@ -140,15 +151,17 @@ curl -X POST -H "Authorization: Bearer <PAT>" \
 
 ```
 dist/index.html   dist/en.html   dist/.nojekyll
+dist/sitemap.xml  dist/robots.txt
 dist/assets/style.css   dist/assets/app.js
-dist/assets/avatar.jpg  dist/assets/favicon.svg
+dist/assets/avatar.svg  dist/assets/favicon.svg
 ```
 
 以后改完内容，重新同步一次即可：
 
 ```bash
 node build.js
-cp -f index.html en.html dist/
+cp -f index.html en.html sitemap.xml robots.txt dist/
+cp -f assets/avatar.svg dist/assets/
 ```
 
 ### 拿到网址后必做（否则搜不到）
@@ -205,9 +218,15 @@ cp -f index.html en.html sitemap.xml robots.txt dist/
 
 ## 发布包
 
-`personal-homepage-publish.zip` 是定稿的静态站点：解压后即为可上传的完整目录，含 `index.html`、`en.html`、`assets/`、`.nojekyll`、`README.md`、`.gitignore`，以及便于日后改内容的 `content.json` / `build.js`。**不含两份原始简历 PDF 与本地记忆目录**。配置 `site.canonicalBase` 后重新构建并重新打包，包内会多出 `sitemap.xml` 与 `robots.txt`。
+三个包按用途区分，均已用正斜杠路径打包并校验，**都不含两份原始简历 PDF 与本地记忆目录**：
 
-最快路径：解压出 `dist/` → 用方案 A 或 B 任一方式上传 → 拿到网址后 `node build.js --set-base=你的网址` 并覆盖 `dist/` 里的页面 → 重新上传一次 → 到 Search Console / Bing / 百度提交 sitemap。只预览的话直接双击 `index.html` 即可。
+| 包 | 文件数 | 用途 |
+| --- | --- | --- |
+| `personal-homepage-upload.zip` | 6（全部在根目录） | **GitHub 网页拖放专用**：`index.html`、`en.html`、`avatar.svg`、`sitemap.xml`、`robots.txt`、`.nojekyll`。CSS / JS / 图标已内联，无子文件夹，一次拖完 |
+| `personal-homepage-static.zip` | 9（含 `assets/`） | 标准静态站，适合 PAT 推送、Cloudflare Pages、腾讯云 EdgeOne 等 |
+| `personal-homepage-publish.zip` | 14 | 完整源码包：额外含 `content.json` / `build.js` / `README.md` / `.gitignore` 与 Pages 自动部署工作流，便于日后改内容 |
+
+`site.canonicalBase` 已配置，`sitemap.xml` / `robots.txt` 都在包内。最快路径：解压 → 用方案 A 或 B 任一方式上传 → 拿到网址（已确定是 `https://guanyuliu0818.github.io/resume`）→ 到 Search Console / Bing / 百度提交 sitemap。只预览的话直接双击 `index.html` 即可。
 
 ## 已核实的外链
 

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://guanyuliu0818.github.io/sitemap.xml
+Sitemap: https://guanyuliu0818.github.io/resume/sitemap.xml

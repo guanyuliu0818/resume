@@ -1,0 +1,47 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check site files
+        id: check
+        run: |
+          if [ -f index.html ]; then echo "ready=true" >> "$GITHUB_OUTPUT"; else echo "ready=false" >> "$GITHUB_OUTPUT"; fi
+      - uses: actions/configure-pages@v5
+        if: steps.check.outputs.ready == 'true'
+        with:
+          enablement: true
+      - name: Prepare static site
+        if: steps.check.outputs.ready == 'true'
+        run: |
+          mkdir -p _site
+          cp index.html en.html sitemap.xml robots.txt _site/ 2>/dev/null || true
+          cp avatar.svg _site/ 2>/dev/null || true
+          if [ -d assets ]; then cp -r assets _site/; fi
+          touch _site/.nojekyll
+      - uses: actions/upload-pages-artifact@v3
+        if: steps.check.outputs.ready == 'true'
+        with:
+          path: _site
+      - id: deployment
+        if: steps.check.outputs.ready == 'true'
+        uses: actions/deploy-pages@v4
