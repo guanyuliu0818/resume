@@ -1,0 +1,1254 @@
+{
+  "_howto": [
+    "这是全站唯一的内容文件。改完在本目录执行 `node build.js`，index.html（中文）和 en.html（英文）会同时重新生成。",
+    "所有 zh / en 字段都要成对填写。文本支持 **加粗**、*斜体*、[文字](链接) 三种轻量标记；写成 [[待补充：xxx]] 的内容会渲染成琥珀色虚线标记。",
+    "url 留空的侧栏链接不会出现在页面上（也不留灰色占位）；补齐 url 后重新构建即自动显示。",
+    "照片来自简历证件照，已放在 assets/avatar.jpg；换照片只需替换同名文件，或改 site.avatar 的路径。",
+    "badge 颜色 tone 可选：red（顶刊 / 一区 Top）、blue（主流期刊）、gray（中文 / 其他）、green（在投 / 会议）。",
+    "所有列表条目一律按时间倒序（最新在最前）：奖项 / 论文按年份，经历按起始年月，教育按学位时间线。"
+  ],
+  "config": {
+    "draft": false,
+    "draftNote": {
+      "zh": "外链与部分联系方式待补充",
+      "en": "Some links and contact details are still to be added"
+    },
+    "copyrightYear": "2026",
+    "lastUpdated": {
+      "zh": "最后更新 2026 年 11 月",
+      "en": "Last updated November 2026"
+    }
+  },
+  "site": {
+    "brand": {
+      "zh": "刘冠宇 (Guanyu Liu)",
+      "en": "Guanyu Liu (刘冠宇)"
+    },
+    "pageTitle": {
+      "zh": "刘冠宇",
+      "en": "Guanyu Liu"
+    },
+    "sidebarName": {
+      "zh": "刘冠宇",
+      "en": "Guanyu Liu"
+    },
+    "sidebarBio": {
+      "zh": "中国南方电力调度控制中心 主管 · 北京大学博士（2026 届）",
+      "en": "Supervisor, CSG Dispatching & Control Center · Ph.D., Peking University (2026)"
+    },
+    "canonicalBase": "https://guanyuliu0818.github.io",
+    "seoDescription": {
+      "zh": "刘冠宇，中国南方电力调度控制中心水电及新能源处主管、北京大学大气物理学与大气环境博士，研究电力气象、新能源功率预测、野火与气溶胶、卫星遥感反演与 AI for Science。",
+      "en": "Guanyu Liu, Supervisor at CSG Power Dispatching & Control Center and Peking University Ph.D. Research: power meteorology, renewable-energy forecasting, wildfire, aerosols, AI for Science."
+    },
+    "keywords": {
+      "zh": "刘冠宇, Guanyu Liu, 北京大学, 中国南方电力调度控制中心, 南方电网, 电力气象, 新能源功率预测, 大气科学, 野火, 气溶胶, 卫星遥感反演, AI for Science",
+      "en": "Guanyu Liu, 刘冠宇, Peking University, CSG, China Southern Power Grid, power meteorology, renewable-energy power forecasting, atmospheric science, wildfire, aerosol, satellite remote sensing, AI for Science"
+    },
+    "knowsAbout": [
+      "Power meteorology",
+      "Renewable-energy power forecasting",
+      "Atmospheric physics",
+      "Wildfire and climate feedbacks",
+      "Aerosol-climate interactions",
+      "Satellite remote sensing",
+      "Machine learning",
+      "AI for Science"
+    ],
+    "sidebarEmailLabel": {
+      "zh": "liuguanyu@csg.cn",
+      "en": "liuguanyu@csg.cn"
+    },
+    "avatar": "assets/avatar.jpg",
+    "avatarAlt": {
+      "zh": "刘冠宇",
+      "en": "Guanyu Liu"
+    },
+    "htmlLang": {
+      "zh": "zh-CN",
+      "en": "en"
+    },
+    "docTitle": {
+      "zh": "刘冠宇 (Guanyu Liu) | 大气科学与电力气象 · 个人主页",
+      "en": "Guanyu Liu (刘冠宇) | Atmospheric Science & Power Meteorology"
+    },
+    "alternateName": {
+      "zh": "Guanyu Liu",
+      "en": "刘冠宇"
+    },
+    "jobTitle": {
+      "zh": "水电及新能源处主管",
+      "en": "Supervisor, Hydropower & New Energy Division"
+    },
+    "affiliation": {
+      "zh": "中国南方电力调度控制中心",
+      "en": "China Southern Power Grid Power Dispatching and Control Center"
+    },
+    "alumniOf": {
+      "zh": "北京大学",
+      "en": "Peking University"
+    }
+  },
+  "labels": {
+    "follow": {
+      "zh": "关注",
+      "en": "Follow"
+    },
+    "langSwitch": {
+      "zh": "EN",
+      "en": "中文"
+    },
+    "langSwitchTitle": {
+      "zh": "切换到英文版",
+      "en": "Switch to Chinese version"
+    },
+    "otherLangFile": {
+      "zh": "en.html",
+      "en": "index.html"
+    },
+    "backToTop": {
+      "zh": "回到顶部",
+      "en": "Back to top"
+    },
+    "draftTag": {
+      "zh": "草稿",
+      "en": "DRAFT"
+    }
+  },
+  "nav": [
+    {
+      "id": "biography",
+      "label": {
+        "zh": "简介",
+        "en": "Biography"
+      }
+    },
+    {
+      "id": "education",
+      "label": {
+        "zh": "教育",
+        "en": "Education"
+      }
+    },
+    {
+      "id": "experience",
+      "label": {
+        "zh": "经历",
+        "en": "Experience"
+      }
+    },
+    {
+      "id": "awards",
+      "label": {
+        "zh": "荣誉",
+        "en": "Awards"
+      }
+    },
+    {
+      "id": "papers",
+      "label": {
+        "zh": "论文",
+        "en": "Papers"
+      }
+    },
+    {
+      "id": "skills",
+      "label": {
+        "zh": "技能",
+        "en": "Skills"
+      }
+    },
+    {
+      "id": "contact",
+      "label": {
+        "zh": "联系",
+        "en": "Contact"
+      }
+    }
+  ],
+  "sidebarLinks": [
+    {
+      "icon": "orcid",
+      "label": {
+        "zh": "ORCID",
+        "en": "ORCID"
+      },
+      "url": "https://orcid.org/0000-0002-2202-4746"
+    },
+    {
+      "icon": "mail",
+      "label": {
+        "zh": "发送邮件",
+        "en": "Email me"
+      },
+      "url": "mailto:liuguanyu@csg.cn"
+    },
+    {
+      "icon": "researchgate",
+      "label": {
+        "zh": "ResearchGate",
+        "en": "ResearchGate"
+      },
+      "url": "https://www.researchgate.net/profile/Guanyu-Liu-4?ev=hdr_xprf"
+    }
+  ],
+  "sections": [
+    {
+      "id": "biography",
+      "emoji": "🧑‍🎓",
+      "title": {
+        "zh": "个人简介",
+        "en": "Biography"
+      },
+      "type": "paragraphs",
+      "paragraphs": [
+        {
+          "zh": "刘冠宇，**中国南方电力调度控制中心水电及新能源处主管**，北京大学物理学院大气与海洋科学系 **大气物理学与大气环境** 专业博士（保送直博，2026 届），导师李婧教授（国家杰出青年科学基金获得者）。2024–2025 年获 **CSC 国家公派留学** 资助赴德国莱比锡大学联合培养，师从 IPCC AR6 主要作者 Johannes Quaas 教授。研究聚焦 **自然源气溶胶与气候变率的相互作用**、**野火的天气与气候效应** 与 **机器学习大气遥感反演**。",
+          "en": "Guanyu Liu is **Supervisor of the Hydropower and New Energy Division at the China Southern Power Grid (CSG) Power Dispatching and Control Center**, and holds a Ph.D. in **Atmospheric Physics and Atmospheric Environment** from the Department of Atmospheric and Oceanic Sciences, School of Physics, Peking University (2026; direct admission), advised by Prof. Jing Li (NSFC Distinguished Young Scholar). From 2024 to 2025 he was a **CSC-sponsored visiting doctoral researcher** at Leipzig University, Germany, working with Prof. Johannes Quaas, a lead author of IPCC AR6. His research centers on **interactions between natural aerosols and climate variability**, **the weather and climate effects of wildfires**, and **machine-learning retrievals for atmospheric remote sensing**."
+        },
+        {
+          "zh": "已发表论文 **18 篇**，其中第一作者 SCI 一区论文 **10 篇**，累计影响因子 >100，成果见于 *Nature Communications*、*PNAS*、*Science Advances*、*Geophysical Research Letters*、*Science Bulletin* 等期刊。主持北京大学「碳与气候」博士研究生未名学者奖学金项目，并参与国家自然科学基金杰出青年基金、面上项目及科技部国家重点研发计划课题。",
+          "en": "He has published 18 papers, including 10 first-author papers in Q1 SCI journals (cumulative impact factor above 100), with work appearing in Nature Communications, PNAS, Science Advances, Geophysical Research Letters and Science Bulletin. He led the Peking University Weiming Scholar Fellowship project on Carbon and Climate, and contributed to NSFC Distinguished Young Scholar and General Program grants and a National Key R&D Program project."
+        },
+        {
+          "zh": "兼具 **大气科学 + 电力调度 + 遥感 AI + 保险金融** 的交叉背景。现任中国南方电力调度控制中心水电及新能源处主管，负责电力气象与新能源功率预测等业务，并开发气象数据分析工具与调度气象智能体应用；此前曾在中国长江三峡集团科学技术研究院、微软亚洲研究院（AI for Science）、北京佳格天地与中科院计算技术研究所实习，把数值模拟与机器学习带入真实业务场景，推动科研成果向能源调度、防灾减灾与气候服务转化。同时侧重「电力 + 气象」线上科普，累计观看人数逾 2 万；并担任北京大学博士生讲师团成员与「蔚蓝空间」学术讲座负责人。",
+          "en": "His background bridges **atmospheric science, power system dispatching, remote-sensing AI and insurance/finance**. At CSG he is responsible for power meteorology and renewable-energy power forecasting, and develops meteorological data-analysis tools and dispatching-oriented AI agents. Earlier internships at the China Three Gorges Corporation Research Institute, Microsoft Research Asia (AI for Science), GAGO Inc. and the Institute of Computing Technology (CAS) shaped a practice of bringing numerical modelling and machine learning into operational settings and translating research into energy dispatch, disaster risk reduction and climate services. He also focuses on online science communication at the *power + meteorology* interface, reaching an audience of over 20,000, and serves as a member of the Peking University Ph.D. Lecturers Group and organiser of the *Blue Space* seminar series."
+        }
+      ]
+    },
+    {
+      "id": "education",
+      "emoji": "🎓",
+      "title": {
+        "zh": "教育背景",
+        "en": "Education"
+      },
+      "type": "entries",
+      "entries": [
+        {
+          "role": {
+            "zh": "**博士（保送直博）**",
+            "en": "**Ph.D. (direct admission)**"
+          },
+          "org": {
+            "zh": "**北京大学**",
+            "en": "**Peking University**"
+          },
+          "detail": {
+            "zh": "物理学院 大气与海洋科学系 · 大气物理学与大气环境；导师：李婧（国家杰青）",
+            "en": "School of Physics, Dept. of Atmospheric & Oceanic Sciences; Advisor: Prof. Jing Li (NSFC Distinguished Young Scholar)"
+          },
+          "date": "2021.09 – 2026.06"
+        },
+        {
+          "role": {
+            "zh": "**联合培养博士**",
+            "en": "**Visiting Ph.D. researcher**"
+          },
+          "org": {
+            "zh": "**莱比锡大学**",
+            "en": "**Leipzig University**"
+          },
+          "detail": {
+            "zh": "物理与地球系统科学学院 · 气象学；CSC 国家公派；导师：Johannes Quaas（IPCC AR6 主要作者）",
+            "en": "Faculty of Physics and Earth System Sciences · Meteorology; CSC scholarship; Advisor: Prof. Johannes Quaas (IPCC AR6 lead author)"
+          },
+          "date": "2024.09 – 2025.09"
+        },
+        {
+          "role": {
+            "zh": "**本科**",
+            "en": "**B.S.**"
+          },
+          "org": {
+            "zh": "**南京大学**",
+            "en": "**Nanjing University**"
+          },
+          "detail": {
+            "zh": "大气科学学院 · 大气科学；GPA 4.5/5.0（专业前 10%），保送北京大学",
+            "en": "School of Atmospheric Sciences; GPA 4.5/5.0 (top 10%); admitted to PKU by recommendation"
+          },
+          "date": "2017.09 – 2021.06"
+        },
+        {
+          "role": {
+            "zh": "**本科双学位**",
+            "en": "**B.S. (dual degree)**"
+          },
+          "org": {
+            "zh": "**南京大学 商学院**",
+            "en": "**Nanjing University, Business School**"
+          },
+          "detail": {
+            "zh": "保险学（辅修金融工程）；气象指数巨灾保险研发",
+            "en": "Insurance (minor in Financial Engineering); development of weather-index catastrophe insurance"
+          },
+          "date": "2018.09 – 2021.06"
+        }
+      ]
+    },
+    {
+      "id": "experience",
+      "emoji": "💼",
+      "title": {
+        "zh": "工作与科研经历",
+        "en": "Professional & Research Experience"
+      },
+      "type": "groups",
+      "groups": [
+        {
+          "title": {
+            "zh": "工作经历",
+            "en": "Professional Experience"
+          },
+          "entries": [
+            {
+              "role": {
+                "zh": "**主管**",
+                "en": "**Supervisor**"
+              },
+              "org": {
+                "zh": "**中国南方电力调度控制中心 水电及新能源处**",
+                "en": "**CSG Dispatching & Control Center · Hydropower & New Energy Division**"
+              },
+              "date": {
+                "zh": "2026 – 至今",
+                "en": "2026 – present"
+              },
+              "bullets": [
+                {
+                  "zh": "在调度处挂职学习一年，并赴各类型电厂、换流站、中调等调研，系统学习接线图、电力系统运行、调规操规、调频备用、直流原理与事故处理等电气知识，学习撰写操作票，使用 OCS、OMS、DCCS 等调度业务系统；负责早汇报、简报日报等日常材料制作",
+                  "en": "One-year secondment in the dispatching division, with field visits to various power plants, converter stations and regional dispatch centres; studied single-line diagrams, power system operations, dispatch regulations and operating rules, frequency regulation and reserves, HVDC principles and incident handling; learned to prepare switching operation tickets and worked with the OCS, OMS and DCCS dispatching systems; prepared morning briefs, daily bulletins and other routine reports"
+                },
+                {
+                  "zh": "负责电力气象、新能源功率预测等业务，开发 MeteoStudio、MeteoWorkbench 气象数据分析工具，交付可用版本并配套用⁠户⁠文⁠档；构建电力气象报告专家智能体、调度气象参谋智能体等 AI 应用并落地实践，搭建天气预报网站与值班月览网站，支撑早汇报与材料编制",
+                  "en": "Responsible for power meteorology and renewable-energy power forecasting; developed the MeteoStudio and MeteoWorkbench meteorological data-analysis tools and delivered working releases with user documentation; built and deployed AI applications including a power-meteorology report expert agent and a dispatching meteorology advisory agent; built a weather forecast portal and a monthly duty overview site to support morning briefs and report preparation"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": {
+            "zh": "科研项目",
+            "en": "Research Projects"
+          },
+          "entries": [
+            {
+              "role": {
+                "zh": "**项目主持**",
+                "en": "**Principal Investigator**"
+              },
+              "org": {
+                "zh": "当前和未来全球野火碳排放的气候反馈",
+                "en": "Climate feedbacks of present and future global fire carbon emissions"
+              },
+              "detail": {
+                "zh": "北京大学「碳与气候」博士研究生未名学者奖学金项目",
+                "en": "Peking University Weiming Scholar Fellowship (Carbon & Climate)"
+              },
+              "date": {
+                "zh": "2024.10 – 2026.06 · 优秀结题",
+                "en": "2024.10 – 2026.06 · Outstanding completion"
+              }
+            },
+            {
+              "role": {
+                "zh": "**项目参与**",
+                "en": "**Project member**"
+              },
+              "org": {
+                "zh": "气溶胶卫星遥感与辐射效应 / DPC 气溶胶反演算法 / 植被生态气候数据集",
+                "en": "Aerosol satellite remote sensing, DPC retrieval algorithms, vegetation–climate datasets"
+              },
+              "detail": {
+                "zh": "国家自然科学基金杰青项目、面上项目 2 项、科技部国家重点研发计划课题",
+                "en": "NSFC Distinguished Young Scholar & General Program grants; MOST National Key R&D Program"
+              },
+              "date": "2020 – 2029"
+            },
+            {
+              "role": {
+                "zh": "**项目主持**",
+                "en": "**Principal Investigator**"
+              },
+              "org": {
+                "zh": "2018 年欧洲热浪的机理分析",
+                "en": "Mechanisms of the 2018 European heatwave"
+              },
+              "detail": {
+                "zh": "南京大学大学生创新创业国家级项目（优秀结题）",
+                "en": "National Undergraduate Innovation Program, Nanjing University (outstanding completion)"
+              },
+              "date": "2018.10 – 2019.10"
+            }
+          ]
+        },
+        {
+          "title": {
+            "zh": "产业实习",
+            "en": "Industry Internships"
+          },
+          "entries": [
+            {
+              "role": {
+                "zh": "**气象数据分析建模实习生**",
+                "en": "Meteorological data analysis & modelling intern"
+              },
+              "org": {
+                "zh": "**中国长江三峡集团科学技术研究院**",
+                "en": "**China Three Gorges Corp. Research Institute**"
+              },
+              "detail": {
+                "zh": "海上垂直风廓线变率评估、台风风场结构分析、海上风能资源储量评估（北京）",
+                "en": "Offshore wind-profile variability, typhoon wind structure, offshore wind resource assessment (Beijing)"
+              },
+              "date": "2024.03 – 2024.07"
+            },
+            {
+              "role": {
+                "zh": "**算法实习生 · AI for Science**",
+                "en": "**Algorithm intern · AI for Science**"
+              },
+              "org": {
+                "zh": "**微软亚洲研究院**",
+                "en": "**Microsoft Research Asia**"
+              },
+              "detail": {
+                "zh": "复现 3 篇气象 / 水文 AI4S 模型，调研 Transformer、ResNet、GAN；开展 WRF-Chem 敏感性实验（北京）",
+                "en": "Reproduced three AI4S models in meteorology/hydrology; surveyed Transformer, ResNet, GAN; WRF-Chem sensitivity experiments (Beijing)"
+              },
+              "date": "2023.02 – 2023.06"
+            },
+            {
+              "role": {
+                "zh": "**气象遥感实习生**",
+                "en": "**Remote sensing intern**"
+              },
+              "org": {
+                "zh": "**北京佳格天地科技有限公司**",
+                "en": "**GAGO Inc.**"
+              },
+              "detail": {
+                "zh": "1 km 温度统计降尺度、农业遥感物理建模、GEE 平台 GIS 编程（北京）",
+                "en": "1 km statistical downscaling of temperature, agro-remote-sensing modelling, Google Earth Engine programming (Beijing)"
+              },
+              "date": "2022.08 – 2023.01"
+            },
+            {
+              "role": {
+                "zh": "**算法实习生**",
+                "en": "**Algorithm intern**"
+              },
+              "org": {
+                "zh": "**中科院计算所南京移动通信与计算创新研究院**",
+                "en": "**ICT/CAS Nanjing Institute of Mobile Communication & Computing**"
+              },
+              "detail": {
+                "zh": "基于 ITU-R 实现卫星通信链路大气衰减建模（10+ 频段）、算法测试与接口服务部署（南京）",
+                "en": "ITU-R satellite-link atmospheric attenuation modelling across 10+ bands, algorithm testing and API deployment (Nanjing)"
+              },
+              "date": "2020.12 – 2021.04"
+            }
+          ]
+        },
+        {
+          "title": {
+            "zh": "社会实践与带队经历",
+            "en": "Fieldwork & Leadership"
+          },
+          "entries": [
+            {
+              "role": {
+                "zh": "**队长**",
+                "en": "**Team leader**"
+              },
+              "org": {
+                "zh": "中国绿色创新夏季学院",
+                "en": "China Green Innovation Summer Academy"
+              },
+              "detail": {
+                "zh": "WRF-Chem 量化北京市臭氧减排方案；1.5 万字报告，获最佳科研奖、综合二等奖与全额奖学金",
+                "en": "Quantified Beijing ozone mitigation with WRF-Chem; 15,000-word report, Best Research Award & full scholarship"
+              },
+              "date": "2022.05 – 2022.08"
+            },
+            {
+              "role": {
+                "zh": "**队长**",
+                "en": "**Team leader**"
+              },
+              "org": {
+                "zh": "后脱贫时代乡村振兴：江苏省农业保险调研、设计与科普",
+                "en": "Post-poverty rural revitalisation: agricultural insurance survey, design and outreach in Jiangsu"
+              },
+              "detail": {
+                "zh": "设计 3 种农作物气象指数保险模型，预计降低 15% 理赔成本；南京大学特别专项社会实践",
+                "en": "Designed three weather-index insurance models with ~15% lower claim costs; NJU special social practice project"
+              },
+              "date": "2021.01 – 2021.08"
+            },
+            {
+              "role": {
+                "zh": "**宣传组组长**",
+                "en": "**Communications lead**"
+              },
+              "org": {
+                "zh": "芬兰赫尔辛基大学联合科考",
+                "en": "Joint field campaign, University of Helsinki"
+              },
+              "detail": {
+                "zh": "用决策树 / SVM 预测新粒子生成事件（准确率 >90%），英文示范报告获 Markku Kulmala 院士赞赏",
+                "en": "Predicted new-particle-formation events with decision trees/SVM (>90% accuracy); English-language demonstration report praised by Prof. Markku Kulmala"
+              },
+              "date": "2019.05 – 2019.08"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "awards",
+      "emoji": "🏆",
+      "title": {
+        "zh": "荣誉与奖励",
+        "en": "Honors and Awards"
+      },
+      "type": "groups-list",
+      "groups": [
+        {
+          "title": {
+            "zh": "奖学金",
+            "en": "Scholarships"
+          },
+          "items": [
+            {
+              "zh": "**第五届王绍武优秀博士毕业生**（2026）",
+              "en": "**Outstanding Doctoral Graduate, 5th Wang Shaowu Award** (2026)"
+            },
+            {
+              "zh": "**北京大学校长奖学金**（2025、2021，北大博士生最高等级奖学金）",
+              "en": "**Peking University Presidential Scholarship** (2025, 2021; highest doctoral scholarship at PKU)"
+            },
+            {
+              "zh": "**CSC 国家公派留学奖学金**（2024）、廖凯原奖学金（2024）、必和必拓「碳与气候」未名学者奖学金（2024）",
+              "en": "**CSC State-Sponsored Study Abroad Scholarship** (2024); Liao Kaiyuan Scholarship (2024); BHP Carbon & Climate Weiming Fellowship (2024)"
+            },
+            {
+              "zh": "**国家奖学金**（2023）",
+              "en": "**National Scholarship** (2023)"
+            },
+            {
+              "zh": "九坤奖学金（2022）",
+              "en": "Jiukun Scholarship (2022)"
+            },
+            {
+              "zh": "招行奖学金（2020）",
+              "en": "CMB Scholarship (2020)"
+            }
+          ]
+        },
+        {
+          "title": {
+            "zh": "科研与竞赛",
+            "en": "Research & Competitions"
+          },
+          "items": [
+            {
+              "zh": "北京大学 **学术创新奖**（2025、2023）",
+              "en": "PKU **Academic Innovation Award** (2025, 2023)"
+            },
+            {
+              "zh": "北京大学优秀科研奖（2024）、第二届「空间、大气、海洋与环境光学」学术会议优秀报告（2024）、「钟盛标」教育基金研究生论坛三等奖（2024）",
+              "en": "PKU Outstanding Research Award (2024); Best Talk, 2nd Symposium on Space/Atmospheric/Oceanic & Environmental Optics (2024); Third Prize, Zhongshengbao Graduate Forum (2024)"
+            },
+            {
+              "zh": "**全国大学生气象科技知识竞赛一等奖**（2023）",
+              "en": "**First Prize, National College Meteorological Science & Technology Contest** (2023)"
+            },
+            {
+              "zh": "中国绿色创新竞赛最佳科研奖（2022）、北京市气象科普讲解大赛三等奖（2022）",
+              "en": "Best Research Award, China Green Innovation Contest (2022); Third Prize, Beijing Meteorological Science Communication Contest (2022)"
+            },
+            {
+              "zh": "中国气象现代化科技创新创业大赛一等奖（2021）",
+              "en": "First Prize, China Meteorological Modernization Innovation Contest (2021)"
+            }
+          ]
+        },
+        {
+          "title": {
+            "zh": "荣誉与实践",
+            "en": "Honors & Service"
+          },
+          "items": [
+            {
+              "zh": "南方电网新员工培训班 **优秀班干部、优秀学员**（2026）",
+              "en": "**Outstanding Class Cadre & Outstanding Trainee**, CSG New Employee Training Program (2026)"
+            },
+            {
+              "zh": "**北京市优秀毕业生**（2026）、**北京大学优秀毕业生**（2026）",
+              "en": "**Outstanding Graduate of Beijing** (2026); **Outstanding Graduate of Peking University** (2026)"
+            },
+            {
+              "zh": "北京大学社会实践十佳团队与优秀个人（2024）",
+              "en": "PKU Top Ten Social Practice Team & Outstanding Individual (2024)"
+            },
+            {
+              "zh": "北京大学三好学生（2023、2022）",
+              "en": "PKU Merit Student (2023, 2022)"
+            },
+            {
+              "zh": "南京大学优秀毕业生（2021）",
+              "en": "NJU Outstanding Graduate (2021)"
+            },
+            {
+              "zh": "南京大学优秀学生标兵（2020）",
+              "en": "NJU Outstanding Student Role Model (2020)"
+            },
+            {
+              "zh": "南京大学十佳志愿者（2019）、江苏省社会实践优秀团队（2019）",
+              "en": "NJU Top Ten Volunteer (2019); Jiangsu Outstanding Social Practice Team (2019)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "papers",
+      "emoji": "📝",
+      "title": {
+        "zh": "主要论文",
+        "en": "Main Papers"
+      },
+      "type": "papers",
+      "note": {
+        "zh": "共发表论文 **18 篇**，其中 **第一作者 SCI 一区论文 10 篇**（累计 IF >100）。粗体为本人；期刊名后的年份即发表年份。",
+        "en": "**18 papers** in total, including **10 first-author papers in Q1 SCI journals** (cumulative IF > 100). Bold denotes the author; the year follows the journal badge."
+      },
+      "groups": [
+        {
+          "title": {
+            "zh": "第一作者论文",
+            "en": "First-author papers"
+          },
+          "papers": [
+            {
+              "badge": "Nature Communications",
+              "badgeValue": {
+                "zh": "2026",
+                "en": "2026"
+              },
+              "tone": "red",
+              "title": {
+                "zh": "Middle East dust as an important external driver of the Indian Ocean Dipole",
+                "en": "Middle East dust as an important external driver of the Indian Ocean Dipole"
+              },
+              "authors": {
+                "zh": "**G Liu**, S.-P Xie, J E Hansen, et al. · 17, 2166",
+                "en": "**G Liu**, S.-P Xie, J E Hansen, et al. · 17, 2166"
+              },
+              "note": {
+                "zh": "揭示中东沙尘作为印度洋偶极子（IOD）的重要外部驱动",
+                "en": "Middle East dust identified as an external driver of the Indian Ocean Dipole"
+              },
+              "links": [
+                {
+                  "label": {
+                    "zh": "DOI",
+                    "en": "DOI"
+                  },
+                  "url": "https://doi.org/10.1038/s41467-026-68842-1"
+                }
+              ]
+            },
+            {
+              "badge": "npj Clim Atmos Sci",
+              "badgeValue": {
+                "zh": "2025",
+                "en": "2025"
+              },
+              "tone": "red",
+              "title": {
+                "zh": "Beaufort sea ice loss contributes to enhanced health exposure to fire weather over Southeast Asia",
+                "en": "Beaufort sea ice loss contributes to enhanced health exposure to fire weather over Southeast Asia"
+              },
+              "authors": {
+                "zh": "**G Liu**, J Li, T Ying, Y Dong, Z Zhang, C Zhang, Q Li · 8, 60",
+                "en": "**G Liu**, J Li, T Ying, Y Dong, Z Zhang, C Zhang, Q Li · 8, 60"
+              },
+              "note": {
+                "zh": "揭示高纬海冰损失对东南亚野火暴露健康风险的影响",
+                "en": "High-latitude sea-ice loss raises fire-weather health exposure in Southeast Asia"
+              },
+              "links": [
+                {
+                  "label": {
+                    "zh": "DOI",
+                    "en": "DOI"
+                  },
+                  "url": "https://doi.org/10.1038/s41612-025-00954-9"
+                }
+              ]
+            },
+            {
+              "badge": "Atmos. Meas. Tech.",
+              "badgeValue": {
+                "zh": "2025",
+                "en": "2025"
+              },
+              "tone": "blue",
+              "title": {
+                "zh": "Estimation of Nighttime Aerosol Optical Depths Using the Ground-based Microwave Radiometer",
+                "en": "Estimation of Nighttime Aerosol Optical Depths Using the Ground-based Microwave Radiometer"
+              },
+              "authors": {
+                "zh": "**G Liu**, J Li, S Yue, L Zhang, C Zhang · 18, 6705–6725",
+                "en": "**G Liu**, J Li, S Yue, L Zhang, C Zhang · 18, 6705–6725"
+              },
+              "note": {
+                "zh": "利用地基微波辐射计亮温反演气溶胶光学厚度",
+                "en": "Nighttime AOD retrieval from ground-based microwave radiometer brightness temperatures"
+              },
+              "links": [
+                {
+                  "label": {
+                    "zh": "DOI",
+                    "en": "DOI"
+                  },
+                  "url": "https://doi.org/10.5194/amt-18-6705-2025"
+                }
+              ]
+            },
+            {
+              "badge": "PNAS",
+              "badgeValue": {
+                "zh": "2024",
+                "en": "2024"
+              },
+              "tone": "red",
+              "title": {
+                "zh": "North Atlantic and the Barents Sea Variability Contribute to the 2023 Extreme Fire Season in Canada",
+                "en": "North Atlantic and the Barents Sea Variability Contribute to the 2023 Extreme Fire Season in Canada"
+              },
+              "authors": {
+                "zh": "**G Liu**, J Li, X Li, T Ying · 121(49), e2414241121",
+                "en": "**G Liu**, J Li, X Li, T Ying · 121(49), e2414241121"
+              },
+              "note": {
+                "zh": "阐明气候变率对 2023 年加拿大极端火季的贡献",
+                "en": "Climate variability contributed to the 2023 extreme Canadian fire season"
+              },
+              "links": [
+                {
+                  "label": {
+                    "zh": "DOI",
+                    "en": "DOI"
+                  },
+                  "url": "https://doi.org/10.1073/pnas.2414241121"
+                }
+              ]
+            },
+            {
+              "badge": "Environ. Sci. Technol.",
+              "badgeValue": {
+                "zh": "2024",
+                "en": "2024"
+              },
+              "tone": "red",
+              "title": {
+                "zh": "Amundsen Sea Ice Loss Contributes to Australian Wildfires",
+                "en": "Amundsen Sea Ice Loss Contributes to Australian Wildfires"
+              },
+              "authors": {
+                "zh": "**G Liu**, J Li, T Ying · 58(15), 6716–6724",
+                "en": "**G Liu**, J Li, T Ying · 58(15), 6716–6724"
+              },
+              "note": {
+                "zh": "强调南极高纬气候变率对澳大利亚野火增加的贡献",
+                "en": "Antarctic sea-ice loss linked to increased Australian wildfires"
+              },
+              "links": [
+                {
+                  "label": {
+                    "zh": "DOI",
+                    "en": "DOI"
+                  },
+                  "url": "https://doi.org/10.1021/acs.est.4c00051"
+                }
+              ]
+            },
+            {
+              "badge": "Geophys. Res. Lett.",
+              "badgeValue": {
+                "zh": "2024",
+                "en": "2024"
+              },
+              "tone": "blue",
+              "title": {
+                "zh": "Estimation of Nighttime Aerosol Optical Depths Using Atmospheric Infrared Sounder Longwave Radiances",
+                "en": "Estimation of Nighttime Aerosol Optical Depths Using Atmospheric Infrared Sounder Longwave Radiances"
+              },
+              "authors": {
+                "zh": "**G Liu**, J Li, J Li, S Yue, R Zhou · 51, e2023GL108120",
+                "en": "**G Liu**, J Li, J Li, S Yue, R Zhou · 51, e2023GL108120"
+              },
+              "note": {
+                "zh": "利用红外窗区卫星辐亮度反演夜间气溶胶光学厚度",
+                "en": "Retrieving nighttime aerosol optical depth from infrared window radiances"
+              },
+              "links": [
+                {
+                  "label": {
+                    "zh": "DOI",
+                    "en": "DOI"
+                  },
+                  "url": "https://doi.org/10.1029/2023GL108120"
+                }
+              ]
+            },
+            {
+              "badge": "Science Bulletin",
+              "badgeValue": {
+                "zh": "2023",
+                "en": "2023"
+              },
+              "tone": "red",
+              "title": {
+                "zh": "The shift of decadal trend in Middle East dust activities attributed to North Tropical Atlantic variability",
+                "en": "The shift of decadal trend in Middle East dust activities attributed to North Tropical Atlantic variability"
+              },
+              "authors": {
+                "zh": "**G Liu**, J Li, T Ying · 68(13), 1439–1446",
+                "en": "**G Liu**, J Li, T Ying · 68(13), 1439–1446"
+              },
+              "note": {
+                "zh": "揭示热带北大西洋海温对中东沙尘年代际趋势转折的影响",
+                "en": "Tropical North Atlantic SST drove the decadal trend shift in Middle East dust"
+              },
+              "links": [
+                {
+                  "label": {
+                    "zh": "DOI",
+                    "en": "DOI"
+                  },
+                  "url": "https://doi.org/10.1016/j.scib.2023.05.031"
+                }
+              ]
+            },
+            {
+              "badge": "Atmos. Chem. Phys.",
+              "badgeValue": {
+                "zh": "2023",
+                "en": "2023"
+              },
+              "tone": "blue",
+              "title": {
+                "zh": "Atlantic Multi-decadal Oscillation Modulates the Relationship Between ENSO and Fire Weather in Australia",
+                "en": "Atlantic Multi-decadal Oscillation Modulates the Relationship Between ENSO and Fire Weather in Australia"
+              },
+              "authors": {
+                "zh": "**G Liu**, J Li, T Ying · 23, 9217–9228",
+                "en": "**G Liu**, J Li, T Ying · 23, 9217–9228"
+              },
+              "note": {
+                "zh": "揭示年代际气候变率对年际气候变率–野火天气关系的调制",
+                "en": "Decadal variability modulates the ENSO–fire-weather relationship"
+              },
+              "links": [
+                {
+                  "label": {
+                    "zh": "DOI",
+                    "en": "DOI"
+                  },
+                  "url": "https://doi.org/10.5194/acp-23-9217-2023"
+                }
+              ]
+            },
+            {
+              "badge": "Geophys. Res. Lett.",
+              "badgeValue": {
+                "zh": "2023",
+                "en": "2023"
+              },
+              "tone": "blue",
+              "title": {
+                "zh": "Increasing fire weather potential over Northeast China linked to declining Bering Sea ice",
+                "en": "Increasing fire weather potential over Northeast China linked to declining Bering Sea ice"
+              },
+              "authors": {
+                "zh": "**G Liu**, J Li, T Ying, H Su, X Huang, Y Yu · 50, e2023GL105931",
+                "en": "**G Liu**, J Li, T Ying, H Su, X Huang, Y Yu · 50, e2023GL105931"
+              },
+              "note": {
+                "zh": "强调北极高纬气候变率对中国东北野火潜势增加的贡献",
+                "en": "Arctic variability contributes to rising fire weather potential in Northeast China"
+              },
+              "links": [
+                {
+                  "label": {
+                    "zh": "DOI",
+                    "en": "DOI"
+                  },
+                  "url": "https://doi.org/10.1029/2023GL105931"
+                }
+              ]
+            },
+            {
+              "badge": {
+                "zh": "科学通报",
+                "en": "Chinese Sci. Bull."
+              },
+              "badgeValue": {
+                "zh": "2023",
+                "en": "2023"
+              },
+              "tone": "gray",
+              "title": {
+                "zh": "热带北大西洋海温变率对中东沙尘活动的影响",
+                "en": "Impact of North Tropical Atlantic SST variability on Middle East dust activities"
+              },
+              "authors": {
+                "zh": "**刘冠宇**，李婧，应同 · 68(21), 2714–2715（中文核心）",
+                "en": "**G Liu**, J Li, T Ying · 68(21), 2714–2715 (in Chinese)"
+              },
+              "links": [
+                {
+                  "label": {
+                    "zh": "DOI",
+                    "en": "DOI"
+                  },
+                  "url": "https://doi.org/10.1360/tb-2023-0457"
+                }
+              ],
+              "note": {
+                "zh": "中文核心期刊短文，梳理热带北大西洋海温对中东沙尘的影响",
+                "en": "Short Chinese-language article on tropical Atlantic SST controls on Middle East dust"
+              }
+            },
+            {
+              "badge": "Geophys. Res. Lett.",
+              "badgeValue": {
+                "zh": "2022",
+                "en": "2022"
+              },
+              "tone": "blue",
+              "title": {
+                "zh": "Impact of sea surface temperature variability at different ocean basins on dust activities in the Gobi Desert and North China",
+                "en": "Impact of sea surface temperature variability at different ocean basins on dust activities in the Gobi Desert and North China"
+              },
+              "authors": {
+                "zh": "**G Liu**, J Li, Z Jiang, X Li · 49, e2022GL099821",
+                "en": "**G Liu**, J Li, Z Jiang, X Li · 49, e2022GL099821"
+              },
+              "note": {
+                "zh": "定量不同海盆海温 / 海冰对我国沙尘活动的贡献",
+                "en": "Quantified contributions of basin-scale SST/sea ice to dust activity over China"
+              },
+              "links": [
+                {
+                  "label": {
+                    "zh": "DOI",
+                    "en": "DOI"
+                  },
+                  "url": "https://doi.org/10.1029/2022GL099821"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": {
+            "zh": "共同作者论文",
+            "en": "Co-authored papers"
+          },
+          "papers": [
+            {
+              "badge": "npj Clim Atmos Sci",
+              "badgeValue": {
+                "zh": "2026",
+                "en": "2026"
+              },
+              "tone": "red",
+              "title": {
+                "zh": "Pacific Walker Circulation strengthened by tropospheric aerosol forcing",
+                "en": "Pacific Walker Circulation strengthened by tropospheric aerosol forcing"
+              },
+              "authors": {
+                "zh": "T Ying, S.-P Xie, R Allen, **G Liu**, J Li · 9, 176",
+                "en": "T Ying, S.-P Xie, R Allen, **G Liu**, J Li · 9, 176"
+              },
+              "links": [
+                {
+                  "label": {
+                    "zh": "DOI",
+                    "en": "DOI"
+                  },
+                  "url": "https://doi.org/10.1038/s41612-026-01442-4"
+                }
+              ]
+            },
+            {
+              "badge": "Atmos. Meas. Tech.",
+              "badgeValue": {
+                "zh": "2026",
+                "en": "2026"
+              },
+              "tone": "blue",
+              "title": {
+                "zh": "An AI-based algorithm for retrieving aerosol optical depth and single scattering albedo using All-Sky Imager observations",
+                "en": "An AI-based algorithm for retrieving aerosol optical depth and single scattering albedo using All-Sky Imager observations"
+              },
+              "authors": {
+                "zh": "H Ni, J Li, L Chang, Y Dong, G Du, M Li, Q Li, **G Liu**, et al. · 19, 5871–5887",
+                "en": "H Ni, J Li, L Chang, Y Dong, G Du, M Li, Q Li, **G Liu**, et al. · 19, 5871–5887"
+              },
+              "links": [
+                {
+                  "label": {
+                    "zh": "DOI",
+                    "en": "DOI"
+                  },
+                  "url": "https://doi.org/10.5194/amt-19-5871-2026"
+                }
+              ]
+            },
+            {
+              "badge": "JGR: Atmospheres",
+              "badgeValue": {
+                "zh": "2025",
+                "en": "2025"
+              },
+              "tone": "blue",
+              "title": {
+                "zh": "Machine learning-based estimation of clear-sky direct aerosol radiative forcing using multisensor satellite observations",
+                "en": "Machine learning-based estimation of clear-sky direct aerosol radiative forcing using multisensor satellite observations"
+              },
+              "authors": {
+                "zh": "L Zhang, J Li, Y Dong, T Ying, Z Zhang, **G Liu**, C Zhang · 130, e2024JD043170",
+                "en": "L Zhang, J Li, Y Dong, T Ying, Z Zhang, **G Liu**, C Zhang · 130, e2024JD043170"
+              },
+              "links": [
+                {
+                  "label": {
+                    "zh": "DOI",
+                    "en": "DOI"
+                  },
+                  "url": "https://doi.org/10.1029/2024JD043170"
+                }
+              ]
+            },
+            {
+              "badge": "Science Advances",
+              "badgeValue": {
+                "zh": "2024",
+                "en": "2024"
+              },
+              "tone": "red",
+              "title": {
+                "zh": "Fractional change of scattering and absorbing aerosols contributes to Northern Hemisphere Hadley circulation expansion",
+                "en": "Fractional change of scattering and absorbing aerosols contributes to Northern Hemisphere Hadley circulation expansion"
+              },
+              "authors": {
+                "zh": "T Ying, J Li, Q Fu, **G Liu**, L Zhang, Y Xia, Y Hu · 10, eadq9716",
+                "en": "T Ying, J Li, Q Fu, **G Liu**, L Zhang, Y Xia, Y Hu · 10, eadq9716"
+              },
+              "links": [
+                {
+                  "label": {
+                    "zh": "DOI",
+                    "en": "DOI"
+                  },
+                  "url": "https://doi.org/10.1126/sciadv.adq9716"
+                }
+              ]
+            },
+            {
+              "badge": "Geophys. Res. Lett.",
+              "badgeValue": {
+                "zh": "2024",
+                "en": "2024"
+              },
+              "tone": "blue",
+              "title": {
+                "zh": "Impact of the Indian Ocean Dipole mode on planetary boundary layer ozone in China",
+                "en": "Impact of the Indian Ocean Dipole mode on planetary boundary layer ozone in China"
+              },
+              "authors": {
+                "zh": "Z Jiang, J Li, **G Liu**, C Zhang · 51, e2024GL110108",
+                "en": "Z Jiang, J Li, **G Liu**, C Zhang · 51, e2024GL110108"
+              },
+              "links": [
+                {
+                  "label": {
+                    "zh": "DOI",
+                    "en": "DOI"
+                  },
+                  "url": "https://doi.org/10.1029/2024GL110108"
+                }
+              ]
+            },
+            {
+              "badge": "Science Bulletin",
+              "badgeValue": {
+                "zh": "2023",
+                "en": "2023"
+              },
+              "tone": "red",
+              "title": {
+                "zh": "Increased aerosol scattering contributes to the recent monsoon rainfall decrease over the Gangetic Plain",
+                "en": "Increased aerosol scattering contributes to the recent monsoon rainfall decrease over the Gangetic Plain"
+              },
+              "authors": {
+                "zh": "T Ying, J Li, Z Jiang, **G Liu**, et al. · 68(21), 2629–2638",
+                "en": "T Ying, J Li, Z Jiang, **G Liu**, et al. · 68(21), 2629–2638"
+              },
+              "links": [
+                {
+                  "label": {
+                    "zh": "DOI",
+                    "en": "DOI"
+                  },
+                  "url": "https://doi.org/10.1016/j.scib.2023.08.052"
+                }
+              ]
+            },
+            {
+              "badge": "Sustainability",
+              "badgeValue": {
+                "zh": "2023",
+                "en": "2023"
+              },
+              "tone": "gray",
+              "title": {
+                "zh": "Changes of Water Vapor Budget over East Asia in Response to 4xCO2 Concentration Forcing",
+                "en": "Changes of Water Vapor Budget over East Asia in Response to 4xCO2 Concentration Forcing"
+              },
+              "authors": {
+                "zh": "Z Shen, T Xu, **G Liu**, X Sun, X.-Q Yang · 15, 313",
+                "en": "Z Shen, T Xu, **G Liu**, X Sun, X.-Q Yang · 15, 313"
+              },
+              "links": [
+                {
+                  "label": {
+                    "zh": "DOI",
+                    "en": "DOI"
+                  },
+                  "url": "https://doi.org/10.3390/su15010313"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "footnote": {
+        "zh": "*以上论文 PDF 可来信索取*",
+        "en": "*PDFs of the papers above are available on request*"
+      }
+    },
+    {
+      "id": "skills",
+      "emoji": "🛠",
+      "title": {
+        "zh": "技能与学术服务",
+        "en": "Skills & Academic Service"
+      },
+      "type": "definitions",
+      "items": [
+        {
+          "key": {
+            "zh": "数值模式",
+            "en": "Numerical models"
+          },
+          "value": {
+            "zh": "WRF-Chem, CESM, GEOS-Chem, RTTOV, SBDART, monoRTM",
+            "en": "WRF-Chem, CESM, GEOS-Chem, RTTOV, SBDART, monoRTM"
+          }
+        },
+        {
+          "key": {
+            "zh": "编程与 AI",
+            "en": "Programming & AI"
+          },
+          "value": {
+            "zh": "Python（scikit-learn, PyTorch）、MATLAB、Fortran、NCL、C++、Shell；Transformer / ResNet / GAN 模型复现",
+            "en": "Python (scikit-learn, PyTorch), MATLAB, Fortran, NCL, C++, Shell; reproduction of Transformer / ResNet / GAN models"
+          }
+        },
+        {
+          "key": {
+            "zh": "地理空间数据",
+            "en": "Geospatial data"
+          },
+          "value": {
+            "zh": "SQL、Google Earth Engine、QGIS；卫星遥感反演与统计降尺度",
+            "en": "SQL, Google Earth Engine, QGIS; satellite retrieval and statistical downscaling"
+          }
+        },
+        {
+          "key": {
+            "zh": "学术报告",
+            "en": "Conference talks"
+          },
+          "value": {
+            "zh": "Biosmoke 论坛（2025）、国际辐射论坛（2024）、空间大气海洋与环境光学会议（2024）、第八届青年地学论坛（2023）、AGU（2023） 等口头报告",
+            "en": "Oral presentations at Biosmoke (2025), International Radiation Symposium (2024), SAME Optics Symposium (2024), Young Geoscientists Forum (2023) and AGU (2023), among others"
+          }
+        },
+        {
+          "key": {
+            "zh": "学术服务",
+            "en": "Academic service"
+          },
+          "value": {
+            "zh": "北京大学博士生讲师团成员（10+ 场社区与院系宣讲）、「蔚蓝空间」研究生学术讲座负责人",
+            "en": "Member of PKU Ph.D. Lecturers Group (10+ outreach talks); organiser of the Blue Space graduate seminar series"
+          }
+        },
+        {
+          "key": {
+            "zh": "语言与资质",
+            "en": "Languages & certificates"
+          },
+          "value": {
+            "zh": "英语 CET-6 589 / CET-4 595，德语（基本交流）；高级信息系统项目管理师、高中地理教师资格证",
+            "en": "English CET-6 589 / CET-4 595, German (basic); Senior Information Systems Project Manager; High-school Geography Teaching Certificate"
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "emoji": "📮",
+      "title": {
+        "zh": "联系方式",
+        "en": "Contact Me"
+      },
+      "type": "list",
+      "items": [
+        {
+          "zh": "**邮箱**：[liuguanyu@csg.cn](mailto:liuguanyu@csg.cn)",
+          "en": "**Email**: [liuguanyu@csg.cn](mailto:liuguanyu@csg.cn)"
+        },
+        {
+          "zh": "**ResearchGate**：[个人主页](https://www.researchgate.net/profile/Guanyu-Liu-4?ev=hdr_xprf)",
+          "en": "**ResearchGate**: [profile](https://www.researchgate.net/profile/Guanyu-Liu-4?ev=hdr_xprf)"
+        },
+        {
+          "zh": "欢迎就 **电力气象、新能源功率预测、气候变率与极端事件、野火与气溶胶、卫星遥感反演、AI for Science** 等话题交⁠流⁠合⁠作。",
+          "en": "Happy to discuss **power meteorology, renewable-energy power forecasting, climate variability and extremes, wildfire and aerosol science, satellite retrievals, and AI for Science**, or potential collaboration."
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "sitemap": {
+      "zh": "站点地图",
+      "en": "Sitemap"
+    },
+    "credit": {
+      "zh": "版式参考 AcademicPages / Minimal Mistakes 设计",
+      "en": "Layout inspired by AcademicPages / Minimal Mistakes"
+    }
+  }
+}

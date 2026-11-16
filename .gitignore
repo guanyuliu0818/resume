@@ -1,0 +1,18 @@
+# 原始简历含手机号等个人信息，默认不纳入版本库，避免随 GitHub Pages 公开
+北京大学_刘冠宇_科研.pdf
+北京大学_刘冠宇_非科研.pdf
+
+# 本地临时产物与发布压缩包（解压后上传即可，不必提交到仓库）
+_ref_*
+_pdfread/
+_*.py
+personal-homepage-publish.zip
+personal-homepage-static.zip
+dist/
+.workbuddy/
+.DS_Store
+Thumbs.db
+node_modules/
+
+# 内置发布应用标记文件（本地产物，不入库）
+.wbapp_*.genie
