@@ -16,3 +16,4 @@ node_modules/
 
 # 内置发布应用标记文件（本地产物，不入库）
 .wbapp_*.genie
+.netlify/
