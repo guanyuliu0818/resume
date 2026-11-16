@@ -2271,10 +2271,17 @@
                 "en": "Public outreach"
               },
               "desc": {
-                "zh": "作为北京大学团委博士生讲师团成员进社区宣讲，主题为《大美中国 气象添彩——新时代气象服务生态文明建设》与《加强生态环境保护，促进绿色低碳发展》，街道办事处官网与北大新闻网均有报道。",
-                "en": "As a member of the PKU Youth League PhD Lecturer Corps, gave community talks on meteorology serving ecological civilization and on green low-carbon development, covered by the sub-district website and PKU News."
+                "zh": "作为北京大学团委博士生讲师团成员进社区宣讲三场：《大美中国 气象添彩——新时代气象服务生态文明建设》（蔚秀园，2023 年世界气象日）、《加强生态环境保护，促进绿色低碳发展》（燕北园）与燕东园专场，街道办事处官网与北大新闻网均有报道。",
+                "en": "As a member of the PKU Youth League PhD Lecturer Corps, gave three community talks — on meteorology serving ecological civilization (Weixiuyuan, World Meteorological Day 2023), on green low-carbon development (Yanbeiyuan) and a Yandongyuan session — covered by the sub-district website and PKU News."
               },
               "links": [
+                {
+                  "label": {
+                    "zh": "蔚秀园社区宣讲（世界气象日）",
+                    "en": "Weixiuyuan talk (World Met Day)"
+                  },
+                  "url": "https://www.yanyuan.pku.edu.cn/xxyw/1111yanyuangb147968.htm"
+                },
                 {
                   "label": {
                     "zh": "燕东园社区宣讲",
