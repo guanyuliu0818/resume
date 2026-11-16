@@ -1458,8 +1458,8 @@
       },
       "type": "press",
       "intro": {
-        "zh": "相关成果获学术期刊、院系、科研机构与国际科技媒体关注，部分工作被中学地理教学与命题采用。以下均为可点击的报道原文或官方发布链接。",
-        "en": "Research has been covered by journals, university media, research institutes and international sci-tech outlets; some results have been adopted in secondary-school geography teaching and examinations. Every entry below links to the original coverage."
+        "zh": "相关成果获学术期刊、院系、科研机构与国际科技媒体关注，部分工作被中学地理教学与命题采用；另收录人物专访、学术报告与科普宣讲的公开报道。以下均为可点击的报道原文或官方发布链接。",
+        "en": "Research has been covered by journals, university media, research institutes and international sci-tech outlets; some results have been adopted in secondary-school geography teaching and examinations. Profile interviews, invited talks and public-outreach activities are included as well. Every entry below links to the original coverage."
       },
       "items": [
         {
@@ -1533,6 +1533,29 @@
         },
         {
           "source": {
+            "zh": "腾讯云开发者社区（转载北大物理人）",
+            "en": "Tencent Cloud Developer Community (repost of PKU Physics)"
+          },
+          "tag": {
+            "zh": "技术社区转载",
+            "en": "Tech community repost"
+          },
+          "desc": {
+            "zh": "全文转载北大物理人关于中东沙尘驱动印度洋偶极子的成果解读（*Nature Communications*，2026）。",
+            "en": "Full repost of the PKU Physics write-up on Middle East dust as a driver of the Indian Ocean Dipole (*Nature Communications*, 2026)."
+          },
+          "links": [
+            {
+              "label": {
+                "zh": "转载原文",
+                "en": "Reposted article"
+              },
+              "url": "https://cloud.tencent.com/developer/article/2646073"
+            }
+          ]
+        },
+        {
+          "source": {
             "zh": "科学通报（公众号）· 腾讯新闻 · 网易新闻",
             "en": "Chinese Science Bulletin (WeChat) · Tencent News · NetEase"
           },
@@ -1588,6 +1611,29 @@
                 "en": "Press release"
               },
               "url": "https://www.eurekalert.org/news-releases/994719"
+            }
+          ]
+        },
+        {
+          "source": {
+            "zh": "北京大学物理学院大气与海洋科学系（官网）· 科研进展",
+            "en": "Dept. of Atmospheric & Oceanic Sciences, PKU (official) · Research Highlights"
+          },
+          "tag": {
+            "zh": "学院新闻",
+            "en": "Department news"
+          },
+          "desc": {
+            "zh": "报道共同作者论文 *Science Bulletin*（2023）：气溶胶散射性占比增强对南亚恒河平原夏季风降水减少的贡献。",
+            "en": "Covered the co-authored *Science Bulletin* (2023) paper showing that a larger scattering fraction of aerosols contributed to the observed monsoon rainfall decrease over the Gangetic Plain."
+          },
+          "links": [
+            {
+              "label": {
+                "zh": "科研进展原文",
+                "en": "Research highlight"
+              },
+              "url": "https://www.atmos.pku.edu.cn/kxyj/kyjz/3dqyhykxx160810.htm"
             }
           ]
         },
@@ -1738,6 +1784,193 @@
                 "en": "Phys.org (English)"
               },
               "url": "https://phys.org/news/2022-08-ocean-variability-contributes-sandstorms-northern.html"
+            },
+            {
+              "label": {
+                "zh": "学院论文页（摘要与引用）",
+                "en": "AOS paper page (abstract & citation)"
+              },
+              "url": "https://www.atmos.pku.edu.cn/kxyj/kyjz/142978.htm"
+            }
+          ]
+        },
+        {
+          "source": {
+            "zh": "北京大学新闻网",
+            "en": "PKU News (news.pku.edu.cn)"
+          },
+          "tag": {
+            "zh": "校园新闻",
+            "en": "Campus news"
+          },
+          "desc": {
+            "zh": "2025 年北京大学–必和必拓「碳与气候」青年论坛暨未名学者奖学金交流会，以《当前和未来全球野火碳排放的气候反馈》作课题汇报。",
+            "en": "Presented \"Climate feedback of current and future global wildfire carbon emissions\" at the 2025 PKU–BHP Carbon & Climate Young Scholars Forum."
+          },
+          "links": [
+            {
+              "label": {
+                "zh": "论坛报道",
+                "en": "Forum report"
+              },
+              "url": "https://news.pku.edu.cn/info/7921/2767181.htm"
+            }
+          ]
+        },
+        {
+          "source": {
+            "zh": "北京大学研究生院（公众号）· 博士生未名学者",
+            "en": "PKU Graduate School (WeChat) · Weiming PhD Scholars"
+          },
+          "tag": {
+            "zh": "人物专访",
+            "en": "Profile interview"
+          },
+          "desc": {
+            "zh": "未名学者奖学金获奖者系列访谈，题为《刘冠宇：气候与野火之歌》，讲述野火—气候反馈的研究思路与科研心得。",
+            "en": "Featured in the Weiming Scholar interview series \"Liu Guanyu: A Song of Climate and Wildfire\", on wildfire–climate feedback research and research practice."
+          },
+          "links": [
+            {
+              "label": {
+                "zh": "专访原文",
+                "en": "Interview"
+              },
+              "url": "https://mp.weixin.qq.com/s?__biz=MzAxMDM4OTQwNw==&mid=2651044874&idx=1&sn=47b31a546a428d979765d5ef1f9dbbc3"
+            }
+          ]
+        },
+        {
+          "source": {
+            "zh": "南京大学大气科学学院（公众号）· 青春风采",
+            "en": "School of Atmospheric Sciences, Nanjing University (WeChat) · Spotlight"
+          },
+          "tag": {
+            "zh": "人物专访（本科阶段）",
+            "en": "Profile interview (undergraduate)"
+          },
+          "desc": {
+            "zh": "本科毕业季人物报道《刘冠宇：四载春秋更替，四心逐梦前行》，记录大气科学 + 金融工程/保险学交叉学习、芬兰科考与直博北大的经历。",
+            "en": "Undergraduate profile \"Four Years, Four Hearts\", covering his combined atmospheric science, financial engineering and insurance training, the Finland field course and direct PhD admission to PKU."
+          },
+          "links": [
+            {
+              "label": {
+                "zh": "学院原文",
+                "en": "School article"
+              },
+              "url": "https://mp.weixin.qq.com/s?__biz=MzAwNjE1OTUzNQ==&mid=2651927486&idx=1&sn=dac8c37aa960559805983f305370eb0e"
+            },
+            {
+              "label": {
+                "zh": "华文融媒云转载",
+                "en": "Repost (ihwrm)"
+              },
+              "url": "https://wx.ihwrm.com/baokan/article/info.html?doc_id=3765768"
+            },
+            {
+              "label": {
+                "zh": "今日头条转载",
+                "en": "Repost (Toutiao)"
+              },
+              "url": "https://www.toutiao.com/article/6938557007372878366/"
+            }
+          ]
+        },
+        {
+          "source": {
+            "zh": "北京大学大气与海洋科学系 · 蔚蓝空间大气科学论坛",
+            "en": "PKU AOS · Blue Space Atmospheric Science Forum"
+          },
+          "tag": {
+            "zh": "学术报告",
+            "en": "Invited talk"
+          },
+          "desc": {
+            "zh": "应邀在第 63 期在线报告作《中东沙尘活动为什么发生年代际趋势的转变？》报告（2023 年 11 月 11 日）。",
+            "en": "Invited talk \"Why did Middle East dust activity shift its decadal trend?\" at the 63rd Blue Space AOS Forum (11 Nov 2023)."
+          },
+          "links": [
+            {
+              "label": {
+                "zh": "报告通告",
+                "en": "Talk announcement"
+              },
+              "url": "https://mp.weixin.qq.com/s?__biz=MzUxNzU0NzA1NA==&mid=2247488755&idx=1&sn=10e60c31ce59f2ce3a33c4c6ea399bb0"
+            }
+          ]
+        },
+        {
+          "source": {
+            "zh": "北京大学燕园街道办事处（官网）",
+            "en": "Yanyuan Sub-district Office, PKU (official)"
+          },
+          "tag": {
+            "zh": "科普宣讲",
+            "en": "Public outreach"
+          },
+          "desc": {
+            "zh": "作为北京大学博士生讲师团成员进社区宣讲，主题为《大美中国 气象添彩——新时代气象服务生态文明建设》与《加强生态环境保护，促进绿色低碳发展》，两场均获官网报道。",
+            "en": "As a member of the PKU PhD Lecturer Corps, gave community talks on meteorology serving ecological civilization and on green low-carbon development, both covered on the sub-district website."
+          },
+          "links": [
+            {
+              "label": {
+                "zh": "燕东园社区宣讲",
+                "en": "Yandongyuan talk"
+              },
+              "url": "https://www.yanyuan.pku.edu.cn/xxyw/1111yanyuangb146873.htm"
+            },
+            {
+              "label": {
+                "zh": "燕北园社区宣讲",
+                "en": "Yanbeiyuan talk"
+              },
+              "url": "https://www.yanyuan.pku.edu.cn/xxyw/1111yanyuangb150713.htm"
+            }
+          ]
+        },
+        {
+          "source": {
+            "zh": "光明网 · 科普中国 · 北京市气象局",
+            "en": "Guangming Online · China Science Communication · Beijing Meteorological Service"
+          },
+          "tag": {
+            "zh": "科普竞赛",
+            "en": "Science-popularization contest"
+          },
+          "desc": {
+            "zh": "2022 年北京市气象科普讲解大赛决赛三等奖（北京大学），决赛由光明网媒体矩阵、科普中国 APP 等 9 个平台同步直播，观看量首破 500 万。",
+            "en": "Third prize at the 2022 Beijing Meteorological Science Popularization Contest (representing Peking University); the final was streamed on nine platforms with over 5 million views."
+          },
+          "links": [
+            {
+              "label": {
+                "zh": "光明网 · 科普中国",
+                "en": "Guangming Online"
+              },
+              "url": "https://kepu.gmw.cn/2022-07/15/content_35887369.htm"
+            },
+            {
+              "label": {
+                "zh": "北京市气象局",
+                "en": "Beijing Meteorological Service"
+              },
+              "url": "http://bj.cma.gov.cn/xwzx/qxyw/202207/t20220719_4987451.html"
+            },
+            {
+              "label": {
+                "zh": "科普中国网",
+                "en": "China Science Communication"
+              },
+              "url": "https://www.kepuchina.cn/article/articleinfo?business_type=100&ar_id=104561"
+            },
+            {
+              "label": {
+                "zh": "北京市科协",
+                "en": "Beijing Association for Science and Technology"
+              },
+              "url": "https://www.bast.net.cn/kxweb/gwzwz/kxpj/qmkxszxd/202507/t20250703_141951.html"
             }
           ]
         },
