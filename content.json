@@ -60,8 +60,13 @@
       "zh": "liuguanyu@csg.cn",
       "en": "liuguanyu@csg.cn"
     },
-    "avatar": "assets/avatar.svg",
-    "avatarAlt": {
+  "avatar": "assets/avatar.svg",
+  "ogImage": "assets/og-card.png",
+  "ogImageAlt": {
+    "zh": "刘冠宇 · 大气科学博士 · 电力气象与新能源功率预测",
+    "en": "Guanyu Liu · Atmospheric science Ph.D. · Power meteorology and renewable forecasting"
+  },
+  "avatarAlt": {
       "zh": "刘冠宇",
       "en": "Guanyu Liu"
     },

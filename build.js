@@ -242,7 +242,7 @@ function renderSection(section, lang, index, total) {
 
   const divider = index < total - 1 ? '\n        <hr class="section-divider">' : '';
   return `        <section class="content-section" id="${esc(section.id)}">
-          <h1 class="section-title"><span class="section-emoji" aria-hidden="true">${section.emoji}</span>${L(section.title, lang)}<a class="section-anchor" href="#${esc(section.id)}" aria-label="Link to this section">#</a></h1>
+          <h2 class="section-title"><span class="section-emoji" aria-hidden="true">${section.emoji}</span>${L(section.title, lang)}<a class="section-anchor" href="#${esc(section.id)}" aria-label="Link to this section">#</a></h2>
           <div class="section-body">
           ${body}
           </div>
@@ -261,12 +261,19 @@ function render(lang) {
   const T = o => (o && typeof o === 'object' ? (o[lang] ?? o.zh ?? '') : (o ?? ''));
   const desc = T(data.site.seoDescription) || `${T(data.site.brand)} — ${T(data.site.sidebarBio)}`;
   const canonical = lang === 'zh' ? ZH_URL : EN_URL;
-  const imageUrl = ABS(data.site.avatar);
+  const imageUrl = ABS(data.site.ogImage || data.site.avatar);
+  const imageAlt = T(data.site.ogImageAlt) || T(data.site.avatarAlt) || T(data.site.brand);
   const absTags = SITE_BASE ? `
 <link rel="canonical" href="${esc(canonical)}">
 <meta property="og:url" content="${esc(canonical)}">
 <meta property="og:image" content="${esc(imageUrl)}">
-<meta name="twitter:image" content="${esc(imageUrl)}">` : '';
+<meta property="og:image:secure_url" content="${esc(imageUrl)}">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="${esc(imageAlt)}">
+<meta name="twitter:image" content="${esc(imageUrl)}">
+<meta name="twitter:image:alt" content="${esc(imageAlt)}">` : '';
   const mailLink = (data.sidebarLinks.find(l => l.icon === 'mail') || {}).url || '';
   const sameAs = data.sidebarLinks.filter(l => /^https?:\/\//i.test(l.url || '')).map(l => l.url);
   // 教育经历 → alumniOf（去掉行内加粗标记）
@@ -275,6 +282,7 @@ function render(lang) {
     .map(e => String(T(e.org) || '').replace(/\*\*/g, '').replace(/\s+/g, ' ').trim())
     .filter(Boolean))];
   const personId = (SITE_BASE ? canonical : '') + '#person';
+  const orcid = sameAs.find(u => /orcid\.org/i.test(u));
   const jsonld = {
     '@context': 'https://schema.org', '@type': 'Person', '@id': personId,
     'name': T(data.site.pageTitle),
@@ -285,10 +293,22 @@ function render(lang) {
     'worksFor': { '@type': 'Organization', 'name': T(data.site.affiliation) },
     'alumniOf': alumni.map(n => ({ '@type': 'CollegeOrUniversity', 'name': n })),
     'knowsAbout': data.site.knowsAbout || [],
-    'sameAs': sameAs
+    'sameAs': sameAs,
+    'hasCredential': {
+      '@type': 'EducationalOccupationalCredential',
+      'credentialCategory': lang === 'zh' ? '博士学位' : 'Ph.D.',
+      'educationalLevel': lang === 'zh' ? '博士' : 'Doctoral',
+      'about': lang === 'zh' ? '大气物理学与大气环境' : 'Atmospheric Physics and Atmospheric Environment',
+      'recognizedBy': { '@type': 'CollegeOrUniversity', 'name': lang === 'zh' ? '北京大学' : 'Peking University' }
+    }
   };
+  if (orcid) jsonld.identifier = orcid;
   if (mailLink) jsonld.email = mailLink;
-  if (SITE_BASE) { jsonld.url = canonical; jsonld.image = imageUrl; }
+  if (SITE_BASE) {
+    jsonld.url = canonical;
+    jsonld.image = imageUrl;
+    jsonld.mainEntityOfPage = { '@id': canonical + '#webpage' };
+  }
   const schemaAwards = data.site.schemaAwards ? data.site.schemaAwards[lang] || data.site.schemaAwards.zh : null;
   if (schemaAwards && schemaAwards.length) jsonld.award = schemaAwards;
 
@@ -310,7 +330,7 @@ function render(lang) {
         'position': i + 1,
         'name': T(p.title),
         'headline': T(p.title),
-        'author': { '@type': 'Person', 'name': T(data.site.pageTitle) },
+        'author': { '@type': 'Person', '@id': personId, 'name': T(data.site.pageTitle) },
         'isPartOf': { '@type': 'Periodical', 'name': String(T(p.badge)).replace(/\s+/g, ' ') }
       };
       const yr = String(T(p.badgeValue)).match(/\d{4}/);
@@ -323,6 +343,23 @@ function render(lang) {
       }
       return item;
     })
+  } : null;
+  // ProfilePage 把「这是一个人的资料页」明确告诉搜索引擎，并与 Person / 18 篇论文关联
+  const profilePageJson = SITE_BASE ? {
+    '@context': 'https://schema.org',
+    '@type': 'ProfilePage',
+    '@id': canonical + '#webpage',
+    'url': canonical,
+    'name': T(data.site.docTitle, lang),
+    'inLanguage': data.site.htmlLang[lang],
+    'dateModified': new Date().toISOString().slice(0, 10),
+    'mainEntity': { '@id': personId },
+    'isPartOf': {
+      '@type': 'WebSite',
+      '@id': SITE_BASE + '/#website',
+      'url': SITE_BASE + '/',
+      'name': T(data.site.brand, lang)
+    }
   } : null;
   const sections = data.sections.map((s, i) => renderSection(s, lang, i, data.sections.length)).join('\n');
   const draftBar = data.config.draft ? `
@@ -354,12 +391,13 @@ ${sameAs.map(u => `<link rel="me" href="${esc(u)}">`).join('\n')}${absTags}
 <meta property="og:description" content="${esc(desc)}">
 <meta property="profile:first_name" content="${lang === 'zh' ? '冠宇' : 'Guanyu'}">
 <meta property="profile:last_name" content="${lang === 'zh' ? '刘' : 'Liu'}">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${esc(T(data.site.docTitle, lang))}">
 <meta name="twitter:description" content="${esc(desc)}">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="stylesheet" href="assets/style.css">
 <script type="application/ld+json">${JSON.stringify(jsonld)}</script>
+${profilePageJson ? `<script type="application/ld+json">${JSON.stringify(profilePageJson)}</script>` : ''}
 ${worksJson ? `<script type="application/ld+json">${JSON.stringify(worksJson)}</script>` : ''}
 </head>
 <body id="top">

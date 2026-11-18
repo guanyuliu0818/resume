@@ -1,5 +1,9 @@
 # 个人学术主页（中 / 英双语）
 
+> ### 🔗 已上线：[guanyuliu0818.github.io/resume](https://guanyuliu0818.github.io/resume/) · [English](https://guanyuliu0818.github.io/resume/en.html)
+>
+> 刘冠宇 · 北京大学大气科学博士 · 中国南方电力调度控制中心水电及新能源处主管
+
 仿 [AcademicPages / Minimal Mistakes](https://github.com/academicpages/academicpages.github.io) 版式重写的纯静态个人主页：白底细边导航、左侧圆形证件照粘性侧栏、右侧 emoji 标题 + 细分割线分区、青蓝色链接、期刊徽章式论文列表。无框架、无外部 CDN 依赖，可放在任意静态托管上（GitHub Pages、Netlify、Cloudflare Pages、腾讯云 EdgeOne 等）。
 
 ## 文件说明
@@ -13,6 +17,7 @@
 | `assets/style.css` | 全站样式 |
 | `assets/app.js` | 移动导航、Follow 折叠、滚动高亮、语言切换保留锚点、回到顶部 |
 | `assets/avatar.jpg` | 头像（来自简历证件照） |
+| `assets/og-card.png` | 1200×630 社交分享卡片（`og:image` / `twitter:image`），由 `_ogcard.py` 思路从 `avatar.jpg` 生成；微信 / LinkedIn / X 不抓 SVG，必须用 PNG |
 | `assets/favicon.svg` | 站点图标 |
 | `sitemap.xml` | **配置 `site.canonicalBase` 后生成**，供搜索引擎提交 |
 | `robots.txt` | **配置 `site.canonicalBase` 后生成**，声明 sitemap 地址 |
@@ -202,12 +207,12 @@ cp -f index.html en.html sitemap.xml robots.txt dist/
 ### 1. 站内已内置的 SEO
 
 - 两版 `<title>` 含中英文姓名、学位与领域关键词；`meta description`（约 150 字，含机构、现职、代表期刊）与 `meta keywords`（含沙尘、印度洋偶极子 IOD、气溶胶光学厚度 AOD、单次散射反照率、功率预测等，主要供百度使用）。
-- `<h1>` 是姓名，正文含机构、导师、期刊名，语义化 `article` + `itemprop` 标记。
+- 页面**唯一一个 `<h1>`** 是姓名；9 个板块标题用 `<h2>`、组内小标题用 `<h3>`，层级清晰（此前 10 个 `<h1>` 会稀释主标题权重）。正文含机构、导师、期刊名，语义化 `article` + `itemprop` 标记。
 - 论文条目全部带**影响因子 / 中科院分区 / 主要内容 / 报道来源**，正文可索引文本量大幅增加（18 篇 × 双语的标题、期刊与摘要式描述）。
 - 「研究方向」标签行与「媒体报道与学术传播」板块，覆盖电力气象、野火、气溶胶、卫星遥感、AI for Science 等长尾检索词。
 - `canonical` + `hreflang`（zh-CN / en / x-default）指向绝对地址，避免中英两版被判为重复内容。
-- Open Graph（`og:type=profile`，含 `profile:first_name` / `profile:last_name`）/ Twitter Card、`og:image`（头像）。
-- JSON-LD **两段**：① `Person`（姓名、别名、职务、任职机构、4 条 `alumniOf`、`award` 获奖、`knowsAbout` 研究方向、`sameAs` ORCID / ResearchGate、`email`）；② `ItemList` 内含 **18 条 `ScholarlyArticle`**（标题、`datePublished`、期刊 `isPartOf`、DOI `identifier`、主要内容 `abstract`、`Impact Factor` 属性），让搜索引擎理解"这个人写过哪些论文"。
+- Open Graph（`og:type=profile`，含 `profile:first_name` / `profile:last_name`）/ Twitter Card（`summary_large_image`）；`og:image` 用 **1200×630 PNG 分享卡片**（`assets/og-card.png`，含 `og:image:width/height/alt`），不是微信和 LinkedIn 不抓的 SVG。
+- JSON-LD **三段**：① `Person`（姓名、别名、职务、任职机构、4 条 `alumniOf`、`award` 获奖、`knowsAbout` 研究方向、`hasCredential` 北大博士、ORCID `identifier`、`sameAs`、`email`、`mainEntityOfPage`）；② `ProfilePage`（`mainEntity` 指回 Person、`isPartOf` WebSite、含 `dateModified`）；③ `ItemList` 内含 **18 条 `ScholarlyArticle`**（标题、`datePublished`、期刊 `isPartOf`、DOI `identifier`、主要内容 `abstract`、`Impact Factor` 属性，`author` 通过 `@id` 关联回 Person），让搜索引擎理解"这个人写过哪些论文"。
 - `<link rel="me">` 指向 ORCID / ResearchGate，帮助引擎把多个身份档案归并到同一个人。
 - `sitemap.xml`（中英两页 + 双语互指 + `lastmod`）与 `robots.txt`（声明 sitemap 地址、允许全站抓取）。
 - `<meta name="applicable-device" content="pc,mobile">`（百度移动适配声明）；`.nojekyll` 保证资源正常发布；全站无 CDN 依赖，抓取无障碍。
@@ -255,10 +260,19 @@ curl -X POST https://api.indexnow.org/indexnow \
 | **Google Scholar** | 档案里的「首页」字段 | 名字检索时直接出现在学者卡片里 |
 | **Semantic Scholar / OpenAlex** | 作者页的 homepage 字段 | 供 AI 与学术搜索抓取 |
 | **单位或院系人员页** | 南方电网 / 北大院系介绍页 | 权威站点外链，最有说服力 |
-| **GitHub 个人 README** | 新建 `guanyuliu0818/guanyuliu0818` 仓库，README 里放主页链接 | GitHub 自身权重高，且会被 Bing 快速收录 |
+| **GitHub 个人 README** ✅ 已完成 | 已建 `guanyuliu0818/guanyuliu0818` 仓库，README 里放了主页、4 篇代表作 DOI、ORCID 与 ResearchGate，访问 [github.com/guanyuliu0818](https://github.com/guanyuliu0818) 即可看到 | GitHub 自身权重高，且会被 Bing 快速收录；同时本仓库 README 顶部也放了主页链接 |
 | **知乎 / 微信公众号 / LinkedIn / 小红书** | 个人简介里放主页链接 | 中文检索与社交曝光；公众号文章可分别介绍每篇论文 |
 
 中文场景还有一个低成本高收益的做法：把「Middle East dust」「中东沙尘与印度洋偶极子」「夜间气溶胶反演」这类主题写成科普短文发在公众号或知乎，文末挂主页链接——媒体与社交平台的外链比反复提交 sitemap 有效得多。
+
+**优先级最高的四件事**（其余可慢慢做）：
+
+1. ORCID → Websites & social links 填 `https://guanyuliu0818.github.io/resume/`（学术身份的核心节点，Google 权重最高）。
+2. Google Scholar → 个人档案的「首页」字段填同一网址；名字检索时学者卡片会直接带出主页。
+3. 百度站长 / Google Search Console / Bing Webmaster 各提交一次 sitemap（三选一也先做 Google 与百度）。
+4. GitHub 个人 README 已完成；再把主页链接加进邮箱签名、微信朋友圈简介与常用社交账号简介，这些是最便宜的持续外链。
+
+如果愿意再投入半天：把 Nature Communications / PNAS 那两篇各写一篇中文科普（公众号 + 知乎），文末挂主页链接。文章本身会被搜索引擎收录，主页也跟着获得主题相关的外链——比反复点「请求编入索引」有效得多。
 
 > 国内访问提示：`*.github.io` 在国内连通性不稳定，百度抓取可能失败。若主要面向国内，建议绑定自定义域名（仓库 Settings → Pages → Custom domain，并加一条 CNAME 解析），或改用方案 B 的国内节点托管（腾讯云 EdgeOne / CloudBase）；换域名后记得更新 `site.canonicalBase` 重新构建并重新上传。
 
@@ -285,11 +299,11 @@ curl -X POST https://api.indexnow.org/indexnow \
 
 页面上 **18 篇论文的 18 个 DOI** 均通过 Crossref 逐条验证，标题、作者与期刊全部匹配，其中中文《科学通报》短文的 DOI 为 `10.1360/tb-2023-0457`。
 
-两版页面均带 `hreflang` 互指、`og:locale`、Open Graph / Twitter Card 与 JSON-LD Person 结构化数据，便于搜索引擎识别中英双版本；配置 `site.canonicalBase` 后还会输出绝对 `canonical`、`sitemap.xml` 和 `robots.txt`。
+两版页面均带 `hreflang` 互指、`og:locale`、Open Graph / Twitter Card 与三段 JSON-LD（`Person` / `ProfilePage` / 18 条 `ScholarlyArticle`），便于搜索引擎识别中英双版本与论文作者归属；`site.canonicalBase` 已配置，会输出绝对 `canonical`、`sitemap.xml`（`lastmod` 每次构建自动刷新为当天）和 `robots.txt`。
 
 ## 可选的后续补充
 
-- **上线后填写 `site.canonicalBase` 并重新构建**（否则 hreflang 为相对地址、无 sitemap，收录会打折扣）
+- ~~**上线后填写 `site.canonicalBase` 并重新构建**~~ ✅ 已完成；新增论文或报道后重新 `node build.js`，`sitemap.xml` 的 `lastmod` 会自动更新
 - 如需恢复 GitHub 主页或脱敏后的 CV PDF，在 `sidebarLinks` 补一条并填 `url` 即自动显示
 - 论文影响因子与分区取自 `北京大学_刘冠宇_科研.pdf`，随 JCR 年度更新时同步修改 `content.json` 的 `metrics`
 - 报道来源目前只写媒体名；若拿到具体文章链接，可把 `media` 里的对象改成 `{"zh": "...", "en": "...", "url": "..."}` 后再扩展渲染
