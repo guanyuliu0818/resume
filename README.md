@@ -17,7 +17,7 @@
 | `assets/style.css` | 全站样式 |
 | `assets/app.js` | 移动导航、Follow 折叠、滚动高亮、语言切换保留锚点、回到顶部 |
 | `assets/avatar.jpg` | 头像（来自简历证件照） |
-| `assets/og-card.png` | 1200×630 社交分享卡片（`og:image` / `twitter:image`），由 `_ogcard.py` 思路从 `avatar.jpg` 生成；微信 / LinkedIn / X 不抓 SVG，必须用 PNG |
+| `assets/og-card.png` | 1200×630 社交分享卡片（`og:image` / `twitter:image`），由 `make_ogcard.py` 从 `avatar.jpg` 生成；微信 / LinkedIn / X 不抓 SVG，必须用 PNG |
 | `assets/favicon.svg` | 站点图标 |
 | `sitemap.xml` | **配置 `site.canonicalBase` 后生成**，供搜索引擎提交 |
 | `robots.txt` | **配置 `site.canonicalBase` 后生成**，声明 sitemap 地址 |
