@@ -114,6 +114,17 @@ function renderSidebar(lang) {
               ${links}
             </ul>
           </div>
+          <div class="site-visits" id="site-visits" title="${esc(L(data.labels.visitHint, lang))}">
+            <div class="site-visits__item">
+              <span class="site-visits__num" data-visit="today">—</span>
+              <span class="site-visits__label">${esc(L(data.labels.visitToday, lang))}</span>
+            </div>
+            <span class="site-visits__sep" aria-hidden="true"></span>
+            <div class="site-visits__item">
+              <span class="site-visits__num" data-visit="total">—</span>
+              <span class="site-visits__label">${esc(L(data.labels.visitTotal, lang))}</span>
+            </div>
+          </div>
         </div>`;
 }
 
@@ -456,6 +467,7 @@ ${sections}
 </button>
 
 <script src="assets/app.js" defer></script>
+<script src="assets/visits.js" defer></script>
 </body>
 </html>
 `;

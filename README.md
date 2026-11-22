@@ -24,6 +24,15 @@
 | `bced4a16983c0370b2c634a7cee8c18c.txt` | **IndexNow 归属验证文件**（内容即 key），供 Bing / Yandex 主动推送时校验，不要删 |
 | `.nojekyll` | 告诉 GitHub Pages 跳过 Jekyll 构建 |
 | `.gitignore` | 默认排除两份原始简历 |
+| `business-card-zh.html` / `business-card-en.html` | 中英文个人名片（1200×720，可打印为 90×54 mm），由 `make_business_card.py` 生成 |
+| `business-card-zh.png` / `business-card-en.png` | 名片图片版，可直接发送 |
+| `business-card-zh.pdf` / `business-card-en.pdf` | 单页 90×54 mm 印刷版 |
+| `assets/card-qr.png` | 指向个人主页的二维码，已内嵌进两份名片 HTML |
+| `assets/csg-logo.png` | 中国南方电网标识（透明底，按用户提供图片裁切），已内嵌进两份名片 HTML |
+
+## 个人名片
+
+运行 `python make_business_card.py` 可按 `content.json` 中的现职、邮箱、主页、ORCID、ResearchGate 重新生成中英文 HTML；PNG / PDF 用无头 Edge 从 HTML 导出。名片采用中国南方电网标识与标准蓝（取自用户提供的 PNG），顶部直接标注「南方电网 · 中国南方电力调度控制中心」，不含荣誉条目；字体为 Candara（拉丁）+ Noto Sans SC（中文），字号已放大。名片只使用主页已公开信息，不含手机号。
 
 ## 本地预览
 

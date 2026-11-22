@@ -113,6 +113,19 @@ h1, h2, h3 { line-height: 1.3; font-weight: 700; }
 .author__bio { margin: 0; color: var(--muted); font-size: .8rem; line-height: 1.55; }
 .author__email { margin: .65rem 0 0; color: var(--faint); font-size: .7rem; word-break: break-word; line-height: 1.5; }
 .author__urls-wrapper { margin-top: 1.15rem; }
+/* 访问量统计 */
+.site-visits {
+  display: flex; align-items: center;
+  margin-top: 1rem; padding-top: .85rem;
+  border-top: 1px solid var(--line);
+}
+.site-visits__item { flex: 1 1 0; min-width: 0; text-align: center; }
+.site-visits__num {
+  display: block; font-size: 1.05rem; font-weight: 700; line-height: 1.25;
+  color: var(--link-dark); font-variant-numeric: tabular-nums;
+}
+.site-visits__label { display: block; margin-top: .2rem; font-size: .68rem; color: var(--faint); }
+.site-visits__sep { flex: none; width: 1px; height: 1.75rem; background: var(--line); }
 .btn--inverse {
   display: inline-block; padding: .34rem .9rem; border: 1px solid var(--line-strong);
   border-radius: 4px; background: #fff; color: var(--muted);
@@ -359,6 +372,7 @@ h1, h2, h3 { line-height: 1.3; font-weight: 700; }
   .author__name { margin: .1rem 0 .25rem; font-size: 1.1rem; }
   .author__urls-wrapper { grid-column: 1 / -1; margin-top: .9rem; }
   .author__urls { flex-direction: row; flex-wrap: wrap; gap: .45rem 1.3rem; }
+  .site-visits { grid-column: 1 / -1; margin-top: .85rem; padding-top: .7rem; }
   .page { max-width: none; }
 }
 @media (max-width: 760px) {

@@ -142,11 +142,23 @@
       "zh": "报道",
       "en": "Covered by"
     },
-    "researchAreas": {
-      "zh": "研究方向",
-      "en": "Research areas"
-    }
+  "researchAreas": {
+    "zh": "研究方向",
+    "en": "Research areas"
   },
+  "visitToday": {
+    "zh": "今日访问",
+    "en": "Today"
+  },
+  "visitTotal": {
+    "zh": "累计访问",
+    "en": "Total views"
+  },
+  "visitHint": {
+    "zh": "访客统计 · 仅记录页面访问次数，不含任何个人信息",
+    "en": "Visitor counter · page views only, no personal data"
+  }
+},
   "nav": [
     {
       "id": "biography",
