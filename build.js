@@ -407,6 +407,9 @@ ${sameAs.map(u => `<link rel="me" href="${esc(u)}">`).join('\n')}${absTags}
 <meta name="twitter:description" content="${esc(desc)}">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="stylesheet" href="assets/style.css">
+<link rel="preconnect" href="https://busuanzi.9420.ltd" crossorigin>
+<link rel="dns-prefetch" href="//busuanzi.9420.ltd">
+<script src="assets/visits.js" defer></script>
 <script type="application/ld+json">${JSON.stringify(jsonld)}</script>
 ${profilePageJson ? `<script type="application/ld+json">${JSON.stringify(profilePageJson)}</script>` : ''}
 ${worksJson ? `<script type="application/ld+json">${JSON.stringify(worksJson)}</script>` : ''}
@@ -467,7 +470,6 @@ ${sections}
 </button>
 
 <script src="assets/app.js" defer></script>
-<script src="assets/visits.js" defer></script>
 </body>
 </html>
 `;
