@@ -16,6 +16,7 @@
 | `build.js` | 由 `content.json` 一次生成两份 HTML |
 | `assets/style.css` | 全站样式 |
 | `assets/app.js` | 移动导航、Follow 折叠、滚动高亮、语言切换保留锚点、回到顶部 |
+| `assets/visits.js` | 访问量统计：每次页面加载上报一次，读取今日 PV 与累计 PV 填入侧栏 |
 | `assets/avatar.jpg` | 头像（来自简历证件照） |
 | `assets/og-card.png` | 1200×630 社交分享卡片（`og:image` / `twitter:image`），由 `make_ogcard.py` 从 `avatar.jpg` 生成；微信 / LinkedIn / X 不抓 SVG，必须用 PNG |
 | `assets/favicon.svg` | 站点图标 |
@@ -284,6 +285,18 @@ curl -X POST https://api.indexnow.org/indexnow \
 如果愿意再投入半天：把 Nature Communications / PNAS 那两篇各写一篇中文科普（公众号 + 知乎），文末挂主页链接。文章本身会被搜索引擎收录，主页也跟着获得主题相关的外链——比反复点「请求编入索引」有效得多。
 
 > 国内访问提示：`*.github.io` 在国内连通性不稳定，百度抓取可能失败。若主要面向国内，建议绑定自定义域名（仓库 Settings → Pages → Custom domain，并加一条 CNAME 解析），或改用方案 B 的国内节点托管（腾讯云 EdgeOne / CloudBase）；换域名后记得更新 `site.canonicalBase` 重新构建并重新上传。
+
+## 访问量统计
+
+侧栏「关注」列表下方显示**今日访问**与**累计访问**两个数字，纯静态站无需后端，由 `assets/visits.js` 实现：
+
+- **服务**：[soxft/busuanzi](https://github.com/soxft/busuanzi/wiki/api) 开源公共服务 `https://busuanzi.9420.ltd/api`；已验证 `https://guanyuliu0818.github.io` 的跨域预检通过（允许 `GET/POST` 与 `x-bsz-referer`）。
+- **口径**：每次**页面文档加载**只 POST 一次，`x-bsz-referer` 用北京时间日期构造虚拟路径 `/resume/__visits/YYYY-MM-DD`。返回的 `page_pv` 即今日访问量，`site_pv` 是站点累计访问量（所有日期路径之和）。锚点跳转、板块筛选不会重复计数；中英两版是两次文档加载，各计一次，符合 PV 定义。
+- **隐私**：请求只发送规范域名与统计日期，**不含**搜索词、URL 查询参数、来源页面或第三方 Cookie；不区分实名用户。
+- **容错**：服务不可用时显示 `—` 而不是假的 `0`；**失败不重试**——请求可能已成功计入，重试会重复计数。
+- **数据起点**：数值从启用当天开始累计，不补历史基数，也不从别的服务迁移。该公共服务没有 SLA；若需长期保障，可自行部署同一开源服务并改 `visits.js` 里的 `API` 常量。
+
+文案在 `content.json → labels.visitToday / visitTotal / visitHint`，样式在 `assets/style.css → .site-visits`，不需要改 `build.js`。
 
 ## 隐私提醒
 
